@@ -1,0 +1,22 @@
+  hit ===> unknown         (747 761)  1.1m  22:06
+  hit ===> unknown         (760 719)  1.4m  22:04
+<== hit by unknown         (766 732)   30k  17:55
+<== hit by unknown         (766 732)    9k  17:53
+  hit ===> unknown         (749 735)   83k  08:56
+  hit ===> unknown         (772 555)  2.9m  08:54
+  hit ===> unknown         (729 674)  1.5m  08:49
+  hit ===> unknown         (759 740)  1.2m  08:49
+  hit ===> Dwarodelf       (732 684)  123k  08:43
+  hit ===> Maverick's      (738 708)  349k  08:40
+  hit ===> unknown         (736 773)  3.1m  08:27
+  hit ===> unknown         (703 701)  820k  08:27
+  hit ===> unknown         (749 735)  589k  08:27
+  hit ===> Mordorz         (750 758)   47k  08:27
+  hit ===> unknown         (747 761)  1.6m  08:26
+  hit ===> Andred          (746 689)    1m  08:26
+  hit ===> Andred          (745 688)  270k  08:26
+  hit ===> unknown         (760 719)  906k  08:25
+Start Time:     23:47 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:47
+SirDuche city coords [ '745,708' ]

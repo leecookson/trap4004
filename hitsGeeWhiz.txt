@@ -1,0 +1,23 @@
+  hit ===> unknown         (188 246)  2.8m  17:40
+  hit ===> unknown         (158 357)  2.8m  17:40
+  hit ===> unknown         (126 293)  1.5m  17:39
+  hit ===> unknown         (131 307)  476k  17:38
+  hit ===> unknown         (130 297)   44k  17:38
+  hit ===> unknown         (167 322)  338k  17:37
+  hit ===> unknown         (166 358)  1.3m  17:35
+  hit ===> unknown         (196 307)  1.5m  17:34
+  hit ===> abbppp          (147 359)  359k  17:33
+  hit ===> unknown         (189 365)  113k  17:33
+  hit ===> unknown         (186 322)  771k  17:32
+  hit ===> unknown         (194 285)  752k  17:32
+  hit ===> unknown         (207 329)  2.9m  17:32
+  hit ===> unknown         (184 302)  1.4m  17:31
+  hit ===> abbppp          (147 359)  1.3m  08:36
+  hit ===> unknown         (189 365)  351k  08:35
+  hit ===> unknown         (194 285)  287k  08:35
+  hit ===> unknown         (207 329)  1.6m  08:35
+  hit ===> unknown         (184 302)  1.1m  08:34
+Start Time:     23:46 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:46
+GeeWhiz city coords [ '183,314' ]

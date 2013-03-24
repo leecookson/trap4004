@@ -1,0 +1,4 @@
+Start Time:     23:47 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:46
+Gryndal city coords []

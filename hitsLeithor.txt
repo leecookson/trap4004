@@ -1,0 +1,63 @@
+  hit ===> Mitrandil       (129 145)  1.3k  21:45
+  hit ===> TRIPLEJ         (137 137)  676k  21:44
+  hit ===> Brian25         ( 99 133)  116k  21:43
+  hit ===> NewUser-C728    (103 130)   60k  21:43
+  hit ===> Fox_of_the_Mist (104 129)  103k  21:42
+  hit ===> MidEarth        (128 147)  103k  21:40
+  hit ===> Gman64          (127 152)   60k  21:40
+  hit ===> Mitrandil       (129 145)   59k  21:38
+  hit ===> Rolando         (136 153)  142k  21:37
+  hit ===> unknown         (150 126)   61k  21:36
+  hit ===> moria1          (122 135)  193k  21:36
+  hit ===> Camper9         (114  73)   29k  21:35
+  hit ===> Krawn           ( 86 115)  184   21:35
+  hit ===> Li57            ( 92 120)  417k  19:14
+  hit ===> Lloyd           ( 84 117)  1.2m  19:13
+  hit ===> Kellbo          (112 100)  1.3m  19:12
+  hit ===> Morigul         (101 126)  620   18:54
+  hit ===> Morigul         (101 126)  610   18:53
+  hit ===> Fox_of_the_Mist (104 129)   18k  18:53
+  hit ===> Morigul         (101 126)  573k  18:52
+  hit ===> DallasCowboys88 (125  87)  112k  18:52
+  hit ===> Piksi           (112 107)  571k  18:09
+  hit ===> Eodyn           (117 119)  982k  18:08
+  hit ===> TRIPLEJ         (137 137)  103k  17:43
+  hit ===> Laurian         (158 480)   11k  17:39
+  hit ===> MrCaboose       (116 124)  232k  15:18
+  hit ===> Talandrius      ( 87 114)  939k  14:43
+  hit ===> me_gusta        ( 70  67)  1.6m  12:52
+  hit ===> Brian25         ( 99 133)   42k  12:49
+  hit ===> unknown         (146 100)   75k  12:23
+  hit ===> Lou             ( 97 145)  189k  12:20
+  hit ===> Ave             (123 150)  605k  12:19
+  hit ===> NINJAOFHATRED   ( 69 144)  123k  11:51
+  hit ===> NINJAOFHATRED   ( 69 144)  103k  11:45
+  hit ===> Laurian         (158 480)  260   11:41
+  hit ===> Reload          ( 72 181)  161k  11:39
+  hit ===> Reload          ( 72 181)  103k  11:29
+  hit ===> NINJAOFHATRED   ( 71 158)    1m  11:19
+  hit ===> NINJAOFHATRED   ( 71 158)    1m  10:22
+  hit ===> Camper9         (114  73)   36k  09:53
+  hit ===> nicholasmaximus (124 150)  114k  09:52
+  hit ===> Li57            ( 92 120)  255k  09:51
+  hit ===> Brian25         ( 99 133)   78k  09:50
+  hit ===> Sambarnes94     (125 113)   48k  09:50
+  hit ===> Elimayo         (114 124)  133k  09:49
+  hit ===> unknown         (797   6)  392k  04:33
+  hit ===> Blackbelteelf   (423 465)  135k  04:22
+  hit ===> Lou             ( 97 145)  965k  04:09
+  hit ===> Li57            ( 92 120)  143k  04:09
+  hit ===> Talandrius      ( 87 114)  2.8m  04:06
+  hit ===> nicholasmaximus (124 150)   38k  04:05
+  hit ===> Brian25         ( 99 133)   65k  04:05
+  hit ===> Sambarnes94     (125 113)   40k  04:05
+  hit ===> XxSlay_AxX      (153 267)   65k  02:18
+  hit ===> XxSlay_AxX      (153 267)  103k  01:09
+  hit ===> Li57            ( 92 120)  1.3m  00:58
+  hit ===> Elimayo         (114 124)   64k  00:57
+  hit ===> Camper9         (114  73)  1.2k  00:53
+  hit ===> Camper9         (114  73)  397k  00:53
+Start Time:     23:46 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:46
+Leithor city coords [ '112,121', '150,157' ]

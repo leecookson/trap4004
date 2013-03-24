@@ -1,0 +1,6 @@
+  hit ===> unknown         (157 397)  2.7k  15:06
+  hit ===> unknown         (157 397)  2.1m  15:05
+Start Time:     23:50 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:48
+Whelo city coords [ '154,399' ]

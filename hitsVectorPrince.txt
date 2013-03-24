@@ -1,0 +1,6 @@
+  hit ===> unknown         (713 608)  621k  19:00
+  hit ===> unknown         (713 608)  6.7k  18:22
+Start Time:     23:47 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:46
+VectorPrince city coords [ '673,752' ]

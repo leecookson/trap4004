@@ -1,0 +1,5 @@
+<== hit by unknown         (325  24)     0  1.5m  548k  1.3m  3.4m  12:03
+Start Time:     22:37 Friday
+End Time:       22:14 Saturday
+Game Time Now:  22:36
+Deathshead city coords [ '336,18' ]

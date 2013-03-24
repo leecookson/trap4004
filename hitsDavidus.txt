@@ -1,0 +1,5 @@
+<== hit by unknown         (757 238)  1.1m  06:38
+Start Time:     23:46 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:46
+Davidus city coords [ '779,229' ]

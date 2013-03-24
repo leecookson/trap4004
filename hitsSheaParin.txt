@@ -1,0 +1,20 @@
+  hit ===> unknown         (285 775)  418k  21:56
+  hit ===> unknown         (287 773)  824k  21:51
+  hit ===> unknown         (295 789)    4m  21:48
+  hit ===> unknown         (297 788)  1.2m  21:29
+  hit ===> unknown         (296 791)  3.5m  21:29
+  hit ===> unknown         (322 797)  652k  21:13
+  hit ===> unknown         (368 770)    1m  20:56
+  hit ===> unknown         (366 700)  203k  10:12
+  hit ===> Home            (394 679)  647k  10:06
+  hit ===> Gnordor         (396 731)  234k  09:48
+  hit ===> unknown         (386 741)  1.3m  09:42
+  hit ===> unknown         (385 741)  1.5m  09:40
+<== hit by crystalskull198 (347 779)   30k  02:00
+  hit ===> unknown         (751 651)  4.7m  00:01
+  hit ===> unknown         (749 779)  1.3m  23:57
+  hit ===> 00zero          (651 148)  308k  23:55
+Start Time:     23:47 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:46
+SheaParin city coords [ '350,773', '350,775' ]

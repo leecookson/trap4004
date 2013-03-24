@@ -1,0 +1,6 @@
+  hit ===> unknown         (128 592)  1.1m  17:17
+<== hit by unknown         (128 592)  2.5m  16:05
+Start Time:     23:47 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:46
+Smithy1992 city coords [ '138,642', '141,568' ]

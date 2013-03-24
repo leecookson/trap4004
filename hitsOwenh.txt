@@ -1,0 +1,28 @@
+<== hit by unknown         (219 484)     0  161k     0     0  161k  21:12
+  hit ===> unknown         (198 437)  267k  189k   58k   70k  585k  14:08
+  hit ===> unknown         (200 436)  2.3m     0     0     0  2.3m  14:06
+  hit ===> bloodcrypt      (206 427)  307k     0   91k   69k  467k  14:03
+  hit ===> unknown         (534 760)     0     0   48k     0   48k  13:05
+  hit ===> unknown         (208 407)     0   43k     0     0   43k  12:36
+  hit ===> unknown         (209 409)   14k  7.3k     0     0   21k  12:25
+  hit ===> unknown         (209 409)  5.3k  2.8k     0     0  8.1k  12:25
+  hit ===> unknown         (209 409)   16k  8.4k     0     0   24k  12:25
+  hit ===> unknown         (209 409)   22k   11k     0     0   33k  12:25
+  hit ===> unknown         (209 409)  9.6k    5k     0     0   14k  12:25
+  hit ===> unknown         (209 409)    5k  2.6k     0     0  7.7k  12:25
+  hit ===> unknown         (155 466)  379k     0     0     0  379k  12:22
+  hit ===> unknown         (215 399)   25    19    10    10    64   12:22
+  hit ===> unknown         (209 409)  1.9k    1k     0     0  2.9k  12:22
+  hit ===> unknown         (215 399)   60k   40k   20k   20k  140k  12:22
+  hit ===> unknown         (209 409)  2.7k  1.4k     0     0  4.2k  12:22
+  hit ===> unknown         (209 409)  3.5k  1.8k     0     0  5.3k  12:22
+  hit ===> unknown         (209 409)  5.2k  2.8k     0     0    8k  12:22
+  hit ===> unknown         (209 409)  6.1k  3.2k     0     0  9.4k  12:21
+  hit ===> unknown         (209 409)  6.9k  3.6k     0     0   10k  12:21
+  hit ===> bloodcrypt      (206 427)    1m     0  203k  204k  1.4m  11:42
+<== hit by unknown         (403 413)     0     0  256k     0  256k  02:13
+  hit ===> bloodcrypt      (206 427)  587k  292k  372k  235k  1.4m  22:51
+Start Time:     22:37 Friday
+End Time:       22:14 Saturday
+Game Time Now:  22:36
+Owenh city coords [ '210,418', '216,413' ]

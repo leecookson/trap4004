@@ -1,0 +1,7 @@
+<== hit by Melfius         (228   5)  103k     0     0     0  103k  16:38
+<== hit by RAMbaggins      (218  79)   21k     0     0     0   21k  04:16
+<== hit by Melfius         (228   5)  169k     0     0     0  169k  01:50
+Start Time:     22:37 Friday
+End Time:       22:14 Saturday
+Game Time Now:  22:36
+FlufferKnuckle city coords [ '297,173', '214,55' ]

@@ -1,0 +1,2 @@
+#!/bin/bash
+node findFarms | egrep '^([1-9]|1[0-9]|1[0-9][0-9]) [0-9]' > farms2.txt

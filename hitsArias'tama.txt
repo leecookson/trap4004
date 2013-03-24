@@ -1,0 +1,37 @@
+<== hit by unknown         (241  18)  350k  20:44
+  hit ===> unknown         (241  18)   83k  17:11
+  hit ===> unknown         (362 797)  127k  16:59
+  hit ===> unknown         (241  18)  8.5k  16:57
+  hit ===> Laurian         (158 480)  7.5k  16:53
+  hit ===> Laurian         (158 480)  8.5k  16:46
+  hit ===> unknown         (117 328)  446k  12:04
+  hit ===> unknown         (117 328)  8.5k  12:03
+  hit ===> unknown         ( 92 247)  291k  03:52
+  hit ===> unknown         ( 94 269)  769   03:52
+  hit ===> JedBell         (118 266)  399k  03:51
+  hit ===> unknown         ( 95 206)  410k  03:50
+  hit ===> unknown         (112 287)  523k  03:50
+  hit ===> tam2            (112 268)   95k  03:49
+  hit ===> Saintor         (101 323)  476k  03:48
+  hit ===> unknown         (106 310)  109k  03:46
+  hit ===> unknown         (117 317)   71k  03:46
+  hit ===> unknown         (206 521)  455k  03:32
+  hit ===> unknown         (147 516)  1.4m  03:31
+  hit ===> unknown         (172 554)  202k  03:26
+  hit ===> Haldirlas       ( 67 303)  656k  03:25
+  hit ===> unknown         (178 530)    2m  03:24
+  hit ===> unknown         (192 536)  638k  03:22
+  hit ===> unknown         (177 405)  2.8m  03:20
+  hit ===> unknown         (121 507)  2.1m  03:19
+  hit ===> unknown         (201 485)   17k  03:19
+  hit ===> unknown         ( 94 291)  260k  03:15
+  hit ===> unknown         ( 91 231)   20k  03:14
+  hit ===> SamWiseTheBabe  (153 478)    1m  03:13
+  hit ===> unknown         (136 301)  1.3m  03:12
+  hit ===> unknown         ( 85 299)  547k  03:12
+  hit ===> unknown         (135 301)   63k  03:12
+  hit ===> KingElve        (108 328)  134k  03:10
+Start Time:     23:47 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:47
+Arias'tama city coords [ '103,328' ]

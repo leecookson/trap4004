@@ -1,0 +1,729 @@
+{"/ajax/getChat.php":[{"ok":true,"data":{"newChats":{"1":[["Tolkien'sReveng","13:30","","Weak JThug.  Lmao","186204",0,1369842,1362144630,"8979","Silmarilli"],["Tolkien'sReveng","13:30","",";)))","186204",0,1369843,1362144639,"8979","Silmarilli"],["KingJthug","13:31","","Nah I'm not afraid to toss my might around","1221",0,1369844,1362144671,"10440","P L A G U E"]],"2":[["Dholl710","13:30","alc_rq_answer","Dholl710 answered Tia2's resource request, 1m Food resource ETA 3 mins","130121",0,8021878,1362144646,"1018","Comrade in arms"],["Dholl710","13:31","","Still have plenty give out","130121",0,8021893,1362144664,"1018","Comrade in arms"],["Dholl710","13:31","","Hi Tia how are u","130121",0,8021897,1362144671,"1018","Comrade in arms"],["SirRajTheElf","13:31","","No more food lef all gone have lots of stone wood and alittle ore left ask away","225831",0,8021906,1362144682,"1018","Comrade in arms"]],"3":[],"4":[{"fromAllianceId":"1018","fromUserId":"887140","fromCityId":"136839","answerUserId":0,"answerCityId":0,"status":0,"requestTime":1362144630,"requestType":"1","resource1":"1000000","id":140716,"fromUserName":"Tia2","fromCityName":"tirion2","fromCityXCoord":"143","fromCityYCoord":"386"}
+]}
+,"nextNewests":{"1":1369844,"2":8021906,"3":"0","4":"0"}
+,"helpObj":[],"allianceOfficer":{"1221":"3","130121":"6","186204":"2","225831":"5","887140":"2"}
+,"userInfo":{"u186204":{"r":"2"}
+,"u1221":{"r":"2"}
+,"u130121":{"r":"1"}
+,"u225831":{"r":"2"}
+}
+}
+,"reqmicrotime":1362144690.3642,"resmicrotime":1362144690.3728}
+,{"ok":true,"data":{"newChats":{"1":[],"2":[],"3":[],"4":[{"fromAllianceId":"1018","fromUserId":"130121","fromCityId":"57107","answerUserId":0,"answerCityId":0,"status":0,"requestTime":1362144703,"requestType":"1","resource2":"1000000","resource3":"500000","resource4":"500000","id":140721,"fromUserName":"Dholl710","fromCityName":"Grrrrrrrrrrrrr","fromCityXCoord":"133","fromCityYCoord":"172"}
+,{"fromAllianceId":"1018","fromUserId":"212533","fromCityId":"83733","answerUserId":0,"answerCityId":0,"status":0,"requestTime":1362144705,"requestType":"1","resource1":"2000000","id":140722,"fromUserName":"Republicireland","fromCityName":"Shane","fromCityXCoord":"93","fromCityYCoord":"406"}
+]}
+,"nextNewests":{"1":1369844,"2":8021906,"3":"0","4":"0"}
+,"helpObj":[],"allianceOfficer":{"130121":"6","212533":"6"}
+,"userInfo":{}
+}
+,"reqmicrotime":1362144711.2757,"resmicrotime":1362144711.2849}
+,{"ok":true,"data":{"newChats":{"1":[["MavericK","13:32","","Atta boy jthug","6549",0,1369845,1362144729,"10440","P L A G U E"]],"2":[],"3":[],"4":[]}
+,"nextNewests":{"1":1369845,"2":8021906,"3":"0","4":"0"}
+,"helpObj":[],"allianceOfficer":{"6549":"6"}
+,"userInfo":{"u6549":{"r":"1"}
+}
+}
+,"reqmicrotime":1362144732.2859,"resmicrotime":1362144732.2938}
+,{"ok":true,"data":{"newChats":{"1":[["Arwen1","13:32","","She's not afraid of all the attention! She's not afraid of.... ????","251855",0,1369846,1362144732,"1570","BEASTS"],["Arwen1","13:32","","Love that song!","251855",0,1369847,1362144747,"1570","BEASTS"]],"2":[["Tia2","13:32","","hi dholl thnx","887140",0,8021950,1362144744,"1018","Comrade in arms"]],"3":[],"4":[]}
+,"nextNewests":{"1":1369847,"2":8021950,"3":"0","4":"0"}
+,"helpObj":[],"allianceOfficer":{"251855":"5","887140":"2"}
+,"userInfo":{"u251855":{"r":"2"}
+,"u887140":{"r":"1"}
+}
+}
+,"reqmicrotime":1362144754.2759,"resmicrotime":1362144754.2842}
+,{"ok":true,"data":{"newChats":{"1":[],"2":[["Republicireland","13:32","alc_rq_answer","Republicireland answered Dholl710's resource request, 589k Wood,686k Stone,500k Ore resource ETA 4 mins","212533",0,8021960,1362144756,"1018","Comrade in arms"],["Dholl710","13:32","","One sec republic need my wagons back","130121",0,8021962,1362144756,"1018","Comrade in arms"],["Tia2","13:32","","ik ok thnx how are u?","887140",0,8021965,1362144761,"1018","Comrade in arms"]],"3":[],"4":[]}
+,"nextNewests":{"1":1369847,"2":8021965,"3":"0","4":"0"}
+,"helpObj":[],"allianceOfficer":{"130121":"6","212533":"6","887140":"2"}
+,"userInfo":{"u212533":{"r":"2"}
+,"u130121":{"r":"1"}
+,"u887140":{"r":"1"}
+}
+}
+,"reqmicrotime":1362144774.4422,"resmicrotime":1362144774.4507}
+],"/ajax/fetchMapTiles.php":[{"ok":true,"data":{"l_146_t_201":{"tileId":"188101","xCoord":"146","yCoord":"201","tileType":"10","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_146_t_202":{"tileId":"188102","xCoord":"146","yCoord":"202","tileType":"30","orgTileLevel":"6","tileLevel":"6","tileCityId":"98859","tileUserId":"256223","tileAllianceId":"1018","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_146_t_203":{"tileId":"188103","xCoord":"146","yCoord":"203","tileType":"10","orgTileLevel":"5","tileLevel":"5","tileCityId":"98859","tileUserId":"256223","tileAllianceId":"1018","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_146_t_204":{"tileId":"188104","xCoord":"146","yCoord":"204","tileType":"10","orgTileLevel":"4","tileLevel":"4","tileCityId":"54727","tileUserId":"121972","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_146_t_205":{"tileId":"188105","xCoord":"146","yCoord":"205","tileType":"50","orgTileLevel":"8","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_147_t_201":{"tileId":"188106","xCoord":"147","yCoord":"201","tileType":"30","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_147_t_202":{"tileId":"188107","xCoord":"147","yCoord":"202","tileType":"20","orgTileLevel":"5","tileLevel":"5","tileCityId":"147663","tileUserId":"105312","tileAllianceId":"7154","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_147_t_203":{"tileId":"188108","xCoord":"147","yCoord":"203","tileType":"51","orgTileLevel":"5","tileLevel":"1","tileCityId":"136521","tileUserId":"3547945","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","cityName":"NewCity241M1","race":"2","misted":false}
+,"l_147_t_204":{"tileId":"188109","xCoord":"147","yCoord":"204","tileType":"20","orgTileLevel":"9","tileLevel":"9","tileCityId":"144375","tileUserId":"4169866","tileAllianceId":"2639","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_147_t_205":{"tileId":"188110","xCoord":"147","yCoord":"205","tileType":"51","orgTileLevel":"1","tileLevel":"6","tileCityId":"151500","tileUserId":"4712088","tileAllianceId":"5737","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","cityName":"HaTe","race":"2","misted":false}
+,"l_148_t_201":{"tileId":"188111","xCoord":"148","yCoord":"201","tileType":"30","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_148_t_202":{"tileId":"188112","xCoord":"148","yCoord":"202","tileType":"10","orgTileLevel":"6","tileLevel":"6","tileCityId":"29940","tileUserId":"54422","tileAllianceId":"89","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_148_t_203":{"tileId":"188113","xCoord":"148","yCoord":"203","tileType":"20","orgTileLevel":"5","tileLevel":"5","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_148_t_204":{"tileId":"188114","xCoord":"148","yCoord":"204","tileType":"30","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_148_t_205":{"tileId":"188115","xCoord":"148","yCoord":"205","tileType":"10","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_149_t_201":{"tileId":"188116","xCoord":"149","yCoord":"201","tileType":"40","orgTileLevel":"5","tileLevel":"5","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_149_t_202":{"tileId":"188117","xCoord":"149","yCoord":"202","tileType":"40","orgTileLevel":"1","tileLevel":"1","tileCityId":"75057","tileUserId":"185042","tileAllianceId":"841","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_149_t_203":{"tileId":"188118","xCoord":"149","yCoord":"203","tileType":"40","orgTileLevel":"1","tileLevel":"1","tileCityId":"75057","tileUserId":"185042","tileAllianceId":"841","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_149_t_204":{"tileId":"188119","xCoord":"149","yCoord":"204","tileType":"51","orgTileLevel":"10","tileLevel":"9","tileCityId":"75057","tileUserId":"185042","tileAllianceId":"841","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","cityName":"Dathomir","race":"2","misted":false}
+,"l_149_t_205":{"tileId":"188120","xCoord":"149","yCoord":"205","tileType":"51","orgTileLevel":"2","tileLevel":"9","tileCityId":"150513","tileUserId":"4686040","tileAllianceId":"2069","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","cityName":"Stonesfold","race":"1","misted":false}
+,"l_150_t_201":{"tileId":"188121","xCoord":"150","yCoord":"201","tileType":"20","orgTileLevel":"8","tileLevel":"8","tileCityId":"150513","tileUserId":"4686040","tileAllianceId":"2069","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_150_t_202":{"tileId":"188122","xCoord":"150","yCoord":"202","tileType":"40","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_150_t_203":{"tileId":"188123","xCoord":"150","yCoord":"203","tileType":"51","orgTileLevel":"6","tileLevel":"1","tileCityId":"140789","tileUserId":"3912956","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","cityName":"NewCity2BV98","race":"1","misted":false}
+,"l_150_t_204":{"tileId":"188124","xCoord":"150","yCoord":"204","tileType":"51","orgTileLevel":"3","tileLevel":"1","tileCityId":"152537","tileUserId":"4739860","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","cityName":"NewCity2TLAS","race":"2","misted":false}
+,"l_150_t_205":{"tileId":"188125","xCoord":"150","yCoord":"205","tileType":"20","orgTileLevel":"10","tileLevel":"10","tileCityId":"150513","tileUserId":"4686040","tileAllianceId":"2069","tileProvinceId":"5","tileBlockId":"29040","tileImgName":"","misted":false}
+,"l_141_t_201":{"tileId":"188001","xCoord":"141","yCoord":"201","tileType":"51","orgTileLevel":"3","tileLevel":"9","tileCityId":"144375","tileUserId":"4169866","tileAllianceId":"2639","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","cityName":"Glossy","race":"2","misted":false}
+,"l_141_t_202":{"tileId":"188002","xCoord":"141","yCoord":"202","tileType":"20","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_141_t_203":{"tileId":"188003","xCoord":"141","yCoord":"203","tileType":"10","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_141_t_204":{"tileId":"188004","xCoord":"141","yCoord":"204","tileType":"10","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_141_t_205":{"tileId":"188005","xCoord":"141","yCoord":"205","tileType":"20","orgTileLevel":"5","tileLevel":"5","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_142_t_201":{"tileId":"188006","xCoord":"142","yCoord":"201","tileType":"40","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_142_t_202":{"tileId":"188007","xCoord":"142","yCoord":"202","tileType":"10","orgTileLevel":"8","tileLevel":"8","tileCityId":"86095","tileUserId":"219361","tileAllianceId":"8579","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_142_t_203":{"tileId":"188008","xCoord":"142","yCoord":"203","tileType":"51","orgTileLevel":"7","tileLevel":"1","tileCityId":"144345","tileUserId":"4169266","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","cityName":"NewCity2HD0Y","race":"2","misted":false}
+,"l_142_t_204":{"tileId":"188009","xCoord":"142","yCoord":"204","tileType":"51","orgTileLevel":"6","tileLevel":"3","tileCityId":"143921","tileUserId":"3274778","tileAllianceId":"347","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","cityName":"Latest Model","race":"2","misted":false}
+,"l_142_t_205":{"tileId":"188010","xCoord":"142","yCoord":"205","tileType":"51","orgTileLevel":"2","tileLevel":"9","tileCityId":"86095","tileUserId":"219361","tileAllianceId":"8579","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","cityName":"Waverlyville","race":"2","misted":false}
+,"l_143_t_201":{"tileId":"188011","xCoord":"143","yCoord":"201","tileType":"11","orgTileLevel":"9","tileLevel":"9","tileCityId":"86095","tileUserId":"219361","tileAllianceId":"8579","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_143_t_202":{"tileId":"188012","xCoord":"143","yCoord":"202","tileType":"10","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_143_t_203":{"tileId":"188013","xCoord":"143","yCoord":"203","tileType":"20","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_143_t_204":{"tileId":"188014","xCoord":"143","yCoord":"204","tileType":"51","orgTileLevel":"7","tileLevel":"1","tileCityId":"138793","tileUserId":"3871322","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","cityName":"NewCity2AZ4Q","race":"2","misted":false}
+,"l_143_t_205":{"tileId":"188015","xCoord":"143","yCoord":"205","tileType":"30","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_144_t_201":{"tileId":"188016","xCoord":"144","yCoord":"201","tileType":"51","orgTileLevel":"10","tileLevel":"4","tileCityId":"144407","tileUserId":"4170730","tileAllianceId":"11744","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","cityName":"Waffleville","race":"1","misted":false}
+,"l_144_t_202":{"tileId":"188017","xCoord":"144","yCoord":"202","tileType":"51","orgTileLevel":"4","tileLevel":"1","tileCityId":"136597","tileUserId":"3566873","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","cityName":"NewCity24G7T","race":"2","misted":false}
+,"l_144_t_203":{"tileId":"188018","xCoord":"144","yCoord":"203","tileType":"30","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_144_t_204":{"tileId":"188019","xCoord":"144","yCoord":"204","tileType":"10","orgTileLevel":"6","tileLevel":"6","tileCityId":"86095","tileUserId":"219361","tileAllianceId":"8579","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_144_t_205":{"tileId":"188020","xCoord":"144","yCoord":"205","tileType":"20","orgTileLevel":"1","tileLevel":"1","tileCityId":"81632","tileUserId":"204716","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_145_t_201":{"tileId":"188021","xCoord":"145","yCoord":"201","tileType":"20","orgTileLevel":"3","tileLevel":"3","tileCityId":"87743","tileUserId":"223632","tileAllianceId":"864","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_145_t_202":{"tileId":"188022","xCoord":"145","yCoord":"202","tileType":"51","orgTileLevel":"9","tileLevel":"1","tileCityId":"144389","tileUserId":"4169890","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","cityName":"NewCity2HDIA","race":"2","misted":false}
+,"l_145_t_203":{"tileId":"188023","xCoord":"145","yCoord":"203","tileType":"40","orgTileLevel":"10","tileLevel":"10","tileCityId":"86095","tileUserId":"219361","tileAllianceId":"8579","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_145_t_204":{"tileId":"188024","xCoord":"145","yCoord":"204","tileType":"10","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","misted":false}
+,"l_145_t_205":{"tileId":"188025","xCoord":"145","yCoord":"205","tileType":"51","orgTileLevel":"5","tileLevel":"1","tileCityId":"141304","tileUserId":"3789629","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28040","tileImgName":"","cityName":"NewCity2983H","race":"1","misted":false}
+}
+,"userInfo":{"u256223":{"n":"BreakingJake","t":"37","m":"144672","s":"M","w":"1","a":"1018","i":"0","r":"2"}
+,"u121972":{"n":"Lethalrappyy","t":"21","m":"96500","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u105312":{"n":"Torvin","t":"50","m":"4325510","s":"M","w":"1","a":"7154","i":"0","r":"1"}
+,"u4169866":{"n":"Uridium","t":"32","m":"539789","s":"M","w":"1","a":"2639","i":"0","r":"2"}
+,"u4712088":{"n":"DarK_VipeR","t":"22","m":"453720","s":"M","w":"1","a":"5737","i":"0","r":"2"}
+,"u54422":{"n":"Koloth","t":"48","m":"3497684","s":"M","w":"1","a":"89","i":"0","r":"1"}
+,"u185042":{"n":"Luciferius","t":"24","m":"89600","s":"M","w":"1","a":"841","i":"0","r":"2"}
+,"u4686040":{"n":"clarke","t":"29","m":"178112","s":"M","w":"1","a":"2069","i":"0","r":"1"}
+,"u219361":{"n":"Waverly","t":"39","m":"1013244","s":"M","w":"1","a":"8579","i":"0","r":"2"}
+,"u4169266":{"n":"NewUser-2HD0Y","t":"2","m":"0","s":"M","w":"2","a":"0","i":"0","r":"2"}
+,"u3274778":{"n":"TX600","t":"14","m":"30000","s":"M","w":"1","a":"347","i":"0","r":"2"}
+,"u3871322":{"n":"NewUser-2AZ4Q","t":"2","m":"0","s":"M","w":"2","a":"0","i":"0","r":"2"}
+,"u4170730":{"n":"Belegost_II","t":"8","m":"2000","s":"M","w":"1","a":"11744","i":"0","r":"1"}
+,"u3566873":{"n":"NewUser-24G7T","t":"2","m":"0","s":"M","w":"2","a":"0","i":"0","r":"2"}
+,"u204716":{"n":"Gayboy","t":"8","m":"0","s":"M","w":"1","a":"0","i":"0","r":"1"}
+,"u223632":{"n":"schoey","t":"38","m":"149424","s":"M","w":"1","a":"864","i":"0","r":"1"}
+,"u4169890":{"n":"NewUser-2HDIA","t":"2","m":"0","s":"M","w":"2","a":"0","i":"0","r":"2"}
+,"u3789629":{"n":"Imanuate","t":"4","m":"131","s":"M","w":"2","a":"0","i":"0","r":"1"}
+,"u3547945":{"n":"NewUser-241M1","t":"2","m":"0","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u3912956":{"n":"NewUser-2BV98","t":"2","m":"0","s":"M","w":"1","a":"0","i":"0","r":"1"}
+,"u4739860":{"n":"NewUser-2TLAS","t":"3","m":"210","s":"M","w":"2","a":"0","i":"0","r":"2"}
+}
+,"allianceNames":{"a1018":"Comrade in arms","a7154":"Whiskers","a2639":"Organized chaos","a5737":"Northern Empire","a89":"Bearded Aliance","a841":"Hunterz","a2069":"The Silence","a8579":"Last Resistance","a347":"_KingdomAcademy","a11744":"Edge","a864":"Thundercats"}
+,"allianceMights":{"a1018":"245470958","a7154":"57896935","a2639":"129282628","a5737":"152067694","a89":"604417830","a841":"4129735","a2069":"1134145","a8579":"4348452","a347":"141663615","a11744":"2000","a864":"8856224"}
+}
+,{"ok":true,"data":{"l_141_t_211":{"tileId":"188051","xCoord":"141","yCoord":"211","tileType":"10","orgTileLevel":"9","tileLevel":"9","tileCityId":"113135","tileUserId":"170264","tileAllianceId":"6553","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_141_t_212":{"tileId":"188052","xCoord":"141","yCoord":"212","tileType":"50","orgTileLevel":"10","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_141_t_213":{"tileId":"188053","xCoord":"141","yCoord":"213","tileType":"51","orgTileLevel":"1","tileLevel":"4","tileCityId":"68447","tileUserId":"162986","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","cityName":"NewCity3HRE","race":"2","misted":false}
+,"l_141_t_214":{"tileId":"188054","xCoord":"141","yCoord":"214","tileType":"30","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_141_t_215":{"tileId":"188055","xCoord":"141","yCoord":"215","tileType":"40","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_142_t_211":{"tileId":"188056","xCoord":"142","yCoord":"211","tileType":"20","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_142_t_212":{"tileId":"188057","xCoord":"142","yCoord":"212","tileType":"50","orgTileLevel":"9","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_142_t_213":{"tileId":"188058","xCoord":"142","yCoord":"213","tileType":"40","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_142_t_214":{"tileId":"188059","xCoord":"142","yCoord":"214","tileType":"40","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_142_t_215":{"tileId":"188060","xCoord":"142","yCoord":"215","tileType":"10","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_143_t_211":{"tileId":"188061","xCoord":"143","yCoord":"211","tileType":"10","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_143_t_212":{"tileId":"188062","xCoord":"143","yCoord":"212","tileType":"50","orgTileLevel":"5","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_143_t_213":{"tileId":"188063","xCoord":"143","yCoord":"213","tileType":"30","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_143_t_214":{"tileId":"188064","xCoord":"143","yCoord":"214","tileType":"51","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_143_t_215":{"tileId":"188065","xCoord":"143","yCoord":"215","tileType":"51","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_144_t_211":{"tileId":"188066","xCoord":"144","yCoord":"211","tileType":"50","orgTileLevel":"3","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_144_t_212":{"tileId":"188067","xCoord":"144","yCoord":"212","tileType":"40","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_144_t_213":{"tileId":"188068","xCoord":"144","yCoord":"213","tileType":"50","orgTileLevel":"6","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_144_t_214":{"tileId":"188069","xCoord":"144","yCoord":"214","tileType":"40","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_144_t_215":{"tileId":"188070","xCoord":"144","yCoord":"215","tileType":"30","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_145_t_211":{"tileId":"188071","xCoord":"145","yCoord":"211","tileType":"11","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_145_t_212":{"tileId":"188072","xCoord":"145","yCoord":"212","tileType":"50","orgTileLevel":"9","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_145_t_213":{"tileId":"188073","xCoord":"145","yCoord":"213","tileType":"40","orgTileLevel":"5","tileLevel":"5","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_145_t_214":{"tileId":"188074","xCoord":"145","yCoord":"214","tileType":"40","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_145_t_215":{"tileId":"188075","xCoord":"145","yCoord":"215","tileType":"10","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28042","tileImgName":"","misted":false}
+,"l_141_t_206":{"tileId":"188026","xCoord":"141","yCoord":"206","tileType":"30","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_141_t_207":{"tileId":"188027","xCoord":"141","yCoord":"207","tileType":"30","orgTileLevel":"10","tileLevel":"10","tileCityId":"86095","tileUserId":"219361","tileAllianceId":"8579","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_141_t_208":{"tileId":"188028","xCoord":"141","yCoord":"208","tileType":"20","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_141_t_209":{"tileId":"188029","xCoord":"141","yCoord":"209","tileType":"10","orgTileLevel":"10","tileLevel":"10","tileCityId":"144375","tileUserId":"4169866","tileAllianceId":"2639","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_141_t_210":{"tileId":"188030","xCoord":"141","yCoord":"210","tileType":"30","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_142_t_206":{"tileId":"188031","xCoord":"142","yCoord":"206","tileType":"20","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_142_t_207":{"tileId":"188032","xCoord":"142","yCoord":"207","tileType":"50","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_142_t_208":{"tileId":"188033","xCoord":"142","yCoord":"208","tileType":"50","orgTileLevel":"7","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_142_t_209":{"tileId":"188034","xCoord":"142","yCoord":"209","tileType":"30","orgTileLevel":"10","tileLevel":"10","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_142_t_210":{"tileId":"188035","xCoord":"142","yCoord":"210","tileType":"51","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_143_t_206":{"tileId":"188036","xCoord":"143","yCoord":"206","tileType":"20","orgTileLevel":"5","tileLevel":"5","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_143_t_207":{"tileId":"188037","xCoord":"143","yCoord":"207","tileType":"10","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_143_t_208":{"tileId":"188038","xCoord":"143","yCoord":"208","tileType":"10","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_143_t_209":{"tileId":"188039","xCoord":"143","yCoord":"209","tileType":"11","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_143_t_210":{"tileId":"188040","xCoord":"143","yCoord":"210","tileType":"40","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_144_t_206":{"tileId":"188041","xCoord":"144","yCoord":"206","tileType":"40","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_144_t_207":{"tileId":"188042","xCoord":"144","yCoord":"207","tileType":"20","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_144_t_208":{"tileId":"188043","xCoord":"144","yCoord":"208","tileType":"20","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_144_t_209":{"tileId":"188044","xCoord":"144","yCoord":"209","tileType":"11","orgTileLevel":"10","tileLevel":"10","tileCityId":"144375","tileUserId":"4169866","tileAllianceId":"2639","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_144_t_210":{"tileId":"188045","xCoord":"144","yCoord":"210","tileType":"50","orgTileLevel":"6","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_145_t_206":{"tileId":"188046","xCoord":"145","yCoord":"206","tileType":"50","orgTileLevel":"9","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_145_t_207":{"tileId":"188047","xCoord":"145","yCoord":"207","tileType":"20","orgTileLevel":"10","tileLevel":"10","tileCityId":"86095","tileUserId":"219361","tileAllianceId":"8579","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_145_t_208":{"tileId":"188048","xCoord":"145","yCoord":"208","tileType":"30","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_145_t_209":{"tileId":"188049","xCoord":"145","yCoord":"209","tileType":"20","orgTileLevel":"5","tileLevel":"5","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_145_t_210":{"tileId":"188050","xCoord":"145","yCoord":"210","tileType":"30","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28041","tileImgName":"","misted":false}
+,"l_136_t_211":{"tileId":"184351","xCoord":"136","yCoord":"211","tileType":"50","orgTileLevel":"5","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_136_t_212":{"tileId":"184352","xCoord":"136","yCoord":"212","tileType":"40","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_136_t_213":{"tileId":"184353","xCoord":"136","yCoord":"213","tileType":"30","orgTileLevel":"3","tileLevel":"3","tileCityId":"125187","tileUserId":"1893252","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_136_t_214":{"tileId":"184354","xCoord":"136","yCoord":"214","tileType":"30","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_136_t_215":{"tileId":"184355","xCoord":"136","yCoord":"215","tileType":"10","orgTileLevel":"9","tileLevel":"9","tileCityId":"89703","tileUserId":"229957","tileAllianceId":"10440","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_137_t_211":{"tileId":"184356","xCoord":"137","yCoord":"211","tileType":"20","orgTileLevel":"7","tileLevel":"7","tileCityId":"113135","tileUserId":"170264","tileAllianceId":"6553","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_137_t_212":{"tileId":"184357","xCoord":"137","yCoord":"212","tileType":"20","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_137_t_213":{"tileId":"184358","xCoord":"137","yCoord":"213","tileType":"40","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_137_t_214":{"tileId":"184359","xCoord":"137","yCoord":"214","tileType":"20","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_137_t_215":{"tileId":"184360","xCoord":"137","yCoord":"215","tileType":"40","orgTileLevel":"2","tileLevel":"2","tileCityId":"113952","tileUserId":"797366","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_138_t_211":{"tileId":"184361","xCoord":"138","yCoord":"211","tileType":"40","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_138_t_212":{"tileId":"184362","xCoord":"138","yCoord":"212","tileType":"50","orgTileLevel":"2","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_138_t_213":{"tileId":"184363","xCoord":"138","yCoord":"213","tileType":"20","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_138_t_214":{"tileId":"184364","xCoord":"138","yCoord":"214","tileType":"50","orgTileLevel":"3","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_138_t_215":{"tileId":"184365","xCoord":"138","yCoord":"215","tileType":"30","orgTileLevel":"4","tileLevel":"4","tileCityId":"125187","tileUserId":"1893252","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_139_t_211":{"tileId":"184366","xCoord":"139","yCoord":"211","tileType":"50","orgTileLevel":"6","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_139_t_212":{"tileId":"184367","xCoord":"139","yCoord":"212","tileType":"50","orgTileLevel":"10","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_139_t_213":{"tileId":"184368","xCoord":"139","yCoord":"213","tileType":"30","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_139_t_214":{"tileId":"184369","xCoord":"139","yCoord":"214","tileType":"40","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_139_t_215":{"tileId":"184370","xCoord":"139","yCoord":"215","tileType":"51","orgTileLevel":"10","tileLevel":"2","tileCityId":"81632","tileUserId":"204716","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","cityName":"Assclown","race":"1","misted":false}
+,"l_140_t_211":{"tileId":"184371","xCoord":"140","yCoord":"211","tileType":"20","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_140_t_212":{"tileId":"184372","xCoord":"140","yCoord":"212","tileType":"11","orgTileLevel":"10","tileLevel":"10","tileCityId":"52464","tileUserId":"115748","tileAllianceId":"435","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_140_t_213":{"tileId":"184373","xCoord":"140","yCoord":"213","tileType":"50","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_140_t_214":{"tileId":"184374","xCoord":"140","yCoord":"214","tileType":"40","orgTileLevel":"10","tileLevel":"10","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_140_t_215":{"tileId":"184375","xCoord":"140","yCoord":"215","tileType":"11","orgTileLevel":"5","tileLevel":"5","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27042","tileImgName":"","misted":false}
+,"l_136_t_206":{"tileId":"184326","xCoord":"136","yCoord":"206","tileType":"10","orgTileLevel":"10","tileLevel":"10","tileCityId":"91271","tileUserId":"235153","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_136_t_207":{"tileId":"184327","xCoord":"136","yCoord":"207","tileType":"51","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_136_t_208":{"tileId":"184328","xCoord":"136","yCoord":"208","tileType":"50","orgTileLevel":"7","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_136_t_209":{"tileId":"184329","xCoord":"136","yCoord":"209","tileType":"51","orgTileLevel":"10","tileLevel":"1","tileCityId":"130644","tileUserId":"2144916","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","cityName":"NewCity19Z10","race":"2","misted":false}
+,"l_136_t_210":{"tileId":"184330","xCoord":"136","yCoord":"210","tileType":"30","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_137_t_206":{"tileId":"184331","xCoord":"137","yCoord":"206","tileType":"20","orgTileLevel":"2","tileLevel":"2","tileCityId":"5103","tileUserId":"5040","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_137_t_207":{"tileId":"184332","xCoord":"137","yCoord":"207","tileType":"11","orgTileLevel":"6","tileLevel":"6","tileCityId":"120446","tileUserId":"1464009","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_137_t_208":{"tileId":"184333","xCoord":"137","yCoord":"208","tileType":"51","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_137_t_209":{"tileId":"184334","xCoord":"137","yCoord":"209","tileType":"30","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_137_t_210":{"tileId":"184335","xCoord":"137","yCoord":"210","tileType":"50","orgTileLevel":"9","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_138_t_206":{"tileId":"184336","xCoord":"138","yCoord":"206","tileType":"10","orgTileLevel":"8","tileLevel":"8","tileCityId":"120446","tileUserId":"1464009","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_138_t_207":{"tileId":"184337","xCoord":"138","yCoord":"207","tileType":"10","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_138_t_208":{"tileId":"184338","xCoord":"138","yCoord":"208","tileType":"51","orgTileLevel":"3","tileLevel":"5","tileCityId":"132655","tileUserId":"1893252","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","cityName":"Moordor","race":"0","misted":false}
+,"l_138_t_209":{"tileId":"184339","xCoord":"138","yCoord":"209","tileType":"20","orgTileLevel":"5","tileLevel":"5","tileCityId":"132655","tileUserId":"1893252","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_138_t_210":{"tileId":"184340","xCoord":"138","yCoord":"210","tileType":"20","orgTileLevel":"6","tileLevel":"6","tileCityId":"132655","tileUserId":"1893252","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_139_t_206":{"tileId":"184341","xCoord":"139","yCoord":"206","tileType":"51","orgTileLevel":"5","tileLevel":"9","tileCityId":"113135","tileUserId":"170264","tileAllianceId":"6553","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","cityName":"Anodyne","race":"0","misted":false}
+,"l_139_t_207":{"tileId":"184342","xCoord":"139","yCoord":"207","tileType":"40","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_139_t_208":{"tileId":"184343","xCoord":"139","yCoord":"208","tileType":"40","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_139_t_209":{"tileId":"184344","xCoord":"139","yCoord":"209","tileType":"20","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_139_t_210":{"tileId":"184345","xCoord":"139","yCoord":"210","tileType":"10","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_140_t_206":{"tileId":"184346","xCoord":"140","yCoord":"206","tileType":"30","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_140_t_207":{"tileId":"184347","xCoord":"140","yCoord":"207","tileType":"30","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_140_t_208":{"tileId":"184348","xCoord":"140","yCoord":"208","tileType":"51","orgTileLevel":"8","tileLevel":"8","tileCityId":"120446","tileUserId":"1464009","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","cityName":"Kaladim","race":"1","misted":false}
+,"l_140_t_209":{"tileId":"184349","xCoord":"140","yCoord":"209","tileType":"30","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_140_t_210":{"tileId":"184350","xCoord":"140","yCoord":"210","tileType":"50","orgTileLevel":"2","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27041","tileImgName":"","misted":false}
+,"l_136_t_201":{"tileId":"184301","xCoord":"136","yCoord":"201","tileType":"40","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_136_t_202":{"tileId":"184302","xCoord":"136","yCoord":"202","tileType":"10","orgTileLevel":"1","tileLevel":"1","tileCityId":"85402","tileUserId":"217657","tileAllianceId":"3991","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_136_t_203":{"tileId":"184303","xCoord":"136","yCoord":"203","tileType":"50","orgTileLevel":"2","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_136_t_204":{"tileId":"184304","xCoord":"136","yCoord":"204","tileType":"51","orgTileLevel":"9","tileLevel":"1","tileCityId":"116963","tileUserId":"1010204","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","cityName":"NewCityLNH8","race":"2","misted":false}
+,"l_136_t_205":{"tileId":"184305","xCoord":"136","yCoord":"205","tileType":"51","orgTileLevel":"2","tileLevel":"1","tileCityId":"133595","tileUserId":"2907790","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","cityName":"NewCity1QBNY","race":"1","misted":false}
+,"l_137_t_201":{"tileId":"184306","xCoord":"137","yCoord":"201","tileType":"10","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_137_t_202":{"tileId":"184307","xCoord":"137","yCoord":"202","tileType":"40","orgTileLevel":"5","tileLevel":"5","tileCityId":"144375","tileUserId":"4169866","tileAllianceId":"2639","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_137_t_203":{"tileId":"184308","xCoord":"137","yCoord":"203","tileType":"30","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_137_t_204":{"tileId":"184309","xCoord":"137","yCoord":"204","tileType":"30","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_137_t_205":{"tileId":"184310","xCoord":"137","yCoord":"205","tileType":"30","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_138_t_201":{"tileId":"184311","xCoord":"138","yCoord":"201","tileType":"50","orgTileLevel":"10","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_138_t_202":{"tileId":"184312","xCoord":"138","yCoord":"202","tileType":"20","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_138_t_203":{"tileId":"184313","xCoord":"138","yCoord":"203","tileType":"10","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_138_t_204":{"tileId":"184314","xCoord":"138","yCoord":"204","tileType":"51","orgTileLevel":"4","tileLevel":"4","tileCityId":"18614","tileUserId":"27214","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","cityName":"Asuna","race":"2","misted":false}
+,"l_138_t_205":{"tileId":"184315","xCoord":"138","yCoord":"205","tileType":"20","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_139_t_201":{"tileId":"184316","xCoord":"139","yCoord":"201","tileType":"30","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_139_t_202":{"tileId":"184317","xCoord":"139","yCoord":"202","tileType":"30","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_139_t_203":{"tileId":"184318","xCoord":"139","yCoord":"203","tileType":"11","orgTileLevel":"5","tileLevel":"5","tileCityId":"28491","tileUserId":"49798","tileAllianceId":"5737","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_139_t_204":{"tileId":"184319","xCoord":"139","yCoord":"204","tileType":"30","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_139_t_205":{"tileId":"184320","xCoord":"139","yCoord":"205","tileType":"30","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_140_t_201":{"tileId":"184321","xCoord":"140","yCoord":"201","tileType":"20","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_140_t_202":{"tileId":"184322","xCoord":"140","yCoord":"202","tileType":"20","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_140_t_203":{"tileId":"184323","xCoord":"140","yCoord":"203","tileType":"51","orgTileLevel":"10","tileLevel":"1","tileCityId":"130196","tileUserId":"2113438","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","cityName":"NewCity19AQM","race":"1","misted":false}
+,"l_140_t_204":{"tileId":"184324","xCoord":"140","yCoord":"204","tileType":"10","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+,"l_140_t_205":{"tileId":"184325","xCoord":"140","yCoord":"205","tileType":"10","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27040","tileImgName":"","misted":false}
+}
+,"userInfo":{"u170264":{"n":"froggiesocks","t":"46","m":"666944","s":"M","w":"1","a":"6553","i":"0","r":"2"}
+,"u219361":{"n":"Waverly","t":"39","m":"1013244","s":"M","w":"1","a":"8579","i":"0","r":"2"}
+,"u4169866":{"n":"Uridium","t":"32","m":"539789","s":"M","w":"1","a":"2639","i":"0","r":"2"}
+,"u229957":{"n":"Arkadar","t":"47","m":"4076720","s":"M","w":"1","a":"10440","i":"0","r":"2"}
+,"u797366":{"n":"Elfwood","t":"37","m":"580000","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u204716":{"n":"Gayboy","t":"8","m":"0","s":"M","w":"1","a":"0","i":"0","r":"1"}
+,"u115748":{"n":"Skyfall2012","t":"43","m":"579504","s":"M","w":"1","a":"435","i":"0","r":"2"}
+,"u235153":{"n":"Boscobel","t":"31","m":"563378","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u2144916":{"n":"NewUser-19Z10","t":"2","m":"0","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u5040":{"n":"Turin","t":"19","m":"84133","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u1464009":{"n":"Hammerfeld","t":"25","m":"341199","s":"M","w":"1","a":"0","i":"0","r":"1"}
+,"u217657":{"n":"Kyland","t":"11","m":"0","s":"M","w":"1","a":"3991","i":"0","r":"2"}
+,"u2907790":{"n":"NewUser-1QBNY","t":"2","m":"0","s":"M","w":"2","a":"0","i":"0","r":"1"}
+,"u27214":{"n":"Jerreh","t":"8","m":"0","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u2113438":{"n":"NewUser-19AQM","t":"2","m":"0","s":"M","w":"1","a":"0","i":"0","r":"1"}
+,"u49798":{"n":"JakeRage","t":"59","m":"36295824","s":"M","w":"1","a":"5737","i":"0","r":"1"}
+,"u162986":{"n":"Alexander109","t":"15","m":"0","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u1010204":{"n":"NewUser-LNH8","t":"3","m":"0","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u1893252":{"n":"Dazland","t":"25","m":"1086","s":"M","w":"1","a":"0","i":"0","r":"1"}
+}
+,"allianceNames":{"a6553":"IComeinPeace","a8579":"Last Resistance","a2639":"Organized chaos","a10440":"P L A G U E","a435":"Canadian Shire","a3991":"Elves of Kyland","a5737":"Northern Empire"}
+,"allianceMights":{"a6553":"958712","a8579":"4348452","a2639":"129282628","a10440":"97996448","a435":"70382918","a3991":"0","a5737":"152067694"}
+}
+,{"ok":true,"data":{"l_141_t_216":{"tileId":"188076","xCoord":"141","yCoord":"216","tileType":"20","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_141_t_217":{"tileId":"188077","xCoord":"141","yCoord":"217","tileType":"51","orgTileLevel":"7","tileLevel":"2","tileCityId":"108199","tileUserId":"563130","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","cityName":"NewCityC2II","race":"2","misted":false}
+,"l_141_t_218":{"tileId":"188078","xCoord":"141","yCoord":"218","tileType":"20","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_141_t_219":{"tileId":"188079","xCoord":"141","yCoord":"219","tileType":"50","orgTileLevel":"3","tileLevel":"3","tileCityId":"127737","tileUserId":"1920996","tileAllianceId":"8610","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_141_t_220":{"tileId":"188080","xCoord":"141","yCoord":"220","tileType":"51","orgTileLevel":"3","tileLevel":"6","tileCityId":"125405","tileUserId":"1895504","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","cityName":"Faithonia","race":"2","misted":false}
+,"l_142_t_216":{"tileId":"188081","xCoord":"142","yCoord":"216","tileType":"40","orgTileLevel":"5","tileLevel":"5","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_142_t_217":{"tileId":"188082","xCoord":"142","yCoord":"217","tileType":"20","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_142_t_218":{"tileId":"188083","xCoord":"142","yCoord":"218","tileType":"10","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_142_t_219":{"tileId":"188084","xCoord":"142","yCoord":"219","tileType":"40","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_142_t_220":{"tileId":"188085","xCoord":"142","yCoord":"220","tileType":"51","orgTileLevel":"9","tileLevel":"6","tileCityId":"66146","tileUserId":"157418","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","cityName":"Stardom","race":"2","misted":false}
+,"l_143_t_216":{"tileId":"188086","xCoord":"143","yCoord":"216","tileType":"50","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_143_t_217":{"tileId":"188087","xCoord":"143","yCoord":"217","tileType":"30","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_143_t_218":{"tileId":"188088","xCoord":"143","yCoord":"218","tileType":"50","orgTileLevel":"10","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_143_t_219":{"tileId":"188089","xCoord":"143","yCoord":"219","tileType":"30","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_143_t_220":{"tileId":"188090","xCoord":"143","yCoord":"220","tileType":"51","orgTileLevel":"1","tileLevel":"9","tileCityId":"113074","tileUserId":"28470","tileAllianceId":"8882","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","cityName":"Skunk Hollow","race":"0","misted":false}
+,"l_144_t_216":{"tileId":"188091","xCoord":"144","yCoord":"216","tileType":"51","orgTileLevel":"1","tileLevel":"7","tileCityId":"131592","tileUserId":"892209","tileAllianceId":"10440","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","cityName":"Melville2","race":"0","misted":false}
+,"l_144_t_217":{"tileId":"188092","xCoord":"144","yCoord":"217","tileType":"10","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_144_t_218":{"tileId":"188093","xCoord":"144","yCoord":"218","tileType":"40","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_144_t_219":{"tileId":"188094","xCoord":"144","yCoord":"219","tileType":"51","orgTileLevel":"7","tileLevel":"9","tileCityId":"19722","tileUserId":"28470","tileAllianceId":"8882","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","cityName":"Sleepy Hollow","race":"2","misted":false}
+,"l_144_t_220":{"tileId":"188095","xCoord":"144","yCoord":"220","tileType":"40","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_145_t_216":{"tileId":"188096","xCoord":"145","yCoord":"216","tileType":"51","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_145_t_217":{"tileId":"188097","xCoord":"145","yCoord":"217","tileType":"20","orgTileLevel":"10","tileLevel":"10","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_145_t_218":{"tileId":"188098","xCoord":"145","yCoord":"218","tileType":"10","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_145_t_219":{"tileId":"188099","xCoord":"145","yCoord":"219","tileType":"51","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_145_t_220":{"tileId":"188100","xCoord":"145","yCoord":"220","tileType":"30","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28043","tileImgName":"","misted":false}
+,"l_136_t_216":{"tileId":"184376","xCoord":"136","yCoord":"216","tileType":"51","orgTileLevel":"2","tileLevel":"8","tileCityId":"117678","tileUserId":"797366","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","cityName":"Elfstock","race":"0","misted":false}
+,"l_136_t_217":{"tileId":"184377","xCoord":"136","yCoord":"217","tileType":"51","orgTileLevel":"6","tileLevel":"2","tileCityId":"117779","tileUserId":"248174","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","cityName":"Gotham","race":"1","misted":false}
+,"l_136_t_218":{"tileId":"184378","xCoord":"136","yCoord":"218","tileType":"51","orgTileLevel":"3","tileLevel":"4","tileCityId":"29957","tileUserId":"54446","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","cityName":"NewCity160E","race":"2","misted":false}
+,"l_136_t_219":{"tileId":"184379","xCoord":"136","yCoord":"219","tileType":"11","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_136_t_220":{"tileId":"184380","xCoord":"136","yCoord":"220","tileType":"10","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_137_t_216":{"tileId":"184381","xCoord":"137","yCoord":"216","tileType":"51","orgTileLevel":"3","tileLevel":"6","tileCityId":"125187","tileUserId":"1893252","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","cityName":"Dazland","race":"1","misted":false}
+,"l_137_t_217":{"tileId":"184382","xCoord":"137","yCoord":"217","tileType":"40","orgTileLevel":"2","tileLevel":"2","tileCityId":"117678","tileUserId":"797366","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_137_t_218":{"tileId":"184383","xCoord":"137","yCoord":"218","tileType":"11","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_137_t_219":{"tileId":"184384","xCoord":"137","yCoord":"219","tileType":"50","orgTileLevel":"10","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_137_t_220":{"tileId":"184385","xCoord":"137","yCoord":"220","tileType":"40","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_138_t_216":{"tileId":"184386","xCoord":"138","yCoord":"216","tileType":"51","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_138_t_217":{"tileId":"184387","xCoord":"138","yCoord":"217","tileType":"20","orgTileLevel":"2","tileLevel":"2","tileCityId":"117678","tileUserId":"797366","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_138_t_218":{"tileId":"184388","xCoord":"138","yCoord":"218","tileType":"30","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_138_t_219":{"tileId":"184389","xCoord":"138","yCoord":"219","tileType":"30","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_138_t_220":{"tileId":"184390","xCoord":"138","yCoord":"220","tileType":"30","orgTileLevel":"10","tileLevel":"10","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_139_t_216":{"tileId":"184391","xCoord":"139","yCoord":"216","tileType":"10","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_139_t_217":{"tileId":"184392","xCoord":"139","yCoord":"217","tileType":"51","orgTileLevel":"8","tileLevel":"9","tileCityId":"153447","tileUserId":"4764974","tileAllianceId":"13271","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","cityName":"Ken No Sen","race":"2","misted":false}
+,"l_139_t_218":{"tileId":"184393","xCoord":"139","yCoord":"218","tileType":"11","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_139_t_219":{"tileId":"184394","xCoord":"139","yCoord":"219","tileType":"20","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_139_t_220":{"tileId":"184395","xCoord":"139","yCoord":"220","tileType":"30","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_140_t_216":{"tileId":"184396","xCoord":"140","yCoord":"216","tileType":"10","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_140_t_217":{"tileId":"184397","xCoord":"140","yCoord":"217","tileType":"30","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_140_t_218":{"tileId":"184398","xCoord":"140","yCoord":"218","tileType":"51","orgTileLevel":"10","tileLevel":"10","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_140_t_219":{"tileId":"184399","xCoord":"140","yCoord":"219","tileType":"10","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+,"l_140_t_220":{"tileId":"184400","xCoord":"140","yCoord":"220","tileType":"40","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27043","tileImgName":"","misted":false}
+}
+,"userInfo":{"u1920996":{"n":"knarf","t":"16","m":"8430","s":"M","w":"1","a":"8610","i":"0","r":"1"}
+,"u892209":{"n":"Mommaoftwo","t":"38","m":"173406","s":"M","w":"1","a":"10440","i":"0","r":"2"}
+,"u797366":{"n":"Elfwood","t":"37","m":"580000","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u1893252":{"n":"Dazland","t":"25","m":"1086","s":"M","w":"1","a":"0","i":"0","r":"1"}
+,"u4764974":{"n":"Omnipotentum","t":"24","m":"344016","s":"M","w":"1","a":"13271","i":"0","r":"2"}
+,"u28470":{"n":"Luxdor","t":"52","m":"10032361","s":"M","w":"1","a":"8882","i":"0","r":"2"}
+,"u54446":{"n":"coltmccoy","t":"13","m":"27045","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u157418":{"n":"Mizzlink","t":"14","m":"3851","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u248174":{"n":"Riddler","t":"6","m":"3345","s":"M","w":"1","a":"0","i":"0","r":"1"}
+,"u563130":{"n":"seagic","t":"4","m":"65","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u1895504":{"n":"thefayth","t":"13","m":"0","s":"M","w":"1","a":"0","i":"0","r":"2"}
+}
+,"allianceNames":{"a8882":"Narsil","a10440":"P L A G U E","a13271":"TheNextChapter","a8610":"darkside"}
+,"allianceMights":{"a8882":"793040511","a10440":"97996448","a13271":"351862","a8610":"158334"}
+}
+,{"ok":true,"data":{"l_141_t_226":{"tileId":"188426","xCoord":"141","yCoord":"226","tileType":"51","orgTileLevel":"4","tileLevel":"1","tileCityId":"107268","tileUserId":"558490","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","cityName":"NewCityBYXM","race":"2","misted":false}
+,"l_141_t_227":{"tileId":"188427","xCoord":"141","yCoord":"227","tileType":"20","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_141_t_228":{"tileId":"188428","xCoord":"141","yCoord":"228","tileType":"50","orgTileLevel":"7","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_141_t_229":{"tileId":"188429","xCoord":"141","yCoord":"229","tileType":"30","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_141_t_230":{"tileId":"188430","xCoord":"141","yCoord":"230","tileType":"10","orgTileLevel":"8","tileLevel":"8","tileCityId":"136106","tileUserId":"1815378","tileAllianceId":"293","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_142_t_226":{"tileId":"188431","xCoord":"142","yCoord":"226","tileType":"20","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_142_t_227":{"tileId":"188432","xCoord":"142","yCoord":"227","tileType":"10","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_142_t_228":{"tileId":"188433","xCoord":"142","yCoord":"228","tileType":"51","orgTileLevel":"3","tileLevel":"1","tileCityId":"107462","tileUserId":"559618","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","cityName":"NewCityBZSY","race":"2","misted":false}
+,"l_142_t_229":{"tileId":"188434","xCoord":"142","yCoord":"229","tileType":"10","orgTileLevel":"9","tileLevel":"9","tileCityId":"120669","tileUserId":"1544014","tileAllianceId":"293","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_142_t_230":{"tileId":"188435","xCoord":"142","yCoord":"230","tileType":"30","orgTileLevel":"10","tileLevel":"10","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_143_t_226":{"tileId":"188436","xCoord":"143","yCoord":"226","tileType":"30","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_143_t_227":{"tileId":"188437","xCoord":"143","yCoord":"227","tileType":"10","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_143_t_228":{"tileId":"188438","xCoord":"143","yCoord":"228","tileType":"20","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_143_t_229":{"tileId":"188439","xCoord":"143","yCoord":"229","tileType":"10","orgTileLevel":"4","tileLevel":"4","tileCityId":"40544","tileUserId":"84119","tileAllianceId":"1285","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_143_t_230":{"tileId":"188440","xCoord":"143","yCoord":"230","tileType":"40","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_144_t_226":{"tileId":"188441","xCoord":"144","yCoord":"226","tileType":"51","orgTileLevel":"2","tileLevel":"4","tileCityId":"65769","tileUserId":"156458","tileAllianceId":"167","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","cityName":"Oh lordy","race":"2","misted":false}
+,"l_144_t_227":{"tileId":"188442","xCoord":"144","yCoord":"227","tileType":"30","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_144_t_228":{"tileId":"188443","xCoord":"144","yCoord":"228","tileType":"50","orgTileLevel":"10","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_144_t_229":{"tileId":"188444","xCoord":"144","yCoord":"229","tileType":"40","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_144_t_230":{"tileId":"188445","xCoord":"144","yCoord":"230","tileType":"10","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_145_t_226":{"tileId":"188446","xCoord":"145","yCoord":"226","tileType":"11","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_145_t_227":{"tileId":"188447","xCoord":"145","yCoord":"227","tileType":"10","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","misted":false}
+,"l_145_t_228":{"tileId":"188448","xCoord":"145","yCoord":"228","tileType":"51","orgTileLevel":"3","tileLevel":"1","tileCityId":"147196","tileUserId":"4214569","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","cityName":"NewCity2IBZD","race":"2","misted":false}
+,"l_145_t_229":{"tileId":"188449","xCoord":"145","yCoord":"229","tileType":"51","orgTileLevel":"8","tileLevel":"5","tileCityId":"1325","tileUserId":"1316","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","cityName":"NewCity10K","race":"2","misted":false}
+,"l_145_t_230":{"tileId":"188450","xCoord":"145","yCoord":"230","tileType":"51","orgTileLevel":"3","tileLevel":"1","tileCityId":"108610","tileUserId":"565154","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28045","tileImgName":"","cityName":"NewCityC42Q","race":"2","misted":false}
+,"l_141_t_221":{"tileId":"188401","xCoord":"141","yCoord":"221","tileType":"10","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_141_t_222":{"tileId":"188402","xCoord":"141","yCoord":"222","tileType":"20","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_141_t_223":{"tileId":"188403","xCoord":"141","yCoord":"223","tileType":"30","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_141_t_224":{"tileId":"188404","xCoord":"141","yCoord":"224","tileType":"10","orgTileLevel":"10","tileLevel":"10","tileCityId":"84082","tileUserId":"213621","tileAllianceId":"95","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_141_t_225":{"tileId":"188405","xCoord":"141","yCoord":"225","tileType":"20","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_142_t_221":{"tileId":"188406","xCoord":"142","yCoord":"221","tileType":"40","orgTileLevel":"2","tileLevel":"2","tileCityId":"66146","tileUserId":"157418","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_142_t_222":{"tileId":"188407","xCoord":"142","yCoord":"222","tileType":"40","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_142_t_223":{"tileId":"188408","xCoord":"142","yCoord":"223","tileType":"20","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_142_t_224":{"tileId":"188409","xCoord":"142","yCoord":"224","tileType":"20","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_142_t_225":{"tileId":"188410","xCoord":"142","yCoord":"225","tileType":"50","orgTileLevel":"5","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_143_t_221":{"tileId":"188411","xCoord":"143","yCoord":"221","tileType":"51","orgTileLevel":"10","tileLevel":"1","tileCityId":"131558","tileUserId":"2209209","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","cityName":"NewCity1BCMX","race":"1","misted":false}
+,"l_143_t_222":{"tileId":"188412","xCoord":"143","yCoord":"222","tileType":"51","orgTileLevel":"5","tileLevel":"5","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_143_t_223":{"tileId":"188413","xCoord":"143","yCoord":"223","tileType":"10","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_143_t_224":{"tileId":"188414","xCoord":"143","yCoord":"224","tileType":"30","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_143_t_225":{"tileId":"188415","xCoord":"143","yCoord":"225","tileType":"10","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_144_t_221":{"tileId":"188416","xCoord":"144","yCoord":"221","tileType":"51","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_144_t_222":{"tileId":"188417","xCoord":"144","yCoord":"222","tileType":"20","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_144_t_223":{"tileId":"188418","xCoord":"144","yCoord":"223","tileType":"51","orgTileLevel":"3","tileLevel":"4","tileCityId":"21571","tileUserId":"30534","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","cityName":"Keyon","race":"2","misted":false}
+,"l_144_t_224":{"tileId":"188419","xCoord":"144","yCoord":"224","tileType":"20","orgTileLevel":"8","tileLevel":"8","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_144_t_225":{"tileId":"188420","xCoord":"144","yCoord":"225","tileType":"51","orgTileLevel":"2","tileLevel":"1","tileCityId":"131678","tileUserId":"2371673","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","cityName":"NewCity1ETZT","race":"1","misted":false}
+,"l_145_t_221":{"tileId":"188421","xCoord":"145","yCoord":"221","tileType":"50","orgTileLevel":"10","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_145_t_222":{"tileId":"188422","xCoord":"145","yCoord":"222","tileType":"10","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_145_t_223":{"tileId":"188423","xCoord":"145","yCoord":"223","tileType":"20","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_145_t_224":{"tileId":"188424","xCoord":"145","yCoord":"224","tileType":"10","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_145_t_225":{"tileId":"188425","xCoord":"145","yCoord":"225","tileType":"20","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"28044","tileImgName":"","misted":false}
+,"l_136_t_226":{"tileId":"184726","xCoord":"136","yCoord":"226","tileType":"50","orgTileLevel":"9","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_136_t_227":{"tileId":"184727","xCoord":"136","yCoord":"227","tileType":"30","orgTileLevel":"10","tileLevel":"10","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_136_t_228":{"tileId":"184728","xCoord":"136","yCoord":"228","tileType":"51","orgTileLevel":"7","tileLevel":"2","tileCityId":"106691","tileUserId":"280116","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","cityName":"Fortress","race":"2","misted":false}
+,"l_136_t_229":{"tileId":"184729","xCoord":"136","yCoord":"229","tileType":"40","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_136_t_230":{"tileId":"184730","xCoord":"136","yCoord":"230","tileType":"30","orgTileLevel":"10","tileLevel":"10","tileCityId":"8253","tileUserId":"9160","tileAllianceId":"293","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_137_t_226":{"tileId":"184731","xCoord":"137","yCoord":"226","tileType":"30","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_137_t_227":{"tileId":"184732","xCoord":"137","yCoord":"227","tileType":"51","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_137_t_228":{"tileId":"184733","xCoord":"137","yCoord":"228","tileType":"11","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_137_t_229":{"tileId":"184734","xCoord":"137","yCoord":"229","tileType":"50","orgTileLevel":"7","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_137_t_230":{"tileId":"184735","xCoord":"137","yCoord":"230","tileType":"40","orgTileLevel":"10","tileLevel":"10","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_138_t_226":{"tileId":"184736","xCoord":"138","yCoord":"226","tileType":"11","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_138_t_227":{"tileId":"184737","xCoord":"138","yCoord":"227","tileType":"51","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_138_t_228":{"tileId":"184738","xCoord":"138","yCoord":"228","tileType":"51","orgTileLevel":"6","tileLevel":"1","tileCityId":"139045","tileUserId":"3875916","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","cityName":"NewCity2B2OC","race":"2","misted":false}
+,"l_138_t_229":{"tileId":"184739","xCoord":"138","yCoord":"229","tileType":"51","orgTileLevel":"5","tileLevel":"1","tileCityId":"144379","tileUserId":"4169874","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","cityName":"NewCity2HDHU","race":"2","misted":false}
+,"l_138_t_230":{"tileId":"184740","xCoord":"138","yCoord":"230","tileType":"10","orgTileLevel":"10","tileLevel":"10","tileCityId":"144375","tileUserId":"4169866","tileAllianceId":"2639","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_139_t_226":{"tileId":"184741","xCoord":"139","yCoord":"226","tileType":"10","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_139_t_227":{"tileId":"184742","xCoord":"139","yCoord":"227","tileType":"51","orgTileLevel":"4","tileLevel":"1","tileCityId":"119709","tileUserId":"1301420","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","cityName":"NewCityRW6K","race":"1","misted":false}
+,"l_139_t_228":{"tileId":"184743","xCoord":"139","yCoord":"228","tileType":"10","orgTileLevel":"6","tileLevel":"6","tileCityId":"136106","tileUserId":"1815378","tileAllianceId":"293","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_139_t_229":{"tileId":"184744","xCoord":"139","yCoord":"229","tileType":"20","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_139_t_230":{"tileId":"184745","xCoord":"139","yCoord":"230","tileType":"50","orgTileLevel":"9","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_140_t_226":{"tileId":"184746","xCoord":"140","yCoord":"226","tileType":"40","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_140_t_227":{"tileId":"184747","xCoord":"140","yCoord":"227","tileType":"11","orgTileLevel":"4","tileLevel":"4","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_140_t_228":{"tileId":"184748","xCoord":"140","yCoord":"228","tileType":"40","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_140_t_229":{"tileId":"184749","xCoord":"140","yCoord":"229","tileType":"30","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_140_t_230":{"tileId":"184750","xCoord":"140","yCoord":"230","tileType":"40","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27045","tileImgName":"","misted":false}
+,"l_136_t_221":{"tileId":"184701","xCoord":"136","yCoord":"221","tileType":"40","orgTileLevel":"5","tileLevel":"5","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_136_t_222":{"tileId":"184702","xCoord":"136","yCoord":"222","tileType":"10","orgTileLevel":"2","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_136_t_223":{"tileId":"184703","xCoord":"136","yCoord":"223","tileType":"20","orgTileLevel":"5","tileLevel":"5","tileCityId":"147663","tileUserId":"105312","tileAllianceId":"7154","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_136_t_224":{"tileId":"184704","xCoord":"136","yCoord":"224","tileType":"40","orgTileLevel":"10","tileLevel":"10","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_136_t_225":{"tileId":"184705","xCoord":"136","yCoord":"225","tileType":"51","orgTileLevel":"8","tileLevel":"9","tileCityId":"123288","tileUserId":"89001","tileAllianceId":"10440","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","cityName":"Rampant Rabbit","race":"0","misted":false}
+,"l_137_t_221":{"tileId":"184706","xCoord":"137","yCoord":"221","tileType":"10","orgTileLevel":"9","tileLevel":"9","tileCityId":"89703","tileUserId":"229957","tileAllianceId":"10440","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_137_t_222":{"tileId":"184707","xCoord":"137","yCoord":"222","tileType":"11","orgTileLevel":"9","tileLevel":"9","tileCityId":"89703","tileUserId":"229957","tileAllianceId":"10440","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_137_t_223":{"tileId":"184708","xCoord":"137","yCoord":"223","tileType":"50","orgTileLevel":"8","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_137_t_224":{"tileId":"184709","xCoord":"137","yCoord":"224","tileType":"50","orgTileLevel":"3","tileLevel":"2","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_137_t_225":{"tileId":"184710","xCoord":"137","yCoord":"225","tileType":"50","orgTileLevel":"5","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_138_t_221":{"tileId":"184711","xCoord":"138","yCoord":"221","tileType":"30","orgTileLevel":"6","tileLevel":"6","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_138_t_222":{"tileId":"184712","xCoord":"138","yCoord":"222","tileType":"51","orgTileLevel":"7","tileLevel":"7","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_138_t_223":{"tileId":"184713","xCoord":"138","yCoord":"223","tileType":"30","orgTileLevel":"9","tileLevel":"9","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_138_t_224":{"tileId":"184714","xCoord":"138","yCoord":"224","tileType":"50","orgTileLevel":"8","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_138_t_225":{"tileId":"184715","xCoord":"138","yCoord":"225","tileType":"50","orgTileLevel":"9","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_139_t_221":{"tileId":"184716","xCoord":"139","yCoord":"221","tileType":"10","orgTileLevel":"3","tileLevel":"3","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_139_t_222":{"tileId":"184717","xCoord":"139","yCoord":"222","tileType":"40","orgTileLevel":"10","tileLevel":"10","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_139_t_223":{"tileId":"184718","xCoord":"139","yCoord":"223","tileType":"30","orgTileLevel":"4","tileLevel":"4","tileCityId":"70006","tileUserId":"167754","tileAllianceId":"6317","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_139_t_224":{"tileId":"184719","xCoord":"139","yCoord":"224","tileType":"51","orgTileLevel":"3","tileLevel":"2","tileCityId":"147302","tileUserId":"2606905","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","cityName":"OhMyGlobs","race":"2","misted":false}
+,"l_139_t_225":{"tileId":"184720","xCoord":"139","yCoord":"225","tileType":"11","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_140_t_221":{"tileId":"184721","xCoord":"140","yCoord":"221","tileType":"30","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_140_t_222":{"tileId":"184722","xCoord":"140","yCoord":"222","tileType":"50","orgTileLevel":"7","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_140_t_223":{"tileId":"184723","xCoord":"140","yCoord":"223","tileType":"20","orgTileLevel":"1","tileLevel":"1","tileCityId":"0","tileUserId":"0","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_140_t_224":{"tileId":"184724","xCoord":"140","yCoord":"224","tileType":"20","orgTileLevel":"5","tileLevel":"5","tileCityId":"70006","tileUserId":"167754","tileAllianceId":"6317","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","misted":false}
+,"l_140_t_225":{"tileId":"184725","xCoord":"140","yCoord":"225","tileType":"51","orgTileLevel":"8","tileLevel":"6","tileCityId":"7092","tileUserId":"7001","tileAllianceId":"0","tileProvinceId":"5","tileBlockId":"27044","tileImgName":"","cityName":"rivendell","race":"2","misted":false}
+}
+,"userInfo":{"u1544014":{"n":"teddy08","t":"40","m":"334280","s":"M","w":"1","a":"293","i":"0","r":"2"}
+,"u84119":{"n":"OrkHunter","t":"27","m":"0","s":"M","w":"1","a":"1285","i":"0","r":"1"}
+,"u213621":{"n":"CosaRocK","t":"45","m":"1708852","s":"M","w":"1","a":"95","i":"0","r":"2"}
+,"u157418":{"n":"Mizzlink","t":"14","m":"3851","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u9160":{"n":"sydargan","t":"54","m":"7562348","s":"M","w":"1","a":"293","i":"0","r":"2"}
+,"u4169866":{"n":"Uridium","t":"32","m":"539789","s":"M","w":"1","a":"2639","i":"0","r":"2"}
+,"u105312":{"n":"Torvin","t":"50","m":"4325510","s":"M","w":"1","a":"7154","i":"0","r":"1"}
+,"u89001":{"n":"Star","t":"59","m":"5112516","s":"M","w":"1","a":"10440","i":"0","r":"2"}
+,"u229957":{"n":"Arkadar","t":"47","m":"4076720","s":"M","w":"1","a":"10440","i":"0","r":"2"}
+,"u2606905":{"n":"kjeo6ea","t":"18","m":"1225","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u1316":{"n":"Dan","t":"11","m":"0","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u7001":{"n":"Benleeder","t":"15","m":"11219","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u30534":{"n":"DragoKeyana","t":"8","m":"500","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u156458":{"n":"Natters","t":"10","m":"99","s":"M","w":"1","a":"167","i":"0","r":"2"}
+,"u167754":{"n":"Fookyah","t":"25","m":"128192","s":"M","w":"1","a":"6317","i":"0","r":"2"}
+,"u280116":{"n":"The_Man","t":"4","m":"30","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u558490":{"n":"NewUser-BYXM","t":"2","m":"0","s":"M","w":"2","a":"0","i":"0","r":"2"}
+,"u559618":{"n":"hiltonone77","t":"5","m":"132","s":"M","w":"2","a":"0","i":"0","r":"2"}
+,"u565154":{"n":"NewUser-C42Q","t":"2","m":"0","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u1301420":{"n":"NewUser-RW6K","t":"2","m":"0","s":"M","w":"1","a":"0","i":"0","r":"1"}
+,"u1815378":{"n":"Nfnix","t":"30","m":"187230","s":"M","w":"1","a":"293","i":"0","r":"2"}
+,"u2209209":{"n":"NewUser-1BCMX","t":"2","m":"0","s":"M","w":"1","a":"0","i":"0","r":"1"}
+,"u2371673":{"n":"NewUser-1ETZT","t":"3","m":"0","s":"M","w":"1","a":"0","i":"0","r":"1"}
+,"u3875916":{"n":"NewUser-2B2OC","t":"3","m":"0","s":"M","w":"1","a":"0","i":"0","r":"2"}
+,"u4169874":{"n":"NewUser-2HDHU","t":"3","m":"0","s":"M","w":"2","a":"0","i":"0","r":"2"}
+,"u4214569":{"n":"Phillygrl","t":"6","m":"105","s":"M","w":"1","a":"0","i":"0","r":"2"}
+}
+,"allianceNames":{"a293":"Christian","a1285":"murder Inc","a167":"Beer master","a95":"Ring of Power","a2639":"Organized chaos","a7154":"Whiskers","a10440":"P L A G U E","a6317":"Elvesunited"}
+,"allianceMights":{"a293":"38311604","a1285":"3867116","a167":"226583","a95":"261404595","a2639":"129282628","a7154":"57896935","a10440":"97996448","a6317":"2995993"}
+}
+],"/ajax/updateSeed.php":[{"allMailCount":"502","allReportCount":"9136","allianceDiplomacies":{"friendly":{"a986":{"allianceId":"986","founderUserId":"40568","allianceName":"Blood Brothers","relation":"1","membersCount":"95","rank":46,"might":"99351735","founderUserName":"Mully"}
+,"a435":{"allianceId":"435","founderUserId":"4005","allianceName":"Canadian Shire","relation":"1","membersCount":"52","rank":66,"might":"68374457","founderUserName":"DARKWINGDUCK"}
+,"a1500":{"allianceId":"1500","founderUserId":"68190","allianceName":"Catalunya","relation":"1","membersCount":"41","rank":68,"might":"66649845","founderUserName":"Drac"}
+,"a2479":{"allianceId":"2479","founderUserId":"54943","allianceName":"Creatures","relation":"1","membersCount":"59","rank":26,"might":"187279533","founderUserName":"Your_Dawg"}
+,"a103":{"allianceId":"103","founderUserId":"901","allianceName":"Dark Riders","relation":"1","membersCount":"20","rank":104,"might":"18322598","founderUserName":"Tathar"}
+,"a343":{"allianceId":"343","founderUserId":"4158","allianceName":"Dwarf Warriors","relation":"1","membersCount":"75","rank":18,"might":"219233285","founderUserName":"GandoIf"}
+,"a802":{"allianceId":"802","founderUserId":"25656","allianceName":"Fetch you a Box","relation":"1","membersCount":"28","rank":130,"might":"10007676","founderUserName":"pink"}
+,"a4592":{"allianceId":"4592","founderUserId":"27119","allianceName":"Flame of Anor","relation":"1","membersCount":"60","rank":65,"might":"70197287","founderUserName":"Lachelyn"}
+,"a930":{"allianceId":"930","founderUserId":"27836","allianceName":"Ghost Dragons","relation":"1","membersCount":"76","rank":41,"might":"124066896","founderUserName":"Thor512"}
+,"a1989":{"allianceId":"1989","founderUserId":"108276","allianceName":"Imperium","relation":"1","membersCount":"86","rank":57,"might":"78055513","founderUserName":"Apocalypse"}
+,"a7856":{"allianceId":"7856","founderUserId":"279117","allianceName":"Inactive Farm","relation":"1","membersCount":"1","rank":2523,"might":"5525","founderUserName":"YY_FAKIE"}
+,"a10503":{"allianceId":"10503","founderUserId":"47387","allianceName":"Just Me","relation":"1","membersCount":"1","rank":5559,"might":"0","founderUserName":"Smudge_KOR"}
+,"a9340":{"allianceId":"9340","founderUserId":"1544227","allianceName":"Legion of Elves","relation":"1","membersCount":"1","rank":6070,"might":"0","founderUserName":"bigfoot"}
+,"a68":{"allianceId":"68","founderUserId":"639","allianceName":"Lords of Endore","relation":"1","membersCount":"54","rank":22,"might":"198462757","founderUserName":"Adamas"}
+,"a11727":{"allianceId":"11727","founderUserId":"1829088","allianceName":"Magical elves","relation":"1","membersCount":"2","rank":2192,"might":"9303","founderUserName":"BillyBaggins"}
+,"a12115":{"allianceId":"12115","founderUserId":"4178975","allianceName":"MetaI Men","relation":"1","membersCount":"40","rank":95,"might":"22567541","founderUserName":"PrincessB"}
+,"a5737":{"allianceId":"5737","founderUserId":"123097","allianceName":"Northern Empire","relation":"1","membersCount":"84","rank":29,"might":"149634616","founderUserName":"Eylanin"}
+,"a1865":{"allianceId":"1865","founderUserId":"21002","allianceName":"Pyro Hobbits","relation":"1","membersCount":"88","rank":99,"might":"21024403","founderUserName":"Pimp"}
+,"a3632":{"allianceId":"3632","founderUserId":"186770","allianceName":"rehelm pact","relation":"1","membersCount":"3","rank":564,"might":"487598","founderUserName":"barlinthewise"}
+,"a1185":{"allianceId":"1185","founderUserId":"57907","allianceName":"RidersoftheMark","relation":"1","membersCount":"87","rank":73,"might":"55598623","founderUserName":"Origen"}
+,"a934":{"allianceId":"934","founderUserId":"1989","allianceName":"Second age","relation":"1","membersCount":"38","rank":189,"might":"4919272","founderUserName":"StonedOne"}
+,"a7964":{"allianceId":"7964","founderUserId":"81193","allianceName":"Shadowstone","relation":"1","membersCount":"68","rank":24,"might":"190596080","founderUserName":"Magnus_Naugrim"}
+,"a8979":{"allianceId":"8979","founderUserId":"115808","allianceName":"Silmarilli","relation":"1","membersCount":"10","rank":75,"might":"52373263","founderUserName":"Camalus"}
+,"a7881":{"allianceId":"7881","founderUserId":"1586168","allianceName":"Strongbrethren","relation":"1","membersCount":"24","rank":156,"might":"7102174","founderUserName":"Yenksilver"}
+,"a7132":{"allianceId":"7132","founderUserId":"264572","allianceName":"The Badgers","relation":"1","membersCount":"3","rank":1128,"might":"105484","founderUserName":"TheHoneyBadger"}
+,"a1111":{"allianceId":"1111","founderUserId":"6023","allianceName":"The Watch","relation":"1","membersCount":"14","rank":460,"might":"766228","founderUserName":"xMcROYALx"}
+,"a3629":{"allianceId":"3629","founderUserId":"135630","allianceName":"THUNDERSTRUCK","relation":"1","membersCount":"84","rank":13,"might":"269682103","founderUserName":"SanAngelo"}
+,"a25":{"allianceId":"25","founderUserId":"153","allianceName":"TombStone","relation":"1","membersCount":"5","rank":486,"might":"669475","founderUserName":"LordWainwright"}
+,"a10494":{"allianceId":"10494","founderUserId":"596234","allianceName":"UrFkd","relation":"1","membersCount":"1","rank":6426,"might":"0","founderUserName":"UrSCR3W3D"}
+,"a7154":{"allianceId":"7154","founderUserId":"29944","allianceName":"Whiskers","relation":"1","membersCount":"46","rank":74,"might":"55386346","founderUserName":"Cason"}
+}
+,"hostile":{"a12736":{"allianceId":"12736","founderUserId":"3286599","allianceName":"FoxFox","relation":"2","membersCount":"1","rank":2004,"might":"14321","founderUserName":"FoxFox"}
+,"a995":{"allianceId":"995","founderUserId":"30292","allianceName":"HelemansArmy","relation":"2","membersCount":"20","rank":164,"might":"6215007","founderUserName":"Rivendale1920"}
+,"a9809":{"allianceId":"9809","founderUserId":"1541","allianceName":"InsidiousUnited","relation":"2","membersCount":"60","rank":19,"might":"215348936","founderUserName":"phrenikos"}
+,"a8049":{"allianceId":"8049","founderUserId":"107852","allianceName":"RivendalleElves","relation":"2","membersCount":"8","rank":1358,"might":"62353","founderUserName":"Zanebob"}
+,"a8953":{"allianceId":"8953","founderUserId":"19422","allianceName":"The Hated","relation":"2","membersCount":"1","rank":1428,"might":"52618","founderUserName":"DarkHunters"}
+,"a9176":{"allianceId":"9176","founderUserId":"147898","allianceName":"Whippity whip","relation":"2","membersCount":"1","rank":1673,"might":"29778","founderUserName":"Vipertown"}
+}
+,"friendlyToThem":{"a325":{"allianceId":"325","founderUserId":"4831","allianceName":"THE WARRIORS","relation":"1","membersCount":"1","rank":4489,"might":"389","founderUserName":"Warriorpower"}
+}
+,"friendlyToYou":{"a9758":{"allianceId":"9758","founderUserId":"1763591","allianceName":"AldmeriDominion","relation":"1","membersCount":"4","might":1125,"founderUserName":"TheWarden"}
+,"a7264":{"allianceId":"7264","founderUserId":"279148","allianceName":"AllianceOfBruce","relation":"1","membersCount":"1","might":2483,"founderUserName":"Kirton"}
+,"a1005":{"allianceId":"1005","founderUserId":"45475","allianceName":"DeathRow","relation":"1","membersCount":"30","might":115,"founderUserName":"RogueAura"}
+,"a10683":{"allianceId":"10683","founderUserId":"2469984","allianceName":"Ghost Army","relation":"1","membersCount":"13","might":479,"founderUserName":"hobo5677"}
+,"a9038":{"allianceId":"9038","founderUserId":"27402","allianceName":"MAGNUS","relation":"1","membersCount":"11","might":283,"founderUserName":"Holty93"}
+,"a8345":{"allianceId":"8345","founderUserId":"421","allianceName":"TheNightsWatch","relation":"1","membersCount":"61","might":80,"founderUserName":"Kellen"}
+}
+,"allianceId":"1018","allianceName":"Comrade in arms"}
+,"artifactSets":{"inventory":[]}
+,"artifacts":{"20221":"0","20323":"0","20415":"0"}
+,"blueLight":{"max":1600,"cur":81,"level":5}
+,"broadcast":"0","buyUpgradeRate":"0.00022","city_unit_count":{"c126934":{"u1":0,"u2":"6684","u4":"500","u5":0,"u6":"500","u7":0,"u8":"500","u9":0,"u10":0,"u11":0,"u12":0,"u13":"500","u14":0,"u15":0,"u16":0}
+,"c135164":{"u1":0,"u2":"1100","u4":"580940","u5":"570394","u6":"651370","u7":"118062","u8":"106339","u9":0,"u10":"22600","u11":"83645","u12":"22650","u13":"21000","u14":0,"u15":0,"u16":0}
+}
+,"config":{"allianceHelp":true}
+,"cur_time":"2013-03-01 13:31:45","dataVersion":"1","fortifications":{"city126934":{"fort52":"0","fort53":"0","fort54":"0","fort55":"0","fort56":"0","fort57":"0","fort58":"0","fort59":"0","fort60":"0"}
+,"city135164":{"fort52":"0","fort53":"0","fort54":"0","fort55":"0","fort56":"0","fort57":"0","fort58":"0","fort59":"0","fort60":"0"}
+}
+,"foundArtifacts":{"126934":false,"135164":false}
+,"hasNewReceiveMail":false,"hasNewReport":false,"hasNewSentMail":false,"hasNewSysMail":false,"newAllInboxCount":null,"newDisasterReportCount":"0","newMailCount":"0","newReportCount":"0","newSentMailCount":0,"newTradeReports":0,"newitems":{"i1":"107","i2":"106","i3":"46","i4":"11","i5":"5","i9":"5","i69":"2","i101":"4","i102":"4","i111":"8","i112":"2","i121":"14","i131":"10","i141":"10","i142":"2","i261":"14","i262":"6","i271":"18","i272":"3","i355":"4","i361":"19","i362":"19","i363":"18","i401":"8","i599":"79","i901":"1","i911":"10","i922":"1","i923":"6","i1001":"11","i1002":"3","i1003":"4","i1004":"5","i1005":"13","i1011":"8","i1012":"6","i1013":"4","i1014":"12","i1015":"29","i1016":"1","i1021":"3","i1022":"2","i1023":"3","i1024":"6","i1025":"15","i1031":"2","i1032":"2","i1033":"3","i1034":"5","i1035":"12","i1041":"2","i1042":"2","i1043":"2","i1044":"13","i1045":"19","i1047":"2","i1202":"1","i10009":"2","i10020":"1","i10030":"1","i10031":"1","i10032":"1","i10033":"1","i10034":"1","i20221":"4","i20323":"4","i20415":"23","i50060":"1","i50062":"5","i60001":"2","i60010":"1","i60017":"15","i60018":"1","i60019":"4","i60023":"1","i60024":"1","i60031":"2","i60033":"1","i60035":"3","i60039":"4","i60041":"1","i60044":"6","i60048":"2"}
+,"ok":true,"player":{"datejoinUnixTime":"1355071835","truceExpireUnixTime":"0","beginproExpireUnixTime":"1355676635","fteFinishUnixTime":"1355098713","userId":"1911696","displayName":"Leith","email":"","fbuid":"0","mobileid":"b1d5ae74028aa35fb1988d3748d69f3d","playerSex":"M","usertype":"201","race":"2","status":"1","dateJoined":"2012-12-09 16:50:35","lastLogin":"2013-03-01 12:32:32","fte_finish_time":"2012-12-10 00:18:33","warStatus":"1","allianceId":"1018","might":"13753552","xp":"831829","title":"53","truceExpireTimestamp":"0000-00-00 00:00:00","beginproExpireTimestamp":"2012-12-16 16:50:35","fogExpireTimestamp":"0000-00-00 00:00:00","cnt_newmsg":"0","cnt_friendreq":"0","cnt_logins":"0","cnt_passreset":"0","cnt_connections":"0","avatarId":"0","photo_host":"0","photo_dir":"0","photo_subdir":"0","photo_name":"0","playerCityLock":"0","officerType":"3"}
+,"players":[],"queue_atkinc":[],"reqmicrotime":1362144705.0164,"resmicrotime":1362144705.0556,"runtime":0.043130874633789,"serverSetting":{"allowJumpAllianceFromInvitation":0}
+,"shopUpgraded":false,"strVersion":"1","timezone":"UTC","updateMarch":[],"updateMight":"13753552","updateSeed":{"city":{"126934":{"gather":{"1":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"2":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"3":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"4":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"5":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"6":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"7":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"8":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+}
+}
+,"135164":{"gather":{"1":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"2":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"3":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"4":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"5":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"6":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"7":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+,"8":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144705,"isCollecting":"1"}
+}
+}
+}
+}
+,"upgrade_flag":0,"xp":{"xp":"831829","lvl":53,"progress":8,"curlvlxp":"828388","nextlvlxp":869387}
+}
+,{"allMailCount":"502","allReportCount":"9136","allianceDiplomacies":{"friendly":{"a986":{"allianceId":"986","founderUserId":"40568","allianceName":"Blood Brothers","relation":"1","membersCount":"95","rank":46,"might":"99351735","founderUserName":"Mully"}
+,"a435":{"allianceId":"435","founderUserId":"4005","allianceName":"Canadian Shire","relation":"1","membersCount":"52","rank":66,"might":"68374457","founderUserName":"DARKWINGDUCK"}
+,"a1500":{"allianceId":"1500","founderUserId":"68190","allianceName":"Catalunya","relation":"1","membersCount":"41","rank":68,"might":"66649845","founderUserName":"Drac"}
+,"a2479":{"allianceId":"2479","founderUserId":"54943","allianceName":"Creatures","relation":"1","membersCount":"59","rank":26,"might":"187279533","founderUserName":"Your_Dawg"}
+,"a103":{"allianceId":"103","founderUserId":"901","allianceName":"Dark Riders","relation":"1","membersCount":"20","rank":104,"might":"18322598","founderUserName":"Tathar"}
+,"a343":{"allianceId":"343","founderUserId":"4158","allianceName":"Dwarf Warriors","relation":"1","membersCount":"75","rank":18,"might":"219233285","founderUserName":"GandoIf"}
+,"a802":{"allianceId":"802","founderUserId":"25656","allianceName":"Fetch you a Box","relation":"1","membersCount":"28","rank":130,"might":"10007676","founderUserName":"pink"}
+,"a4592":{"allianceId":"4592","founderUserId":"27119","allianceName":"Flame of Anor","relation":"1","membersCount":"60","rank":65,"might":"70197287","founderUserName":"Lachelyn"}
+,"a930":{"allianceId":"930","founderUserId":"27836","allianceName":"Ghost Dragons","relation":"1","membersCount":"76","rank":41,"might":"124066896","founderUserName":"Thor512"}
+,"a1989":{"allianceId":"1989","founderUserId":"108276","allianceName":"Imperium","relation":"1","membersCount":"86","rank":57,"might":"78055513","founderUserName":"Apocalypse"}
+,"a7856":{"allianceId":"7856","founderUserId":"279117","allianceName":"Inactive Farm","relation":"1","membersCount":"1","rank":2523,"might":"5525","founderUserName":"YY_FAKIE"}
+,"a10503":{"allianceId":"10503","founderUserId":"47387","allianceName":"Just Me","relation":"1","membersCount":"1","rank":5559,"might":"0","founderUserName":"Smudge_KOR"}
+,"a9340":{"allianceId":"9340","founderUserId":"1544227","allianceName":"Legion of Elves","relation":"1","membersCount":"1","rank":6070,"might":"0","founderUserName":"bigfoot"}
+,"a68":{"allianceId":"68","founderUserId":"639","allianceName":"Lords of Endore","relation":"1","membersCount":"54","rank":22,"might":"198462757","founderUserName":"Adamas"}
+,"a11727":{"allianceId":"11727","founderUserId":"1829088","allianceName":"Magical elves","relation":"1","membersCount":"2","rank":2192,"might":"9303","founderUserName":"BillyBaggins"}
+,"a12115":{"allianceId":"12115","founderUserId":"4178975","allianceName":"MetaI Men","relation":"1","membersCount":"40","rank":95,"might":"22567541","founderUserName":"PrincessB"}
+,"a5737":{"allianceId":"5737","founderUserId":"123097","allianceName":"Northern Empire","relation":"1","membersCount":"84","rank":29,"might":"149634616","founderUserName":"Eylanin"}
+,"a1865":{"allianceId":"1865","founderUserId":"21002","allianceName":"Pyro Hobbits","relation":"1","membersCount":"88","rank":99,"might":"21024403","founderUserName":"Pimp"}
+,"a3632":{"allianceId":"3632","founderUserId":"186770","allianceName":"rehelm pact","relation":"1","membersCount":"3","rank":564,"might":"487598","founderUserName":"barlinthewise"}
+,"a1185":{"allianceId":"1185","founderUserId":"57907","allianceName":"RidersoftheMark","relation":"1","membersCount":"87","rank":73,"might":"55598623","founderUserName":"Origen"}
+,"a934":{"allianceId":"934","founderUserId":"1989","allianceName":"Second age","relation":"1","membersCount":"38","rank":189,"might":"4919272","founderUserName":"StonedOne"}
+,"a7964":{"allianceId":"7964","founderUserId":"81193","allianceName":"Shadowstone","relation":"1","membersCount":"68","rank":24,"might":"190596080","founderUserName":"Magnus_Naugrim"}
+,"a8979":{"allianceId":"8979","founderUserId":"115808","allianceName":"Silmarilli","relation":"1","membersCount":"10","rank":75,"might":"52373263","founderUserName":"Camalus"}
+,"a7881":{"allianceId":"7881","founderUserId":"1586168","allianceName":"Strongbrethren","relation":"1","membersCount":"24","rank":156,"might":"7102174","founderUserName":"Yenksilver"}
+,"a7132":{"allianceId":"7132","founderUserId":"264572","allianceName":"The Badgers","relation":"1","membersCount":"3","rank":1128,"might":"105484","founderUserName":"TheHoneyBadger"}
+,"a1111":{"allianceId":"1111","founderUserId":"6023","allianceName":"The Watch","relation":"1","membersCount":"14","rank":460,"might":"766228","founderUserName":"xMcROYALx"}
+,"a3629":{"allianceId":"3629","founderUserId":"135630","allianceName":"THUNDERSTRUCK","relation":"1","membersCount":"84","rank":13,"might":"269682103","founderUserName":"SanAngelo"}
+,"a25":{"allianceId":"25","founderUserId":"153","allianceName":"TombStone","relation":"1","membersCount":"5","rank":486,"might":"669475","founderUserName":"LordWainwright"}
+,"a10494":{"allianceId":"10494","founderUserId":"596234","allianceName":"UrFkd","relation":"1","membersCount":"1","rank":6426,"might":"0","founderUserName":"UrSCR3W3D"}
+,"a7154":{"allianceId":"7154","founderUserId":"29944","allianceName":"Whiskers","relation":"1","membersCount":"46","rank":74,"might":"55386346","founderUserName":"Cason"}
+}
+,"hostile":{"a12736":{"allianceId":"12736","founderUserId":"3286599","allianceName":"FoxFox","relation":"2","membersCount":"1","rank":2004,"might":"14321","founderUserName":"FoxFox"}
+,"a995":{"allianceId":"995","founderUserId":"30292","allianceName":"HelemansArmy","relation":"2","membersCount":"20","rank":164,"might":"6215007","founderUserName":"Rivendale1920"}
+,"a9809":{"allianceId":"9809","founderUserId":"1541","allianceName":"InsidiousUnited","relation":"2","membersCount":"60","rank":19,"might":"215348936","founderUserName":"phrenikos"}
+,"a8049":{"allianceId":"8049","founderUserId":"107852","allianceName":"RivendalleElves","relation":"2","membersCount":"8","rank":1358,"might":"62353","founderUserName":"Zanebob"}
+,"a8953":{"allianceId":"8953","founderUserId":"19422","allianceName":"The Hated","relation":"2","membersCount":"1","rank":1428,"might":"52618","founderUserName":"DarkHunters"}
+,"a9176":{"allianceId":"9176","founderUserId":"147898","allianceName":"Whippity whip","relation":"2","membersCount":"1","rank":1673,"might":"29778","founderUserName":"Vipertown"}
+}
+,"friendlyToThem":{"a325":{"allianceId":"325","founderUserId":"4831","allianceName":"THE WARRIORS","relation":"1","membersCount":"1","rank":4489,"might":"389","founderUserName":"Warriorpower"}
+}
+,"friendlyToYou":{"a9758":{"allianceId":"9758","founderUserId":"1763591","allianceName":"AldmeriDominion","relation":"1","membersCount":"4","might":1125,"founderUserName":"TheWarden"}
+,"a7264":{"allianceId":"7264","founderUserId":"279148","allianceName":"AllianceOfBruce","relation":"1","membersCount":"1","might":2483,"founderUserName":"Kirton"}
+,"a1005":{"allianceId":"1005","founderUserId":"45475","allianceName":"DeathRow","relation":"1","membersCount":"30","might":115,"founderUserName":"RogueAura"}
+,"a10683":{"allianceId":"10683","founderUserId":"2469984","allianceName":"Ghost Army","relation":"1","membersCount":"13","might":479,"founderUserName":"hobo5677"}
+,"a9038":{"allianceId":"9038","founderUserId":"27402","allianceName":"MAGNUS","relation":"1","membersCount":"11","might":283,"founderUserName":"Holty93"}
+,"a8345":{"allianceId":"8345","founderUserId":"421","allianceName":"TheNightsWatch","relation":"1","membersCount":"61","might":80,"founderUserName":"Kellen"}
+}
+,"allianceId":"1018","allianceName":"Comrade in arms"}
+,"artifactSets":{"inventory":[]}
+,"artifacts":{"20221":"0","20323":"0","20415":"0"}
+,"blueLight":{"max":1600,"cur":81,"level":5}
+,"broadcast":"0","buyUpgradeRate":"0.00022","city_unit_count":{"c126934":{"u1":0,"u2":"6684","u4":"500","u5":0,"u6":"500","u7":0,"u8":"500","u9":0,"u10":0,"u11":0,"u12":0,"u13":"500","u14":0,"u15":0,"u16":0}
+,"c135164":{"u1":0,"u2":"1100","u4":"580940","u5":"570394","u6":"651370","u7":"118062","u8":"106339","u9":0,"u10":"22600","u11":"83645","u12":"22650","u13":"21000","u14":0,"u15":0,"u16":0}
+}
+,"config":{"allianceHelp":true}
+,"cur_time":"2013-03-01 13:32:15","dataVersion":"1","fortifications":{"city126934":{"fort52":"0","fort53":"0","fort54":"0","fort55":"0","fort56":"0","fort57":"0","fort58":"0","fort59":"0","fort60":"0"}
+,"city135164":{"fort52":"0","fort53":"0","fort54":"0","fort55":"0","fort56":"0","fort57":"0","fort58":"0","fort59":"0","fort60":"0"}
+}
+,"foundArtifacts":{"126934":false,"135164":false}
+,"hasNewReceiveMail":false,"hasNewReport":false,"hasNewSentMail":false,"hasNewSysMail":false,"newAllInboxCount":null,"newDisasterReportCount":"0","newMailCount":"0","newReportCount":"0","newSentMailCount":0,"newTradeReports":0,"newitems":{"i1":"107","i2":"106","i3":"46","i4":"11","i5":"5","i9":"5","i69":"2","i101":"4","i102":"4","i111":"8","i112":"2","i121":"14","i131":"10","i141":"10","i142":"2","i261":"14","i262":"6","i271":"18","i272":"3","i355":"4","i361":"19","i362":"19","i363":"18","i401":"8","i599":"79","i901":"1","i911":"10","i922":"1","i923":"6","i1001":"11","i1002":"3","i1003":"4","i1004":"5","i1005":"13","i1011":"8","i1012":"6","i1013":"4","i1014":"12","i1015":"29","i1016":"1","i1021":"3","i1022":"2","i1023":"3","i1024":"6","i1025":"15","i1031":"2","i1032":"2","i1033":"3","i1034":"5","i1035":"12","i1041":"2","i1042":"2","i1043":"2","i1044":"13","i1045":"19","i1047":"2","i1202":"1","i10009":"2","i10020":"1","i10030":"1","i10031":"1","i10032":"1","i10033":"1","i10034":"1","i20221":"4","i20323":"4","i20415":"23","i50060":"1","i50062":"5","i60001":"2","i60010":"1","i60017":"15","i60018":"1","i60019":"4","i60023":"1","i60024":"1","i60031":"2","i60033":"1","i60035":"3","i60039":"4","i60041":"1","i60044":"6","i60048":"2"}
+,"ok":true,"player":{"datejoinUnixTime":"1355071835","truceExpireUnixTime":"0","beginproExpireUnixTime":"1355676635","fteFinishUnixTime":"1355098713","userId":"1911696","displayName":"Leith","email":"","fbuid":"0","mobileid":"b1d5ae74028aa35fb1988d3748d69f3d","playerSex":"M","usertype":"201","race":"2","status":"1","dateJoined":"2012-12-09 16:50:35","lastLogin":"2013-03-01 12:32:32","fte_finish_time":"2012-12-10 00:18:33","warStatus":"1","allianceId":"1018","might":"13753552","xp":"831829","title":"53","truceExpireTimestamp":"0000-00-00 00:00:00","beginproExpireTimestamp":"2012-12-16 16:50:35","fogExpireTimestamp":"0000-00-00 00:00:00","cnt_newmsg":"0","cnt_friendreq":"0","cnt_logins":"0","cnt_passreset":"0","cnt_connections":"0","avatarId":"0","photo_host":"0","photo_dir":"0","photo_subdir":"0","photo_name":"0","playerCityLock":"0","officerType":"3"}
+,"players":[],"queue_atkinc":[],"reqmicrotime":1362144735.7096,"resmicrotime":1362144735.7508,"runtime":0.04736590385437,"serverSetting":{"allowJumpAllianceFromInvitation":0}
+,"shopUpgraded":false,"strVersion":"1","timezone":"UTC","updateMarch":[],"updateMight":"13753552","updateSeed":{"city":{"126934":{"gather":{"1":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"2":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"3":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"4":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"5":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"6":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"7":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"8":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+}
+}
+,"135164":{"gather":{"1":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"2":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"3":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"4":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"5":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"6":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"7":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+,"8":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144735,"isCollecting":"1"}
+}
+}
+}
+}
+,"upgrade_flag":0,"xp":{"xp":"831829","lvl":53,"progress":8,"curlvlxp":"828388","nextlvlxp":869387}
+}
+,{"allMailCount":"502","allReportCount":"9136","allianceDiplomacies":{"friendly":{"a986":{"allianceId":"986","founderUserId":"40568","allianceName":"Blood Brothers","relation":"1","membersCount":"95","rank":46,"might":"99351735","founderUserName":"Mully"}
+,"a435":{"allianceId":"435","founderUserId":"4005","allianceName":"Canadian Shire","relation":"1","membersCount":"52","rank":66,"might":"68374457","founderUserName":"DARKWINGDUCK"}
+,"a1500":{"allianceId":"1500","founderUserId":"68190","allianceName":"Catalunya","relation":"1","membersCount":"41","rank":68,"might":"66649845","founderUserName":"Drac"}
+,"a2479":{"allianceId":"2479","founderUserId":"54943","allianceName":"Creatures","relation":"1","membersCount":"59","rank":26,"might":"187279533","founderUserName":"Your_Dawg"}
+,"a103":{"allianceId":"103","founderUserId":"901","allianceName":"Dark Riders","relation":"1","membersCount":"20","rank":104,"might":"18322598","founderUserName":"Tathar"}
+,"a343":{"allianceId":"343","founderUserId":"4158","allianceName":"Dwarf Warriors","relation":"1","membersCount":"75","rank":18,"might":"219233285","founderUserName":"GandoIf"}
+,"a802":{"allianceId":"802","founderUserId":"25656","allianceName":"Fetch you a Box","relation":"1","membersCount":"28","rank":130,"might":"10007676","founderUserName":"pink"}
+,"a4592":{"allianceId":"4592","founderUserId":"27119","allianceName":"Flame of Anor","relation":"1","membersCount":"60","rank":65,"might":"70197287","founderUserName":"Lachelyn"}
+,"a930":{"allianceId":"930","founderUserId":"27836","allianceName":"Ghost Dragons","relation":"1","membersCount":"76","rank":41,"might":"124066896","founderUserName":"Thor512"}
+,"a1989":{"allianceId":"1989","founderUserId":"108276","allianceName":"Imperium","relation":"1","membersCount":"86","rank":57,"might":"78055513","founderUserName":"Apocalypse"}
+,"a7856":{"allianceId":"7856","founderUserId":"279117","allianceName":"Inactive Farm","relation":"1","membersCount":"1","rank":2523,"might":"5525","founderUserName":"YY_FAKIE"}
+,"a10503":{"allianceId":"10503","founderUserId":"47387","allianceName":"Just Me","relation":"1","membersCount":"1","rank":5559,"might":"0","founderUserName":"Smudge_KOR"}
+,"a9340":{"allianceId":"9340","founderUserId":"1544227","allianceName":"Legion of Elves","relation":"1","membersCount":"1","rank":6070,"might":"0","founderUserName":"bigfoot"}
+,"a68":{"allianceId":"68","founderUserId":"639","allianceName":"Lords of Endore","relation":"1","membersCount":"54","rank":22,"might":"198462757","founderUserName":"Adamas"}
+,"a11727":{"allianceId":"11727","founderUserId":"1829088","allianceName":"Magical elves","relation":"1","membersCount":"2","rank":2192,"might":"9303","founderUserName":"BillyBaggins"}
+,"a12115":{"allianceId":"12115","founderUserId":"4178975","allianceName":"MetaI Men","relation":"1","membersCount":"40","rank":95,"might":"22567541","founderUserName":"PrincessB"}
+,"a5737":{"allianceId":"5737","founderUserId":"123097","allianceName":"Northern Empire","relation":"1","membersCount":"84","rank":29,"might":"149634616","founderUserName":"Eylanin"}
+,"a1865":{"allianceId":"1865","founderUserId":"21002","allianceName":"Pyro Hobbits","relation":"1","membersCount":"88","rank":99,"might":"21024403","founderUserName":"Pimp"}
+,"a3632":{"allianceId":"3632","founderUserId":"186770","allianceName":"rehelm pact","relation":"1","membersCount":"3","rank":564,"might":"487598","founderUserName":"barlinthewise"}
+,"a1185":{"allianceId":"1185","founderUserId":"57907","allianceName":"RidersoftheMark","relation":"1","membersCount":"87","rank":73,"might":"55598623","founderUserName":"Origen"}
+,"a934":{"allianceId":"934","founderUserId":"1989","allianceName":"Second age","relation":"1","membersCount":"38","rank":189,"might":"4919272","founderUserName":"StonedOne"}
+,"a7964":{"allianceId":"7964","founderUserId":"81193","allianceName":"Shadowstone","relation":"1","membersCount":"68","rank":24,"might":"190596080","founderUserName":"Magnus_Naugrim"}
+,"a8979":{"allianceId":"8979","founderUserId":"115808","allianceName":"Silmarilli","relation":"1","membersCount":"10","rank":75,"might":"52373263","founderUserName":"Camalus"}
+,"a7881":{"allianceId":"7881","founderUserId":"1586168","allianceName":"Strongbrethren","relation":"1","membersCount":"24","rank":156,"might":"7102174","founderUserName":"Yenksilver"}
+,"a7132":{"allianceId":"7132","founderUserId":"264572","allianceName":"The Badgers","relation":"1","membersCount":"3","rank":1128,"might":"105484","founderUserName":"TheHoneyBadger"}
+,"a1111":{"allianceId":"1111","founderUserId":"6023","allianceName":"The Watch","relation":"1","membersCount":"14","rank":460,"might":"766228","founderUserName":"xMcROYALx"}
+,"a3629":{"allianceId":"3629","founderUserId":"135630","allianceName":"THUNDERSTRUCK","relation":"1","membersCount":"84","rank":13,"might":"269682103","founderUserName":"SanAngelo"}
+,"a25":{"allianceId":"25","founderUserId":"153","allianceName":"TombStone","relation":"1","membersCount":"5","rank":486,"might":"669475","founderUserName":"LordWainwright"}
+,"a10494":{"allianceId":"10494","founderUserId":"596234","allianceName":"UrFkd","relation":"1","membersCount":"1","rank":6426,"might":"0","founderUserName":"UrSCR3W3D"}
+,"a7154":{"allianceId":"7154","founderUserId":"29944","allianceName":"Whiskers","relation":"1","membersCount":"46","rank":74,"might":"55386346","founderUserName":"Cason"}
+}
+,"hostile":{"a12736":{"allianceId":"12736","founderUserId":"3286599","allianceName":"FoxFox","relation":"2","membersCount":"1","rank":2004,"might":"14321","founderUserName":"FoxFox"}
+,"a995":{"allianceId":"995","founderUserId":"30292","allianceName":"HelemansArmy","relation":"2","membersCount":"20","rank":164,"might":"6215007","founderUserName":"Rivendale1920"}
+,"a9809":{"allianceId":"9809","founderUserId":"1541","allianceName":"InsidiousUnited","relation":"2","membersCount":"60","rank":19,"might":"215348936","founderUserName":"phrenikos"}
+,"a8049":{"allianceId":"8049","founderUserId":"107852","allianceName":"RivendalleElves","relation":"2","membersCount":"8","rank":1358,"might":"62353","founderUserName":"Zanebob"}
+,"a8953":{"allianceId":"8953","founderUserId":"19422","allianceName":"The Hated","relation":"2","membersCount":"1","rank":1428,"might":"52618","founderUserName":"DarkHunters"}
+,"a9176":{"allianceId":"9176","founderUserId":"147898","allianceName":"Whippity whip","relation":"2","membersCount":"1","rank":1673,"might":"29778","founderUserName":"Vipertown"}
+}
+,"friendlyToThem":{"a325":{"allianceId":"325","founderUserId":"4831","allianceName":"THE WARRIORS","relation":"1","membersCount":"1","rank":4489,"might":"389","founderUserName":"Warriorpower"}
+}
+,"friendlyToYou":{"a9758":{"allianceId":"9758","founderUserId":"1763591","allianceName":"AldmeriDominion","relation":"1","membersCount":"4","might":1125,"founderUserName":"TheWarden"}
+,"a7264":{"allianceId":"7264","founderUserId":"279148","allianceName":"AllianceOfBruce","relation":"1","membersCount":"1","might":2483,"founderUserName":"Kirton"}
+,"a1005":{"allianceId":"1005","founderUserId":"45475","allianceName":"DeathRow","relation":"1","membersCount":"30","might":115,"founderUserName":"RogueAura"}
+,"a10683":{"allianceId":"10683","founderUserId":"2469984","allianceName":"Ghost Army","relation":"1","membersCount":"13","might":479,"founderUserName":"hobo5677"}
+,"a9038":{"allianceId":"9038","founderUserId":"27402","allianceName":"MAGNUS","relation":"1","membersCount":"11","might":283,"founderUserName":"Holty93"}
+,"a8345":{"allianceId":"8345","founderUserId":"421","allianceName":"TheNightsWatch","relation":"1","membersCount":"61","might":80,"founderUserName":"Kellen"}
+}
+,"allianceId":"1018","allianceName":"Comrade in arms"}
+,"artifactSets":{"inventory":[]}
+,"artifacts":{"20221":"0","20323":"0","20415":"0"}
+,"blueLight":{"max":1600,"cur":81,"level":5}
+,"broadcast":"0","buyUpgradeRate":"0.00022","city_unit_count":{"c126934":{"u1":0,"u2":"6684","u4":"500","u5":0,"u6":"500","u7":0,"u8":"500","u9":0,"u10":0,"u11":0,"u12":0,"u13":"500","u14":0,"u15":0,"u16":0}
+,"c135164":{"u1":0,"u2":"1100","u4":"580940","u5":"570394","u6":"651370","u7":"118062","u8":"106339","u9":0,"u10":"22600","u11":"83645","u12":"22650","u13":"21000","u14":0,"u15":0,"u16":0}
+}
+,"config":{"allianceHelp":true}
+,"cur_time":"2013-03-01 13:32:46","dataVersion":"1","fortifications":{"city126934":{"fort52":"0","fort53":"0","fort54":"0","fort55":"0","fort56":"0","fort57":"0","fort58":"0","fort59":"0","fort60":"0"}
+,"city135164":{"fort52":"0","fort53":"0","fort54":"0","fort55":"0","fort56":"0","fort57":"0","fort58":"0","fort59":"0","fort60":"0"}
+}
+,"foundArtifacts":{"126934":false,"135164":false}
+,"hasNewReceiveMail":false,"hasNewReport":false,"hasNewSentMail":false,"hasNewSysMail":false,"newAllInboxCount":null,"newDisasterReportCount":"0","newMailCount":"0","newReportCount":"0","newSentMailCount":0,"newTradeReports":0,"newitems":{"i1":"107","i2":"106","i3":"46","i4":"11","i5":"5","i9":"5","i69":"2","i101":"4","i102":"4","i111":"8","i112":"2","i121":"14","i131":"10","i141":"10","i142":"2","i261":"14","i262":"6","i271":"18","i272":"3","i355":"4","i361":"19","i362":"19","i363":"18","i401":"8","i599":"79","i901":"1","i911":"10","i922":"1","i923":"6","i1001":"11","i1002":"3","i1003":"4","i1004":"5","i1005":"13","i1011":"8","i1012":"6","i1013":"4","i1014":"12","i1015":"29","i1016":"1","i1021":"3","i1022":"2","i1023":"3","i1024":"6","i1025":"15","i1031":"2","i1032":"2","i1033":"3","i1034":"5","i1035":"12","i1041":"2","i1042":"2","i1043":"2","i1044":"13","i1045":"19","i1047":"2","i1202":"1","i10009":"2","i10020":"1","i10030":"1","i10031":"1","i10032":"1","i10033":"1","i10034":"1","i20221":"4","i20323":"4","i20415":"23","i50060":"1","i50062":"5","i60001":"2","i60010":"1","i60017":"15","i60018":"1","i60019":"4","i60023":"1","i60024":"1","i60031":"2","i60033":"1","i60035":"3","i60039":"4","i60041":"1","i60044":"6","i60048":"2"}
+,"ok":true,"player":{"datejoinUnixTime":"1355071835","truceExpireUnixTime":"0","beginproExpireUnixTime":"1355676635","fteFinishUnixTime":"1355098713","userId":"1911696","displayName":"Leith","email":"","fbuid":"0","mobileid":"b1d5ae74028aa35fb1988d3748d69f3d","playerSex":"M","usertype":"201","race":"2","status":"1","dateJoined":"2012-12-09 16:50:35","lastLogin":"2013-03-01 12:32:32","fte_finish_time":"2012-12-10 00:18:33","warStatus":"1","allianceId":"1018","might":"13753552","xp":"831829","title":"53","truceExpireTimestamp":"0000-00-00 00:00:00","beginproExpireTimestamp":"2012-12-16 16:50:35","fogExpireTimestamp":"0000-00-00 00:00:00","cnt_newmsg":"0","cnt_friendreq":"0","cnt_logins":"0","cnt_passreset":"0","cnt_connections":"0","avatarId":"0","photo_host":"0","photo_dir":"0","photo_subdir":"0","photo_name":"0","playerCityLock":"0","officerType":"3"}
+,"players":[],"queue_atkinc":[],"reqmicrotime":1362144766.4586,"resmicrotime":1362144766.5587,"runtime":0.10480380058289,"serverSetting":{"allowJumpAllianceFromInvitation":0}
+,"shopUpgraded":false,"strVersion":"1","timezone":"UTC","updateMarch":[],"updateMight":"13753552","updateSeed":{"ok":false,"city":{"126934":{"production":{"ok":true,"mightInc":0,"reports":[],"paid":false,"fiscalUnixTime":1362144423,"happiness":"97","grievance":"0","population":"23182","laborPopulation":"16410","populationCap":"36000","gold":28697,"goldUpkeep":"0","taxRate":"3","resourceUnixTime":1362144766,"resource1x3600":1746037661,"resource2x3600":2738452654,"resource3x3600":6726038459,"resource4x3600":5731291716,"resource5x3600":0,"resource6x3600":0,"resource7x3600":0,"resource8x3600":0,"resource1Productivity":56200,"resource2Productivity":36100,"resource3Productivity":36100,"resource4Productivity":36100,"resource5Productivity":0,"resource6Productivity":0,"resource7Productivity":0,"resource8Productivity":0,"resource1Capx3600":"20232000000","resource2Capx3600":"12996000000","resource3Capx3600":"12996000000","resource4Capx3600":"12996000000","resource5Capx3600":"36000000","resource6Capx3600":"36000000","resource7Capx3600":"36000000","resource8Capx3600":"36000000","resource1Upkeep":69472,"resource2Upkeep":"0","resource3Upkeep":"0","resource4Upkeep":"0","resource5Upkeep":"0","resource6Upkeep":"0","resource7Upkeep":"0","resource8Upkeep":"0"}
+,"gather":{"1":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"2":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"3":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"4":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"5":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"6":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"7":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"8":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+}
+}
+,"135164":{"production":{"ok":true,"mightInc":0,"reports":[],"paid":false,"fiscalUnixTime":1362144483,"happiness":"97","grievance":"0","population":"34920","laborPopulation":"13000","populationCap":"36000","gold":1433127,"goldUpkeep":"0","taxRate":"3","resourceUnixTime":1362144766,"resource1x3600":0,"resource2x3600":"25389309542","resource3x3600":10394972887,"resource4x3600":9616955265,"resource5x3600":0,"resource6x3600":0,"resource7x3600":0,"resource8x3600":0,"resource1Productivity":27100,"resource2Productivity":24100,"resource3Productivity":38000,"resource4Productivity":41200,"resource5Productivity":0,"resource6Productivity":0,"resource7Productivity":0,"resource8Productivity":0,"resource1Capx3600":"9756000000","resource2Capx3600":"8676000000","resource3Capx3600":"13680000000","resource4Capx3600":"14832000000","resource5Capx3600":"36000000","resource6Capx3600":"36000000","resource7Capx3600":"36000000","resource8Capx3600":"36000000","resource1Upkeep":10743984,"resource2Upkeep":"0","resource3Upkeep":"0","resource4Upkeep":"0","resource5Upkeep":"0","resource6Upkeep":"0","resource7Upkeep":"0","resource8Upkeep":"0"}
+,"gather":{"1":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"2":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"3":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"4":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"5":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"6":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"7":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+,"8":{"resourcex3600":"0","resourceRate":"0","lastObservedTS":1362144766,"isCollecting":"1"}
+}
+}
+}
+,"xp":{"xp":"831829","lvl":53,"progress":8,"curlvlxp":"828388","nextlvlxp":869387}
+}
+,"upgrade_flag":0,"xp":{"xp":"831829","lvl":53,"progress":8,"curlvlxp":"828388","nextlvlxp":869387}
+}
+],"/ajax/datameerTracking.php":[{"ok":true}
+]}
+

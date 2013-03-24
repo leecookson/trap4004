@@ -1,0 +1,7 @@
+<== hit by unknown         (519  60)   78k  14:04
+<== hit by unknown         (519  60)   22k  14:00
+  hit ===> unknown         (519  60)  130k  09:50
+Start Time:     23:48 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:47
+AutumnWinds city coords [ '528,3' ]

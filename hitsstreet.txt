@@ -1,0 +1,12 @@
+<== hit by unknown         (681   2)  1.3m  11:25
+  hit ===> unknown         (654  23)   47k  09:01
+  hit ===> unknown         (569  63)  1.8m  09:01
+  hit ===> unknown         (655  19)  737k  09:00
+  hit ===> unknown         (645  94)  1.6m  08:58
+  hit ===> unknown         (644  93)    2m  08:57
+  hit ===> unknown         (637  94)  1.5m  08:57
+  hit ===> unknown         (638  91)  1.2m  08:57
+Start Time:     23:50 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:48
+street city coords [ '641,87', '685,1' ]

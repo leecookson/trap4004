@@ -1,0 +1,6 @@
+  hit ===> unknown         (622 786)  2.7m  20:16
+  hit ===> unknown         (618 787)  239k  20:14
+Start Time:     23:48 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:47
+GandalfTheGinge city coords [ '625,784' ]

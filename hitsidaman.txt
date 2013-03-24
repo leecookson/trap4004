@@ -1,0 +1,5 @@
+<== hit by unknown         (610 103)  3.6k  09:39
+Start Time:     23:48 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:47
+idaman city coords [ '598,78' ]

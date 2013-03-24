@@ -1,0 +1,12 @@
+  hit ===> Rankin          (128 250)  4.6k  18:20
+  hit ===> unknown         (128 270)   11k  18:18
+  hit ===> unknown         (129 274)  7.9k  18:18
+  hit ===> unknown         (141 220)   24k  08:21
+  hit ===> Corum           (122 283)   27k  08:21
+  hit ===> unknown         (123 224)  171k  08:17
+  hit ===> Gayboy          (139 215)  140k  08:16
+  hit ===> Chingones       (123 235)  126k  08:14
+Start Time:     23:50 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:48
+Razak1 city coords [ '132,252' ]

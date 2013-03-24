@@ -1,0 +1,31 @@
+<== hit by Dire_wolf       (610  41)  166k  21:47
+  hit ===> unknown         (155 466)  3.2k  18:38
+  hit ===> NuclearWaste    (599  68)  504k  17:44
+  hit ===> Nipz            (600  67)  1.1m  17:43
+  hit ===> Galfar          (608  57)   60k  17:43
+  hit ===> Nike69          (602  56)  8.9k  17:43
+  hit ===> Eldamar         (596  42)  2.2k  17:43
+  hit ===> Petbadger       (594  44)  424k  17:42
+  hit ===> unknown         (598  44)  187   17:42
+  hit ===> drewanda        (587  37)  129   17:41
+  hit ===> unknown         (585  39)  159k  17:41
+  hit ===> Yannick         (587  35)   13k  17:40
+  hit ===> Stuicus         (586  39)  311k  17:40
+  hit ===> unknown         (585  40)  1.1m  17:40
+  hit ===> drewanda        (587  37)   89k  17:40
+  hit ===> Ozzz            (588  40)  137k  17:38
+  hit ===> Dnsnenzj        (592  51)   61k  17:36
+  hit ===> Petbadger       (594  44)   61k  17:36
+  hit ===> WillFlipUrSht   (594  49)  464k  17:35
+  hit ===> Elventhorn      (594  47)   30k  17:35
+  hit ===> NewUser-2UIXN   (594  45)   60k  17:35
+  hit ===> NewUser-2UQN2   (594  43)   15k  17:34
+  hit ===> unknown         (598  44)  4.7k  17:34
+  hit ===> Eldamar         (596  42)   16k  17:34
+  hit ===> unknown         (601  44)   60k  17:34
+<== hit by unknown         (699  74)  1.7m  10:10
+<== hit by unknown         (699  74)  8.5k  10:06
+Start Time:     23:47 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:47
+FlorinRo city coords [ '604,49' ]

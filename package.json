@@ -1,0 +1,30 @@
+{
+  "name": "trapKoM",
+  "version": "1.0.0-13",
+  "description": "trap KoM",
+  "main": "trap2.js",
+  "subdomain": "trap-4004",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "trap2.js"
+  },
+  "repository": "",
+  "keywords": [
+    "trap",
+    "KoM"
+  ],
+  "author": "LeeCookson@gmail.com",
+  "license": "BSD",
+  "dependencies": {
+    "async": "~0.2.5",
+    "underscore": "~1.4.4",
+    "mongodb": "~1.2.13",
+    "printf": "~0.1.1",
+    "traverse": "~0.6.3",
+    "colors": "~0.6.0-1",
+    "mongoskin": "~0.5.0"
+  },
+  "engines": {
+    "node": "0.8.x"
+  }
+}

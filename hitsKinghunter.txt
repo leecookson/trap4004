@@ -1,0 +1,13 @@
+<== hit by ShadowEclipse   (373 188)  1.4m  16:19
+<== hit by ShadowEclipse   (373 188)    1m  16:19
+<== hit by ShadowEclipse   (373 188)  3.4k  16:18
+<== hit by ShadowEclipse   (373 188)  3.4k  16:17
+<== hit by Fogwoggle       (352 135)  115k  10:50
+<== hit by Barbwire        (338 193)  910k  10:15
+<== hit by Barbwire        (338 193)  713k  10:15
+<== hit by Fogwoggle       (352 135)  1.2m  06:24
+<== hit by Fogwoggle       (352 135)  1.5m  06:24
+Start Time:     23:50 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:48
+Kinghunter city coords [ '350,166', '350,171' ]

@@ -1,0 +1,4 @@
+Start Time:     22:37 Friday
+End Time:       22:14 Saturday
+Game Time Now:  22:36
+GosthWarrior city coords [ '490,560' ]

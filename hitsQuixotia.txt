@@ -1,0 +1,40 @@
+  hit ===> unknown         (171  20)  543k  19:52
+  hit ===> unknown         (136   8)   52k  19:51
+  hit ===> unknown         (186  29)  345k  19:51
+  hit ===> unknown         (190  52)   21k  19:51
+  hit ===> Ezikiyil        (214  27)   32k  19:50
+  hit ===> unknown         (164  14)  688k  19:50
+  hit ===> unknown         (174  54)  401k  19:46
+  hit ===> unknown         (326   4)  291k  19:46
+  hit ===> HoneydewDwarf   (219   5)  156k  19:45
+  hit ===> unknown         (183  18)   42k  19:45
+  hit ===> unknown         (227  25)  452k  19:44
+  hit ===> unknown         (225  11)  172k  19:44
+  hit ===> unknown         (244   5)  112k  19:43
+  hit ===> unknown         (200  19)   48k  19:43
+  hit ===> unknown         (221  12)   26   19:41
+  hit ===> unknown         (221  12)   22   19:39
+  hit ===> unknown         (221  12)   72   19:38
+  hit ===> unknown         (221  12)   25   19:36
+  hit ===> unknown         (221  12)  125   19:35
+  hit ===> NewUser-2I2XS   (212  16)  6.4k  19:35
+  hit ===> unknown         (268  18)  1.3m  19:34
+  hit ===> unknown         (229  18)  129k  19:32
+  hit ===> unknown         (135   4)   98k  19:32
+  hit ===> unknown         (210  36)  170k  19:32
+  hit ===> deathmwaha      (218  24)   20k  19:32
+  hit ===> unknown         (158   4)    2k  19:31
+  hit ===> unknown         (221  12)   30   19:30
+  hit ===> unknown         (175  54)  853k  19:30
+  hit ===> unknown         (221  12)   24k  19:29
+  hit ===> unknown         (135   4)  287k  10:05
+  hit ===> unknown         (175  54)  364k  10:03
+  hit ===> unknown         (210  36)  1.1m  10:03
+  hit ===> HoneydewDwarf   (219   5)   31k  10:03
+  hit ===> unknown         (229  18)  780k  10:02
+  hit ===> unknown         (175  54)  571k  01:21
+  hit ===> unknown         (229  18)  261k  01:20
+Start Time:     23:46 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:46
+Quixotia city coords [ '215,1', '215,4' ]

@@ -1,0 +1,4 @@
+Start Time:     23:50 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:48
+Toprak city coords [ '658,569' ]

@@ -1,0 +1,6 @@
+  hit ===> unknown         (363  80)   22k  21:25
+<== hit by Eldabar         (397 148)  1.2m  01:44
+Start Time:     23:50 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:48
+Becks1 city coords [ '365,79', '363,78' ]

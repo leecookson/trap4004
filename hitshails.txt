@@ -1,0 +1,21 @@
+  hit ===> unknown         (779 725)  934k  20:34
+  hit ===> unknown         (776 723)   60k  18:51
+  hit ===> unknown         (776 729)   23k  18:49
+  hit ===> unknown         (775 734)  132k  18:47
+  hit ===> unknown         (777 736)   84k  18:45
+  hit ===> unknown         (793 714)  1.1m  17:42
+  hit ===> unknown         (787 713)  615k  17:34
+  hit ===> unknown         (772 701)  114k  17:32
+  hit ===> Andred          (745 688)  381k  17:23
+  hit ===> unknown         (799 702)   44k  16:57
+  hit ===> Greywolf87      (798 722)  374k  16:56
+  hit ===> unknown         (799 731)  1.7m  16:51
+  hit ===> unknown         (795 731)  428k  16:50
+  hit ===> unknown         (784 732)  4.3m  16:38
+  hit ===> unknown         (781 734)   60k  16:34
+  hit ===> unknown         (768 640)  722k  04:18
+  hit ===> unknown         (783 636)  7.1k  04:07
+Start Time:     23:48 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:47
+hails city coords [ '781,733', '744,768' ]

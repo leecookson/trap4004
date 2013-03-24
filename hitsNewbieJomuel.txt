@@ -1,0 +1,6 @@
+<== hit by unknown         (259 709)  448k  05:07
+<== hit by unknown         (259 709)  6.7k  05:04
+Start Time:     23:48 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:47
+NewbieJomuel city coords [ '257,726' ]

@@ -1,0 +1,12 @@
+<== hit by Heaven_Lee      ( 95 306)   32k  21:41
+<== hit by unknown         (  5  31)   13k  21:25
+<== hit by Reload          ( 69 239)   54k  21:06
+<== hit by unknown         (241  18)  3.8k  21:02
+<== hit by unknown         (241  18)  8.5k  21:02
+<== hit by Sgtnumnutz      ( 94 342)  162k  20:54
+<== hit by Sgtnumnutz      ( 94 342)  3.4m  20:43
+<== hit by Serendipities   (168 210)  123k  17:01
+Start Time:     23:47 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:47
+Best city coords [ '100,300', '99,301' ]

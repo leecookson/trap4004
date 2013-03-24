@@ -1,0 +1,6 @@
+<== hit by fenixs          (790 170)     0  180k  243k   81k  503k  19:05
+<== hit by unknown         (777 125)     0  981k  2.7m   81k  3.8m  15:02
+Start Time:     22:37 Friday
+End Time:       22:14 Saturday
+Game Time Now:  22:36
+Endymion43 city coords [ '782,160' ]

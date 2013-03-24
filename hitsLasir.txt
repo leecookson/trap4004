@@ -1,0 +1,6 @@
+  hit ===> unknown         (517 796)   60k  03:10
+  hit ===> unknown         (517 794)  530k  03:10
+Start Time:     23:50 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:48
+Lasir city coords [ '519,795' ]

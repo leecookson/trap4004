@@ -1,0 +1,9 @@
+  hit ===> unknown         (732 558)  924k  20:36
+  hit ===> unknown         (765 528)  737k  17:22
+  hit ===> unknown         (771 538)  918k  17:15
+<== hit by unknown         (767 523)  123k  15:46
+<== hit by unknown         (767 523)    9k  15:44
+Start Time:     23:50 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:48
+Grimbeorn city coords [ '736,563' ]

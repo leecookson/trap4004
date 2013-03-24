@@ -1,0 +1,37 @@
+  hit ===> unknown         (181 248)  3.7m  20:54
+  hit ===> unknown         (154 300)  1.1m  20:50
+  hit ===> unknown         (162 307)  450k  19:30
+  hit ===> unknown         (165 306)  345k  19:30
+  hit ===> unknown         (163 306)  189k  19:30
+  hit ===> teddy8          (143 454)  889k  11:39
+  hit ===> hatchasaurusrex (126 442)  566k  11:34
+  hit ===> unknown         (175 277)  991k  11:31
+  hit ===> unknown         (176 292)  274k  11:27
+  hit ===> unknown         (177 260)  3.3m  11:26
+  hit ===> unknown         (170 337)  460k  11:23
+  hit ===> unknown         (319 151)    2m  11:22
+  hit ===> unknown         (158 320)  536k  11:19
+  hit ===> unknown         (163 313)  1.6m  11:17
+  hit ===> LordDoc         (149 455)  635k  11:16
+  hit ===> unknown         (175 254)  291k  11:10
+  hit ===> unknown         (179 318)  1.4m  11:10
+  hit ===> unknown         (182 323)  249k  11:07
+  hit ===> mattan          (141 447)  112k  11:06
+  hit ===> unknown         (170 302)  197k  11:04
+  hit ===> unknown         (177 311)  285k  11:03
+  hit ===> unknown         (171 299)    1m  11:00
+  hit ===> unknown         (172 293)  987k  11:00
+  hit ===> unknown         (166 297)  686k  08:08
+  hit ===> unknown         (212 182)  1.6m  08:08
+  hit ===> unknown         (177 321)  722k  08:07
+  hit ===> unknown         (181 307)  781k  08:07
+  hit ===> unknown         (176 310)  2.1m  08:04
+  hit ===> unknown         (162 307)  110k  08:02
+  hit ===> unknown         (168 315)   85k  07:59
+  hit ===> unknown         (167 333)  1.9m  07:58
+  hit ===> unknown         (171 311)  330k  07:58
+  hit ===> unknown         (164 297)  413k  07:57
+Start Time:     23:47 Friday
+End Time:       22:14 Saturday
+Game Time Now:  23:47
+StigsUncle city coords [ '175,310', '211,184' ]

@@ -1,0 +1,5 @@
+<== hit by Taralom         (788 190)     0  350k  319k  277k  945k  01:26
+Start Time:     22:37 Friday
+End Time:       22:14 Saturday
+Game Time Now:  22:36
+BreakingJake city coords [ '781,197' ]

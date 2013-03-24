@@ -1,0 +1,8 @@
+#!/bin/bash
+
+all=$(node findMembers.js | cut -d ' ' -f 1)
+for m in $all
+do
+  node findHits $m
+done
+cp hits*.txt reports/
