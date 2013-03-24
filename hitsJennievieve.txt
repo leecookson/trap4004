@@ -1,6 +1,0 @@
-<== hit by unknown         (596 100)  973k  05:19
-<== hit by unknown         (596 100)  8.5k  05:18
-Start Time:     23:48 Friday
-End Time:       22:14 Saturday
-Game Time Now:  23:47
-Jennievieve city coords [ '606,86' ]

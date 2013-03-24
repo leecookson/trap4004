@@ -1,9 +1,0 @@
-  hit ===> unknown         (785 649)   46k  06:52
-  hit ===> unknown         (776 647)   33k  06:04
-  hit ===> unknown         (775 648)  5.2m  06:04
-  hit ===> unknown         (773 641)  204k  06:00
-  hit ===> unknown         (776 636)   53k  06:00
-Start Time:     23:50 Friday
-End Time:       22:14 Saturday
-Game Time Now:  23:48
-wonton808 city coords [ '779,637' ]

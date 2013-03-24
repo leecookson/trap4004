@@ -1,5 +1,4 @@
 #!/bin/bash
 
-node findFarmers.js > farmersLosers.txt
-cp farmersLosers.txt reports
+node findFarmers.js > reports/farmersLosers.txt
 cat reports/farmersLosers.txt

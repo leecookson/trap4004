@@ -1,5 +1,0 @@
-<== hit by lostsoul        (100  80)     0  1.7m  1.4m  1.2m  4.4m  18:36
-Start Time:     22:37 Friday
-End Time:       22:14 Saturday
-Game Time Now:  22:36
-Thrim city coords [ '91,79' ]

@@ -1,7 +1,0 @@
-  hit ===> unknown         (324  24)   91k  12:10
-  hit ===> unknown         (325  24)   11m  12:06
-<== hit by unknown         (325  24)  5.6m  12:04
-Start Time:     23:50 Friday
-End Time:       22:14 Saturday
-Game Time Now:  23:48
-JohnDX city coords [ '335,16' ]

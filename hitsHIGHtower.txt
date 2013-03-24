@@ -1,6 +1,0 @@
-<== hit by unknown         (362 797)  583k  833k  833k  833k    3m  16:49
-<== hit by unknown         (362 797)   29k   42k   42k   42k  157k  16:46
-Start Time:     22:37 Friday
-End Time:       22:14 Saturday
-Game Time Now:  22:36
-HIGHtower city coords [ '353,775' ]

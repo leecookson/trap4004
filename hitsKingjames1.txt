@@ -1,6 +1,0 @@
-  hit ===> unknown         (644 100)  450k  12:33
-  hit ===> unknown         (649  99)   58k  12:32
-Start Time:     23:48 Friday
-End Time:       22:14 Saturday
-Game Time Now:  23:47
-Kingjames1 city coords [ '647,101' ]

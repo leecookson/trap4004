@@ -1,6 +1,0 @@
-<== hit by Espectre        ( 47 335)  2.8m  16:44
-<== hit by Espectre        ( 47 335)   45k  16:42
-Start Time:     23:50 Friday
-End Time:       22:14 Saturday
-Game Time Now:  23:48
-CPU1592 city coords [ '37,289', '42,252' ]

@@ -1,5 +1,0 @@
-<== hit by unknown         (777 629)  1.3m  19:11
-Start Time:     23:50 Friday
-End Time:       22:14 Saturday
-Game Time Now:  23:48
-Schizo city coords [ '799,621' ]
