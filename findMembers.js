@@ -15,7 +15,7 @@ var userCoords = [];
 
 var searchAlliance = "1018";
 
-var gameHoursShift = -4;
+var gameHoursShift = 0; //0 for AWS, -4 for local TODO: fix the delta
 
 var now = new Date();
 
