@@ -35,24 +35,21 @@ process.on('uncaughtException', function (err) {
 });
 
 data.loadDB('user', {query: {}}, function (err, users) {
-//    var reports = data.get('report');
-//    var users = data.get('user');
 
   var usersSorted = [];
 
-  usersSorted = _.sortBy(users, function (item) {return -(item.m); });
+  usersAllies = _.filter(users, function (item) {return (item.a === searchAlliance); });
+  usersSorted = _.sortBy(usersAllies, function (item) {return -(0 + item.m); });
 
   // TODO: write this out to a specific file automatically, not std out
   var counter = 0;
-  if (logLevel > 1) console.log(users.length, 'reports');
+  if (logLevel > 1) console.log(users.length, 'users');
 
   usersSorted.forEach(function (item) {
     var user0, user1;
     var stats;
 
-
     try {
-
 
       //console.log(item);
       // TODO: filter by alliance, not user, optional
