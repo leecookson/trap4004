@@ -5,4 +5,3 @@ for m in $all
 do
   node findHits $m
 done
-cp hits*.txt reports/
