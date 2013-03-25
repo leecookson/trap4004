@@ -134,22 +134,22 @@ Data.prototype.find = function (type, limit, cb) {
 Data.prototype.saveItem = function (id, item, type, cb) {
   var self = this;
 
-  if (self.options.logLevel > 0) console.log('id', id, 'item', item, 'type', type, typeof cb);
+  if (self.options.logLevel > 1) console.log('id', id, 'item', item, 'type', type, typeof cb);
+  if (self.options.logLevel > 0) console.log('saving', id);
 
-  self.initDB(function (err, collection) {
-    if (err) return cb(err);
-
-    self.db.collection(type + 'Data', function (err, collection) {
-      if (err) return cb(err);
-
-      if (self.options.logLevel > 1) console.log('updating', type, id);
-
-      self._updateOne(id, item, type, collection, function (err) {
+  db.collection(type + 'Data').update(
+      {'id': id},
+      {$set: item},
+      {'upsert': true},
+      function (err, docs) {
         if (err) return cb(err);
-        cb(null);
-      });
-    });
-  });
+
+        if (self.options.logLevel > 0) console.log('id', id, 'saved');
+        cb(null, docs[0]);
+      }
+    );
+
+
 };
 
 Data.prototype.saveDB = function (type, cb) {
@@ -271,5 +271,5 @@ Data.prototype.closeDB = function () {
 
 };
 
-var db = mongo.db('localhost:27017/trap4004');
+var db = mongo.db('localhost:27017/trap4004', {w: 1});
 
