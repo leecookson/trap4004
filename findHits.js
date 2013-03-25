@@ -39,7 +39,7 @@ process.on('uncaughtException', function (err) {
 
 // TODO: filter reports by startDate
 data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTime.getTime() / 1000)).toString()}}}, function (err, reports) {
-  data.loadDB('user', {query: {}}, function (err, users) {
+  data.loadDB('user', {query: {'n': userName}}, function (err, users) {
 //    var reports = data.get('report');
 //    var users = data.get('user');
     var user = (_.findWhere(users, {'n': userName}));
