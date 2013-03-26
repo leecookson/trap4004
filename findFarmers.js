@@ -8,7 +8,7 @@ var printf = require('printf');
 var farmerAlliance = "1018";
 var loserAlliance = "1018";
 
-var gameHoursShift = -4;
+var gameHoursShift = 0;
 
 var now = new Date();
 

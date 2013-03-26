@@ -14,7 +14,7 @@ var userName = process.argv[2] || 'all';
 
 var ourAlliance = "1018";
 
-var gameHoursShift = -4;
+var gameHoursShift = 0;
 
 var now = new Date();
 
