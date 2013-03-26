@@ -110,7 +110,7 @@ UserData.prototype.blendUser = function (userData) {
       users[userKey].r = value;
     }
     if (key[0] === 'p') {
-      // Just a user race (elf/dwarf)
+      // Just a user name
       users[userKey].n = value;
     }
   });
