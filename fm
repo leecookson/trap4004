@@ -1,4 +1,4 @@
 #!/bin/bash
 
-node findMembers.js > reports/members.txt
+node findMembers.js
 cat reports/members.txt
