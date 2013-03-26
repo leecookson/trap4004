@@ -1,0 +1,5 @@
+Tip for hero use
+
+Hero's do more than fight.
+
+When you are about to start a construction, training or research, go to the Great Hall and assign your best hero to the matching job.  Start the build/train/research, and it will go faster by .5% per hero level.  When you have started this, you can unassign your hero, or assign them to something else.
