@@ -113,6 +113,10 @@ UserData.prototype.blendUser = function (userData) {
       // Just a user race (elf/dwarf)
       users[userKey].r = value;
     }
+    if (key[0] === 'p') {
+      // Just a user race (elf/dwarf)
+      users[userKey].n = value;
+    }
   });
 
   return users;
