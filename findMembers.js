@@ -9,7 +9,7 @@ var dist = require('./dist');
 var formatRes = require('./format_res');
 var printf = require('printf');
 
-var outputFileName = path.resolve('.', 'members.txt');
+var outputFileName = path.resolve('reports', 'members.txt');
 var outputReport = [];
 var userCoords = [];
 
@@ -36,7 +36,7 @@ process.on('uncaughtException', function (err) {
 
 data.loadDB('user', {query: {}}, function (err, users) {
 
-  var usersSorted = [];
+  var usersAllies, usersSorted = [];
 
   usersAllies = _.filter(users, function (item) {return (item.a === searchAlliance); });
   usersSorted = _.sortBy(usersAllies, function (item) {return -(0 + item.m); });
@@ -64,7 +64,6 @@ data.loadDB('user', {query: {}}, function (err, users) {
 
   var gameTime = toGameTime(now);
   outputReport.push('Game Time Now:  ' + toSimpleTime(gameTime));
-  console.log(outputReport.join('\n'));
 
   fs.writeFileSync(outputFileName, outputReport.join('\n'));
 
