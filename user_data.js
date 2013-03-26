@@ -101,10 +101,6 @@ UserData.prototype.blendUser = function (userData) {
       users[userKey] = {id: userKey};
     }
 
-    if (key[0] === 'p') {
-      // Just a user name
-      users[userKey].u = value;
-    }
     if (key[0] === 'g') {
       // Just a user gender/sex
       users[userKey].s = value;
