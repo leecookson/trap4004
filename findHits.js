@@ -37,6 +37,13 @@ process.on('uncaughtException', function (err) {
 data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTime.getTime() / 1000)).toString()}}}, function (err, reports) {
   data.loadDB('user', {query: {}}, function (err, users) {
 
+    var userHash = {};
+    users.forEach(function (u) {
+      userHash[u.id] = u;
+    });
+
+    console.log(reports.length, 'reports');
+    console.log(users.length, 'users');
     var reportsSorted = _.sortBy(reports, function (item) {return -(item.reportUnixTime); });
 
     if (userName === 'all') {
@@ -44,7 +51,7 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
 
       users.forEach(function (user) {
         if (user.a === ourAlliance) {
-          getUserHits(reportsSorted, users, user);
+          getUserHits(reportsSorted, userHash, user);
         }
       });
 
@@ -57,7 +64,7 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
         process.exit(-1);
       }
       console.log('report for', user.n);
-      getUserHits(reportsSorted, users, user);
+      getUserHits(reportsSorted, userHash, user);
     }
 
     data.closeDB();
@@ -91,8 +98,8 @@ function getUserHits(reports, users, user) {
 
       try {
 
-        user0 = (_.findWhere(users, {'id': 'u' + item.side0PlayerId})) || {n: 'unknown' };
-        user1 = (_.findWhere(users, {'id': 'u' + item.side1PlayerId})) || {n: 'unknown' };
+        user0 = users['u' + item.side0PlayerId] || {n: 'unknown' };
+        user1 = users['u' + item.side1PlayerId] || {n: 'unknown' };
 
         item.boxContent.n = user0.n;
 
