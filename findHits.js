@@ -104,7 +104,7 @@ function getUserHits(reports, users, user) {
         item.boxContent.n = user0.n;
 
         // TODO: filter by alliance, not user, optional
-        if (item.side1AllianceId === ourAlliance && user1 && user1.n === user.n) {
+        if (user1 && user1.n === user.n) {
 
           if (!farmers[user0.id]) farmers[user0.id] = {'n': user0.n, xCoord: item.side0XCoord, yCoord: item.side0YCoord};
 
@@ -123,7 +123,7 @@ function getUserHits(reports, users, user) {
           userCoords[item.side1XCoord + ',' + item.side1YCoord] = item.side1XCoord + ',' + item.side1YCoord;
         }
 
-        if (item.side0AllianceId === ourAlliance && user0 && user0.n === user.n) {
+        if (user0 && user0.n === user.n) {
 
           if (!losers[user1.id]) losers[user1.id] = {'n': user1.n,  xCoord: item.side1XCoord, yCoord: item.side1YCoord};
           stats = {n: user1.n, xCoord: item.side1XCoord, yCoord: item.side1YCoord, reportUnixTime: item.reportUnixTime};
@@ -150,6 +150,12 @@ function getUserHits(reports, users, user) {
   outputReport.push('End Time:       ' + toSimpleTime(toGameTime(latestTime)) + ' ' + latestTime.getDayName());
   var gameTime = toGameTime(now);
   outputReport.push('Game Time Now:  ' + toSimpleTime(gameTime));
+
+  if (user.lastLoginTimestamp) {
+    var llTime = new Date(user.lastLoginTimestamp * 1000);
+    outputReport.push('Last Login:     ' + toSimpleTime(toGameTime(llTime)) + ' ' + llTime.getDayName());
+  }
+
   outputReport.push(userName + ' city coords ' + util.inspect(_.keys(userCoords)));
   //console.log(outputReport.join('\n'));
 
@@ -243,9 +249,9 @@ function toSimpleTime(date) {
 }
 
 (function () {
-  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   Date.prototype.getMonthName = function () {
     return months[this.getMonth()];
