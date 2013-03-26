@@ -94,7 +94,7 @@ UserData.prototype.blendUser = function (userData) {
 
   var users = {};
 
-  _.each(userData, function (key, value) {
+  _.each(userData, function (value, key) {
     var userKey = 'u' + key.slice(1);
 
     if (!users[userKey]) {
