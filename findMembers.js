@@ -9,7 +9,7 @@ var dist = require('./dist');
 var formatRes = require('./format_res');
 var printf = require('printf');
 
-var outputFileName = path.resolve('reports', 'members.txt');
+var outputFileName = path.resolve('reports', 'allies.txt');
 var outputReport = [];
 var userCoords = [];
 
