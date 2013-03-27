@@ -1,4 +1,4 @@
 #!/bin/bash
 
 node findMembers.js
-cat reports/members.txt
+cat reports/allies.txt
