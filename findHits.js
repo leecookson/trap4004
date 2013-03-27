@@ -77,7 +77,13 @@ function getUserHits(reports, users, user) {
   var farmers = {};
   var losers = {};
 
-  var outputFileName = path.resolve('reports', 'hits' + user.n + '.txt');
+  var outputPrefix = 'ally';
+
+  if (user.a !== ourAlliance) {
+    outputPrefix = 'enemy';
+  }
+  var outputFileName = path.resolve('reports', outputPrefix, user.n + '.txt');
+
   var outputReport = [];
   var userCoords = [];
 
