@@ -38,7 +38,7 @@ data.loadDB('user', {query: {}}, function (err, users) {
 
   var usersCan, usersSorted = [];
 
-  usersCan = _.filter(users, function (item) {return (!item.a); });
+  usersCan = _.filter(users, function (item) {return (item.a === "0"); });
   usersSorted = _.sortBy(usersCan, function (item) {return -(0 + item.m); });
 
   // TODO: write this out to a specific file automatically, not std out
@@ -72,7 +72,7 @@ data.loadDB('user', {query: {}}, function (err, users) {
 
 var reportFormat = '%4s  %4s  %4s  %4s  %4s  %s';
 var hitReportFormat = '%-15s (%3d %3d)  %4s  %4s  %4s  %4s  %4s  %s';
-var memberFormat = '%-15s %-10s %s';
+var memberFormat = '%-15s %-10s';
 function formatHeader() {
   console.log(printf(reportFormat,
         '  F ', '  W ', '  S ', '  O ', '  T ', 'Totals'));
