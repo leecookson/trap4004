@@ -32,7 +32,7 @@ UserData.prototype.update = function (id, item, cb) {
 UserData.prototype.handleMapUsers = function (mapUsers, cb) {
   var self = this;
 
-  async.each(
+  async.eachSeries(
     _.keys(mapUsers),
    function (key, next) {
       //console.log('key', key);
@@ -71,7 +71,7 @@ UserData.prototype.handleReportUsers = function (reportUsers, cb) {
 UserData.prototype.handleAllianceUsers = function (allyUsers, cb) {
   var self = this;
 
-  async.each(
+  async.eachSeries(
     _.keys(allyUsers),
     function (key, next) {
       var user = allyUsers[key];
@@ -86,6 +86,36 @@ UserData.prototype.handleAllianceUsers = function (allyUsers, cb) {
     },
     function (err) {
       cb(err);
+    }
+  );
+};
+/*
+  leaderboard: 
+   [ { userId: '137590',
+       race: '2',
+       rank: '31',
+       displayName: 'Lord_Hades',
+       might: '38531651',
+       title: '57',
+       allianceId: '8936',
+       allianceName: 'The Immortals' }
+*/
+UserData.prototype.handleLeaderboard = function (leaderboard, cb) {
+  var self = this;
+
+  async.eachSeries(
+    leaderboard,
+    function (item, next) {
+      var user = {};
+      user.id = 'u' + item.userId;
+      user.m = item.might;
+      user.r = item.race;
+      user.a = item.allianceId;
+      user.n = item.displayName;
+      var do_it = _.once(function (err, data) { next(err, data); });
+      self.update(user.id, user, function (err, data) {
+        do_it(err, data);
+      });
     }
   );
 };

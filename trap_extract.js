@@ -78,6 +78,20 @@ TrapExtract.prototype.handlers['/ajax/allianceGetMembersInfo.php'] = function (r
 
 };
 
+TrapExtract.prototype.handlers['/ajax/getLeaderboard.php'] = function (report, cb) {
+
+  //console.log('report data', report);
+  var userData = new UserData();
+
+  userData.handleLeaderboard(report.leaderboard, function (err) {
+      userData.close();
+      cb(err);
+    }
+  );
+
+  cb(null);
+};
+
 TrapExtract.prototype.handlers['/ajax/tileBookmark.php'] = function (report, cb) {
 
   //console.log('report data', report);
