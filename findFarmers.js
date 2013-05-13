@@ -5,8 +5,8 @@ var dist = require('./dist');
 var formatRes = require('./format_res');
 var printf = require('printf');
 
-var farmerAlliance = "1018";
-var loserAlliance = "1018";
+var farmerAlliance = "15740";
+var loserAlliance = "15740";
 
 var gameHoursShift = 0;
 
