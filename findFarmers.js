@@ -57,12 +57,22 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
         if (reportDate.getTime() > latestTime.getTime()) latestTime = reportDate;
 
         try {
-          user0 = (_.findWhere(users, {'id': 'u' + item.side0PlayerId}));
-          user1 = (_.findWhere(users, {'id': 'u' + item.side1PlayerId}));
+          user0 = (_.findWhere(users, {
+            'id': 'u' + item.side0PlayerId
+          }));
+          user1 = (_.findWhere(users, {
+            'id': 'u' + item.side1PlayerId
+          }));
 
           if (item.side1AllianceId === farmerAlliance && user1) {
 
-            if (!farmers[user1.id]) farmers[user1.id] = {'n': user1.n, xCoord: item.side1XCoord, yCoord: item.side1YCoord};
+            if (!farmers[user1.id]) {
+              farmers[user1.id] = {
+                'n': user1.n,
+                xCoord: item.side1XCoord,
+                yCoord: item.side1YCoord
+              };
+            }
             aggregateRes(globalFarmerLoot, farmers[user1.id], item.boxContent.loot);
 
             if (logLevel > 1) {
@@ -82,7 +92,13 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
 
           if (item.side0AllianceId === loserAlliance && user0) {
 
-            if (!losers[user0.id]) losers[user0.id] = {'n': user0.n,  xCoord: item.side0XCoord, yCoord: item.side0YCoord};
+            if (!losers[user0.id]) {
+              losers[user0.id] = {
+                'n': user0.n,
+                xCoord: item.side0XCoord,
+                yCoord: item.side0YCoord
+              };
+            }
             aggregateRes(globalLoserLoot, losers[user0.id], item.boxContent.loot);
 
             if (logLevel > 1) {
@@ -111,8 +127,10 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
     console.log('\nLosers');
     console.log('======');
     formatHeader();
-    var sortLosers = _.sortBy(losers, function (item) { return - item.loot.total; });
-    _.each(sortLosers, function (loser, id) {
+    var sortLosers = _.sortBy(losers, function(item) {
+      return -item.loot.total;
+    });
+    _.each(sortLosers, function(loser, id) {
       formatStats(loser);
     });
     formatTotals(globalLoserLoot);
@@ -120,8 +138,10 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
     console.log('\nFarmers');
     console.log('=======');
     formatHeader();
-    var sortFarmers = _.sortBy(farmers, function (item) { return -item.loot.total; });
-    _.each(sortFarmers, function (farmer, id) {
+    var sortFarmers = _.sortBy(farmers, function(item) {
+      return -item.loot.total;
+    });
+    _.each(sortFarmers, function(farmer, id) {
       formatStats(farmer);
     });
     formatTotals(globalFarmerLoot);
