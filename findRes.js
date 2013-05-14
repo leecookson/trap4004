@@ -3,14 +3,13 @@ var _ = require('underscore');
 var Data = require('./data');
 var dist = require('./dist');
 var formatRes = require('./format_res');
+var path = require('path');
 var printf = require('printf');
 var fs = require('fs');
 var hogan = require('hogan.js');
 
 var alliance = "15740";
 var farmMode = process.argv[2] || 0; // 1 = farm, 0 = lose
-
-console.log('farmMode', farmMode);
 
 var gameHoursShift = 0;
 
@@ -31,7 +30,7 @@ process.on('uncaughtException', function (err) {
   process.exit(-1);
 });
 
-console.log('Starting       ==========', new Date());
+console.log('Starting       ====', new Date());
 
 data.loadDB('report', {
   query: {
@@ -40,12 +39,12 @@ data.loadDB('report', {
     }
   }
 }, function (err, reports) {
-  console.log('Reports Loaded ==========', new Date());
+  console.log('Reports Loaded ====', new Date(), reports.length);
 
   data.loadDB('user', {
     query: {}
   }, function (err, users) {
-    console.log('Users Loaded   ==========', new Date());
+    console.log('Users Loaded   ====', new Date(), users.length);
 
     var reportsSorted = [];
     var globalLoot = {
@@ -164,7 +163,8 @@ data.loadDB('report', {
     reportData.totals = globalLoot;
     reportData.farmMode = farmMode;
 
-    fs.writeFileSync(farmMode ? 'farmers.html' : 'losers.html', generateReport(reportData));
+    var outputFile = path.resolve('reports', farmMode ? 'farmers.html' : 'losers.html');
+    fs.writeFileSync(outputFile, generateReport(reportData));
 
     process.exit();
   });

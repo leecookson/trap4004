@@ -1,6 +1,6 @@
 #!/bin/bash
 
-node findRes.js > reports/losers.txt
 node findRes.js 1 > reports/farmers.txt
 cat reports/farmers.txt
+node findRes.js > reports/losers.txt
 cat reports/losers.txt
