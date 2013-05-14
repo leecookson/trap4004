@@ -62,7 +62,6 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
     });
 
     // TODO: write this out to a specific file automatically, not std out
-    var counter = 0;
     if (logLevel > 1) console.log(reports.length, 'reports');
 
     reportsSorted.forEach(function (item) {
