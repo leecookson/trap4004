@@ -189,11 +189,14 @@ data.loadDB('report', {
     reportData.farmerTotals = globalFarmerLoot;
     formatTotals(globalFarmerLoot);
 
+    fs.writeFileSync('index.html', generateReport(reportData));
+
     process.exit();
   });
 });
 
 var reportFormat = '%4s  %4s  %4s  %4s  %4s  %s';
+
 function formatHeader() {
   console.log(printf(reportFormat, '  F ', '  W ', '  S ', '  O ', '  T ', 'Totals'));
 }
@@ -268,6 +271,17 @@ function toGameTime(date) {
 
 function toSimpleTime(date) {
   return printf('%02d:%02d', date.getHours(), date.getMinutes());
+}
+
+function generateReport(reportData) {
+  var templateFile = fs.readFileSync('farmerLoser.mu').toString();
+
+  console.log(reportData);
+  // compile template
+  var template = hogan.compile(templateFile);
+
+  return template.render(reportData);
+
 }
 
 (function() {
