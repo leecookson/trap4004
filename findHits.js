@@ -12,13 +12,20 @@ var printf = require('printf');
 
 var userName = process.argv[2] || 'all';
 
-var ourAlliance = "1018";
+console.log('report for user:', userName);
+
+var startDaysAgo = process.argv[3] || 1;
+
+console.log('start days ago:', startDaysAgo);
+
+var ourAlliance = "15740";
 
 var gameHoursShift = 0;
 
+var minLootForReport = -1;
+
 var now = new Date();
 
-var startDaysAgo = 1;
 var startReportTime = new Date();
 startReportTime.setDate(now.getDate() - startDaysAgo);
 
@@ -77,12 +84,16 @@ function getUserHits(reports, users, user) {
   var farmers = {};
   var losers = {};
 
+  var totalLootFarmed = totalLootLost = 0;
   var outputPrefix = 'ally';
 
   if (user.a !== ourAlliance) {
     outputPrefix = 'enemy';
   }
-  var outputFileName = path.resolve('reports', outputPrefix, user.n + '.txt');
+  var userNameForFile = user.n;
+  userNameForFile = user.n[0].toUpperCase() + user.n.substring(1);
+
+  var outputFileName = path.resolve('reports', outputPrefix, userNameForFile + '.txt');
 
   var outputReport = [];
   var userCoords = [];
@@ -112,37 +123,77 @@ function getUserHits(reports, users, user) {
         // TODO: filter by alliance, not user, optional
         if (user1 && user1.n === user.n) {
 
-          if (!farmers[user0.id]) farmers[user0.id] = {'n': user0.n, xCoord: item.side0XCoord, yCoord: item.side0YCoord};
+          if (!farmers[user0.id]) farmers[user0.id] = {
+            'n': user0.n,
+            xCoord: item.side0XCoord,
+            yCoord: item.side0YCoord,
+            xCoordFrom: item.side1XCoord,
+            yCoordFrom: item.side1YCoord
+          };
 
-          stats = {n: user0.n, xCoord: item.side0XCoord, yCoord: item.side0YCoord, reportUnixTime: item.reportUnixTime};
+          stats = {
+            n: user0.n,
+            xCoord: item.side0XCoord,
+            yCoord: item.side0YCoord,
+            xCoordFrom: item.side1XCoord,
+            yCoordFrom: item.side1YCoord,
+            reportUnixTime: item.reportUnixTime
+          };
           stats.loot = refactorLoot(item.boxContent.loot);
 
+          stats.attUnits = stats.defUnits = 0;
           if (item.boxContent.fght) {
-            stats.attUnits = countUnits(item.boxContent.fght.s1);
-            stats.defUnits = countUnits(item.boxContent.fght.s0);
+            var s0 = item.boxContent.fght.s0;
+            var s1 = item.boxContent.fght.s1;
+            stats.attUnits = countUnits(s1);
+            stats.attMightLost = calculateMightLost(s1);
+            stats.defUnits = countUnits(s0);
+            stats.defMightLost = calculateMightLost(s0);
           }
 
-          if (stats.loot.total > 0) {
+          if (stats.loot.total >= minLootForReport) {
             outputReport.push('  hit ===> ' + formatStats(stats));
           }
+          totalLootFarmed += stats.loot.total;
 
           userCoords[item.side1XCoord + ',' + item.side1YCoord] = item.side1XCoord + ',' + item.side1YCoord;
         }
 
         if (user0 && user0.n === user.n) {
 
-          if (!losers[user1.id]) losers[user1.id] = {'n': user1.n,  xCoord: item.side1XCoord, yCoord: item.side1YCoord};
-          stats = {n: user1.n, xCoord: item.side1XCoord, yCoord: item.side1YCoord, reportUnixTime: item.reportUnixTime};
+          if (!losers[user1.id]) {
+            losers[user1.id] = {
+              'n': user1.n,
+              xCoord: item.side1XCoord,
+              yCoord: item.side1YCoord,
+              xCoordFrom: item.side0XCoord,
+              yCoordFrom: item.side0YCoord
+            };
+          }
+          stats = {
+            n: user1.n,
+            xCoord: item.side1XCoord,
+            yCoord: item.side1YCoord,
+            xCoordFrom: item.side0XCoord,
+            yCoordFrom: item.side0YCoord,
+            reportUnixTime: item.reportUnixTime
+          };
           stats.loot = refactorLoot(item.boxContent.loot);
 
+          stats.attUnits = stats.defUnits = 0;
           if (item.boxContent.fght) {
-            stats.attUnits = countUnits(item.boxContent.fght.s1);
-            stats.defUnits = countUnits(item.boxContent.fght.s0);
+            var s0 = item.boxContent.fght.s0;
+            var s1 = item.boxContent.fght.s1;
+            stats.attUnits = countUnits(s1);
+            stats.attMightLost = calculateMightLost(s1);
+            stats.defUnits = countUnits(s0);
+            stats.defMightLost = calculateMightLost(s0);
           }
 
-          if (stats.loot.total > 0) {
+          if (stats.loot.total >= minLootForReport) {
             outputReport.push('<== hit by ' + formatStats(stats));
           }
+          totalLootLost += stats.loot.total;
 
           userCoords[item.side0XCoord + ',' + item.side0YCoord] = item.side0XCoord + ',' + item.side0YCoord;
         }
@@ -162,6 +213,11 @@ function getUserHits(reports, users, user) {
     outputReport.push('Last Login:     ' + toSimpleTime(toGameTime(llTime)) + ' ' + llTime.getDayName());
   }
 
+  outputReport.push('');
+  outputReport.push('Loot Farmed: ' + formatRes(totalLootFarmed));
+  outputReport.push('Loot Lost:   ' + formatRes(totalLootLost));
+  outputReport.push('');
+
   outputReport.push(userName + ' city coords ' + util.inspect(_.keys(userCoords)));
   //console.log(outputReport.join('\n'));
 
@@ -170,7 +226,7 @@ function getUserHits(reports, users, user) {
 }
 
 var reportFormat = '%4s  %4s  %4s  %4s %4s  %s %s';
-var hitReportFormat = '%-15s (%3d %3d)  %4s %7s %s';
+var hitReportFormat = '%-15s (%3d %3d)  %4s %7s %s (%3d %3d) %7d %7d %4.1f';
 function formatHeader() {
   console.log(printf(reportFormat,
         '  F ', '  W ', '  S ', '  O ', '  T ', 'Totals'));
@@ -179,7 +235,9 @@ function formatHeader() {
 function formatStats(stats) {
   if (stats.loot) {
     try {
-      console.log
+      var attMightLost = stats.attMightLost || 0;
+      var defMightLost = stats.defMightLost || 0;
+      var ratio = defMightLost / attMightLost;
       return printf(hitReportFormat,
         stats.n,
         stats.xCoord,
@@ -190,7 +248,12 @@ function formatStats(stats) {
         formatRes(stats.loot.ore),*/
         formatRes(stats.loot.total),
         stats.attUnits,
-        toSimpleTime(toGameTime(new Date(stats.reportUnixTime * 1000)))
+        toSimpleTime(toGameTime(new Date(stats.reportUnixTime * 1000))),
+        stats.xCoordFrom,
+        stats.yCoordFrom,
+        attMightLost,
+        defMightLost,
+        ratio
       );
     } catch (e) {
       console.error(e, e.stack);
@@ -232,6 +295,100 @@ function refactorLoot(loot) {
   return newLoot;
 }
 
+/*
+ * boxContent.fght.s0 (receiver)
+ * boxContent.fght.s1 (attacker)
+ * boxContent.fght.s1.r1 (own troops?)
+ * boxContent.fght.s1.r2 (reinforcements?)
+ * boxContent.fght.s1.r2.u2 (wagons)
+ * boxContent.fght.s1.r2.u2[0] sent
+ * boxContent.fght.s1.r2.u2[1] survived
+ * boxContent.fght.s1.r2.u2[2] lost
+ *
+ *
+ * u1 = Porters
+ * u2 = Wagons
+ * u4 = Mounted Elves, Dwarves
+ * u5 = Elvin Militia, Dwarven
+ * u6 = Elvin Archers, Axe Throwers
+ * u7 = Elvin Warriors
+ * u8 = Mounted Hunters, Boar Rider
+ * u9 = Supply Carts
+ * u10 = Rams
+ * u11 = Scorpions, Seige Crossbows
+ * u12 = Ents, Catapults
+ * u13 = Galadhrim, Heavy Boar Riders
+ *
+ * u52 = Def Trebuchet - yes
+ * u53 = Traps - yes
+ * u54 = Caltrops - yes
+ * u55 = Def Crossbows - yes
+ * u56 = Rock Droppers - yes
+ * u57 = Dragon's Teeth - yes
+ * u58 = Fire Droppers, Boiling Lead - yes
+ * u59 = Mist Globes
+ * u60 = Fire Throwers - yes
+ *
+ * t0 = u[1-2,9]
+ * t1 = u[4-6]
+ * t2 = u[7-8,11]
+ * t4 = u[10,12-13]
+ * w1 = u[52-54]
+ */
+function calculateMightLost(fightSide) {
+
+  var troopMightLost = reinMightLost = 0;
+
+  var troops = fightSide.r1;
+  var reins = fightSide.r2;
+
+  return calculateMightLostRank(troops) + calculateMightLostRank(reins);
+}
+
+function calculateMightLostRank (rank) {
+  if (!rank) {
+    return 0;
+  }
+
+  var totalMightLost = 0;
+
+  for (var u in might) {
+    var unitList = rank[u];
+    if (unitList) {
+      var unitsLost = unitList[2];
+      if (unitsLost) {
+        totalMightLost += (unitsLost * might[u]);
+      }
+    }
+  }
+  return totalMightLost;
+}
+
+
+var might = {
+  'u1': 1,
+  'u2': 0,
+  'u3': 0,
+  'u4': 4,
+  'u5': 4,
+  'u6': 4,
+  'u7': 16,
+  'u8': 16,
+  'u9': 0,
+  'u10': 24,
+  'u11': 16,
+  'u12': 24,
+  'u13': 24,
+  'u52': 30,
+  'u53': 18,
+  'u54': 18,
+  'u55': 18,
+  'u56': 30,
+  'u57': 30,
+  'u58': 56,
+  'u59': 56,
+  'u60': 56
+};
 function countUnits(fightSide) {
 
   var totalUnits = 0;
