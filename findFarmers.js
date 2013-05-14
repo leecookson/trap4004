@@ -32,9 +32,17 @@ process.on('uncaughtException', function (err) {
 
 console.log('Starting ========', new Date());
 // TODO: filter reports by startDate
-data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTime.getTime() / 1000)).toString()}}}, function (err, reports) {
-  data.loadDB('user', {query: {}}, function (err, users) {
+data.loadDB('report', {
+  query: {
+    'reportUnixTime': {
+      $gt: (Math.floor(startReportTime.getTime() / 1000)).toString()
+    }
+  }
+}, function (err, reports) {
   console.log('Reports Loaded ==========', new Date());
+  data.loadDB('user', {
+    query: {}
+  }, function (err, users) {
     console.log('Users Loaded ==========', new Date());
     var reportsSorted = [];
     var globalFarmerLoot = {
