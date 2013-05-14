@@ -120,6 +120,22 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
       }
     });
 
+    var gameTime = toGameTime(now);
+    var reportData = {};
+    reportData.startTime = {
+      time: toSimpleTime(toGameTime(earliestTime)),
+      dayOfWeek: earliestTime.getDayName()
+    };
+    reportData.endTime = {
+      time: toSimpleTime(toGameTime(latestTime)),
+      dayOfWeek: latestTime.getDayName()
+    };
+    reportData.nowTime = {
+      time: toSimpleTime(gameTime),
+    };
+    reportData.losers = [];
+    reportData.farmers = [];
+
     console.log('Start Time:    ', toSimpleTime(toGameTime(earliestTime)), earliestTime.getDayName());
     console.log('End Time:      ', toSimpleTime(toGameTime(latestTime)), latestTime.getDayName());
     var gameTime = toGameTime(now);
@@ -132,8 +148,10 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
     });
     _.each(sortLosers, function(loser, id) {
       formatStats(loser);
+      reportData.losers.push(loser);
     });
     formatTotals(globalLoserLoot);
+    reportData.loserTotals = globalLoserLoot;
 
     console.log('\nFarmers');
     console.log('=======');
@@ -143,7 +161,9 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
     });
     _.each(sortFarmers, function(farmer, id) {
       formatStats(farmer);
+      reportData.farmers.push(farmer);
     });
+    reportData.farmerTotals = globalFarmerLoot;
     formatTotals(globalFarmerLoot);
 
     process.exit();
@@ -156,6 +176,12 @@ function formatHeader() {
 }
 
 function formatStats(stats) {
+  stats.loot.foodStr = formatRes(stats.loot.food);
+  stats.loot.woodStr = formatRes(stats.loot.wood);
+  stats.loot.stoneStr = formatRes(stats.loot.stone);
+  stats.loot.oreStr = formatRes(stats.loot.ore);
+  stats.loot.totalStr = formatRes(stats.loot.total);
+
   try {
     console.log(printf(reportFormat, stats.loot.foodStr, stats.loot.woodStr, stats.loot.stoneStr, stats.loot.oreStr, stats.loot.totalStr, stats.n, stats.xCoord, stats.yCoord));
   } catch (e) {
@@ -165,6 +191,12 @@ function formatStats(stats) {
 }
 
 function formatTotals(stats) {
+  stats.foodStr = formatRes(stats.food);
+  stats.woodStr = formatRes(stats.wood);
+  stats.stoneStr = formatRes(stats.stone);
+  stats.oreStr = formatRes(stats.ore);
+  stats.totalStr = formatRes(stats.total);
+
   console.log(printf(reportFormat, stats.foodStr, stats.woodStr, stats.stoneStr, stats.oreStr, stats.totalStr, 'Totals'));
 }
 
