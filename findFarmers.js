@@ -41,6 +41,7 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
     var reportsSorted = [];
     var globalFarmerLoot = {
       food: 0,
+      wood: 0,
       stone: 0,
       ore: 0,
       total: 0,
