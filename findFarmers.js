@@ -30,11 +30,14 @@ process.on('uncaughtException', function (err) {
   process.exit(-1);
 });
 
+console.log('Starting ========', new Date());
 // TODO: filter reports by startDate
 data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTime.getTime() / 1000)).toString()}}}, function (err, reports) {
   data.loadDB('user', {query: {}}, function (err, users) {
 //    var reports = data.get('report');
 //    var users = data.get('user');
+  console.log('Reports Loaded ==========', new Date());
+    console.log('Users Loaded ==========', new Date());
     var reportsSorted = [];
     var globalFarmerLoot = {food: 0, wood: 0, stone: 0, ore: 0, total: 0, hits: 0};
     var globalLoserLoot = {food: 0, wood: 0, stone: 0, ore: 0, total: 0, hits: 0};
