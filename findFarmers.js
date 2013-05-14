@@ -4,6 +4,7 @@ var Data = require('./data');
 var dist = require('./dist');
 var formatRes = require('./format_res');
 var printf = require('printf');
+var fs = require('fs');
 
 var farmerAlliance = "15740";
 var loserAlliance = "15740";
@@ -21,6 +22,8 @@ var data = new Data();
 
 var earliestTime = new Date();
 var latestTime = startReportTime;
+
+var hogan = require('hogan.js');
 
 process.on('uncaughtException', function (err) {
   console.log('Caught exception:', err, err.stack);
@@ -129,22 +132,12 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
 
 var reportFormat = '%4s  %4s  %4s  %4s  %4s  %s';
 function formatHeader() {
-  console.log(printf(reportFormat,
-        '  F ', '  W ', '  S ', '  O ', '  T ', 'Totals'));
+  console.log(printf(reportFormat, '  F ', '  W ', '  S ', '  O ', '  T ', 'Totals'));
 }
 
 function formatStats(stats) {
   try {
-    console.log(printf(reportFormat,
-      formatRes(stats.loot.food),
-      formatRes(stats.loot.wood),
-      formatRes(stats.loot.stone),
-      formatRes(stats.loot.ore),
-      formatRes(stats.loot.total),
-      stats.n,
-      stats.xCoord,
-      stats.yCoord
-    ));
+    console.log(printf(reportFormat, stats.loot.foodStr, stats.loot.woodStr, stats.loot.stoneStr, stats.loot.oreStr, stats.loot.totalStr, stats.n, stats.xCoord, stats.yCoord));
   } catch (e) {
     console.error(e);
     process.exit(-1);
@@ -152,14 +145,7 @@ function formatStats(stats) {
 }
 
 function formatTotals(stats) {
-  console.log(printf(reportFormat,
-    formatRes(stats.food),
-    formatRes(stats.wood),
-    formatRes(stats.stone),
-    formatRes(stats.ore),
-    formatRes(stats.total),
-    'Totals'
-  ));
+  console.log(printf(reportFormat, stats.foodStr, stats.woodStr, stats.stoneStr, stats.oreStr, stats.totalStr, 'Totals'));
 }
 
 function aggregateRes(global, user, loot) {
@@ -206,18 +192,18 @@ function toGameTime(date) {
 }
 
 function toSimpleTime(date) {
-  return printf('%02d:%02d',  date.getHours(), date.getMinutes());
+  return printf('%02d:%02d', date.getHours(), date.getMinutes());
 }
 
-(function () {
+(function() {
   var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-  Date.prototype.getMonthName = function () {
+  Date.prototype.getMonthName = function() {
     return months[this.getMonth()];
   };
-  Date.prototype.getDayName = function () {
+  Date.prototype.getDayName = function() {
     return days[this.getDay()];
   };
 })();
