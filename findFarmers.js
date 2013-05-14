@@ -39,12 +39,27 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
   console.log('Reports Loaded ==========', new Date());
     console.log('Users Loaded ==========', new Date());
     var reportsSorted = [];
-    var globalFarmerLoot = {food: 0, wood: 0, stone: 0, ore: 0, total: 0, hits: 0};
-    var globalLoserLoot = {food: 0, wood: 0, stone: 0, ore: 0, total: 0, hits: 0};
+    var globalFarmerLoot = {
+      food: 0,
+      stone: 0,
+      ore: 0,
+      total: 0,
+      hits: 0
+    };
+    var globalLoserLoot = {
+      food: 0,
+      wood: 0,
+      stone: 0,
+      ore: 0,
+      total: 0,
+      hits: 0
+    };
     var farmers = {};
     var losers = {};
 
-    reportsSorted = _.sortBy(reports, function (item) {return -(item.reportUnixTime); });
+    reportsSorted = _.sortBy(reports, function (item) {
+      return -(item.reportUnixTime);
+    });
 
     // TODO: write this out to a specific file automatically, not std out
     var counter = 0;
