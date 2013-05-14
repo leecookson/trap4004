@@ -34,8 +34,6 @@ console.log('Starting ========', new Date());
 // TODO: filter reports by startDate
 data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTime.getTime() / 1000)).toString()}}}, function (err, reports) {
   data.loadDB('user', {query: {}}, function (err, users) {
-//    var reports = data.get('report');
-//    var users = data.get('user');
   console.log('Reports Loaded ==========', new Date());
     console.log('Users Loaded ==========', new Date());
     var reportsSorted = [];
