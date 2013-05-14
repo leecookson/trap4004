@@ -1,9 +1,9 @@
-var _ = require('underscore')
-  , colors = require('colors')
-  , path = require('path')
-  , fs = require('fs')
-  , util = require('util')
-  , traverse = require('traverse');
+var _ = require('underscore'),
+  colors = require('colors'),
+  path = require('path'),
+  fs = require('fs'),
+  util = require('util'),
+  traverse = require('traverse');
 
 var Data = require('./data');
 var dist = require('./dist');
@@ -35,28 +35,31 @@ var data = new Data();
 var earliestTime = new Date();
 var latestTime = startReportTime;
 
-process.on('uncaughtException', function (err) {
+process.on('uncaughtException', function(err) {
   console.log('Caught exception:', err, err.stack);
   process.exit(-1);
 });
 
 // TODO: filter reports by startDate
-data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTime.getTime() / 1000)).toString()}}}, function (err, reports) {
-  data.loadDB('user', {query: {}}, function (err, users) {
+data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTime.getTime() / 1000)).toString()}}},
+  function (err, reports) {
+    data.loadDB('user', {query: {}}, function (err, users) {
 
     var userHash = {};
-    users.forEach(function (u) {
+    users.forEach(function(u) {
       userHash[u.id] = u;
     });
 
     console.log(reports.length, 'reports');
     console.log(users.length, 'users');
-    var reportsSorted = _.sortBy(reports, function (item) {return -(item.reportUnixTime); });
+    var reportsSorted = _.sortBy(reports, function(item) {
+      return -(item.reportUnixTime);
+    });
 
     if (userName === 'all') {
       console.log('looping over all users');
 
-      users.forEach(function (user) {
+      users.forEach(function(user) {
         if (user.a === ourAlliance) {
           getUserHits(reportsSorted, userHash, user);
         }
@@ -65,7 +68,9 @@ data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTi
     } else {
 
 
-      var user = (_.findWhere(users, {'n': userName}));
+      var user = (_.findWhere(users, {
+        'n': userName
+      }));
       if (!user) {
         console.error('User', userName, 'Not Found');
         process.exit(-1);
@@ -103,7 +108,7 @@ function getUserHits(reports, users, user) {
   if (logLevel > 1) console.log(reports.length, 'reports');
 
   console.log('reports for', user.n);
-  reports.forEach(function (item) {
+  reports.forEach(function(item) {
     var user0, user1;
     var reportDate = new Date(item.reportUnixTime * 1000);
     var stats;
@@ -115,8 +120,12 @@ function getUserHits(reports, users, user) {
 
       try {
 
-        user0 = users['u' + item.side0PlayerId] || {n: 'unknown' };
-        user1 = users['u' + item.side1PlayerId] || {n: 'unknown' };
+        user0 = users['u' + item.side0PlayerId] || {
+          n: 'unknown'
+        };
+        user1 = users['u' + item.side1PlayerId] || {
+          n: 'unknown'
+        };
 
         item.boxContent.n = user0.n;
 
@@ -228,8 +237,7 @@ function getUserHits(reports, users, user) {
 var reportFormat = '%4s  %4s  %4s  %4s %4s  %s %s';
 var hitReportFormat = '%-15s (%3d %3d)  %4s %7s %s (%3d %3d) %7d %7d %4.1f';
 function formatHeader() {
-  console.log(printf(reportFormat,
-        '  F ', '  W ', '  S ', '  O ', '  T ', 'Totals'));
+  console.log(printf(reportFormat, '  F ', '  W ', '  S ', '  O ', '  T ', 'Totals'));
 }
 
 function formatStats(stats) {
@@ -265,14 +273,7 @@ function formatStats(stats) {
 }
 
 function formatTotals(stats) {
-  console.log(printf(reportFormat,
-    formatRes(stats.food),
-    formatRes(stats.wood),
-    formatRes(stats.stone),
-    formatRes(stats.ore),
-    formatRes(stats.total),
-    'Totals'
-  ));
+  console.log(printf(reportFormat, formatRes(stats.food), formatRes(stats.wood), formatRes(stats.stone), formatRes(stats.ore), formatRes(stats.total), 'Totals'));
 }
 
 function refactorLoot(loot) {
@@ -392,7 +393,7 @@ var might = {
 function countUnits(fightSide) {
 
   var totalUnits = 0;
-  traverse(fightSide).forEach(function (x) {
+  traverse(fightSide).forEach(function(x) {
     if (this.key && this.key.match(/u[0-9]+/)) {
       totalUnits += parseInt(x[0], 10);
     }
@@ -408,18 +409,18 @@ function toGameTime(date) {
 }
 
 function toSimpleTime(date) {
-  return printf('%02d:%02d',  date.getHours(), date.getMinutes());
+  return printf('%02d:%02d', date.getHours(), date.getMinutes());
 }
 
-(function () {
+(function() {
   var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-  Date.prototype.getMonthName = function () {
+  Date.prototype.getMonthName = function() {
     return months[this.getMonth()];
   };
-  Date.prototype.getDayName = function () {
+  Date.prototype.getDayName = function() {
     return days[this.getDay()];
   };
 })();

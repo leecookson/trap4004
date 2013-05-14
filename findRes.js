@@ -5,9 +5,12 @@ var dist = require('./dist');
 var formatRes = require('./format_res');
 var printf = require('printf');
 var fs = require('fs');
+var hogan = require('hogan.js');
 
-var farmerAlliance = "15740";
-var loserAlliance = "15740";
+var alliance = "15740";
+var farmMode = process.argv[2] || 0; // 1 = farm, 0 = lose
+
+console.log('farmMode', farmMode);
 
 var gameHoursShift = 0;
 
@@ -23,15 +26,13 @@ var data = new Data();
 var earliestTime = new Date();
 var latestTime = startReportTime;
 
-var hogan = require('hogan.js');
-
 process.on('uncaughtException', function (err) {
   console.log('Caught exception:', err, err.stack);
   process.exit(-1);
 });
 
-console.log('Starting ========', new Date());
-// TODO: filter reports by startDate
+console.log('Starting       ==========', new Date());
+
 data.loadDB('report', {
   query: {
     'reportUnixTime': {
@@ -40,12 +41,14 @@ data.loadDB('report', {
   }
 }, function (err, reports) {
   console.log('Reports Loaded ==========', new Date());
+
   data.loadDB('user', {
     query: {}
   }, function (err, users) {
-    console.log('Users Loaded ==========', new Date());
+    console.log('Users Loaded   ==========', new Date());
+
     var reportsSorted = [];
-    var globalFarmerLoot = {
+    var globalLoot = {
       food: 0,
       wood: 0,
       stone: 0,
@@ -53,16 +56,7 @@ data.loadDB('report', {
       total: 0,
       hits: 0
     };
-    var globalLoserLoot = {
-      food: 0,
-      wood: 0,
-      stone: 0,
-      ore: 0,
-      total: 0,
-      hits: 0
-    };
-    var farmers = {};
-    var losers = {};
+    var players = {};
 
     reportsSorted = _.sortBy(reports, function (item) {
       return -(item.reportUnixTime);
@@ -72,7 +66,7 @@ data.loadDB('report', {
     if (logLevel > 1) console.log(reports.length, 'reports');
 
     reportsSorted.forEach(function (item) {
-      var user0, user1;
+      var loser, farmer;
       var reportDate = new Date(item.reportUnixTime * 1000);
 
       if (reportDate.getTime() > startReportTime.getTime()) {
@@ -81,32 +75,44 @@ data.loadDB('report', {
         if (reportDate.getTime() > latestTime.getTime()) latestTime = reportDate;
 
         try {
-          user0 = (_.findWhere(users, {
+          loser = (_.findWhere(users, {
             'id': 'u' + item.side0PlayerId
           }));
-          user1 = (_.findWhere(users, {
+          farmer = (_.findWhere(users, {
             'id': 'u' + item.side1PlayerId
           }));
 
-          if (item.side1AllianceId === farmerAlliance && user1) {
+          if (item.side1AllianceId === alliance && farmer ||
+            item.side0AllianceId === alliance && loser) {
 
-            if (!farmers[user1.id]) {
-              farmers[user1.id] = {
-                'n': user1.n,
-                xCoord: item.side1XCoord,
-                yCoord: item.side1YCoord
-              };
+            if (farmMode && item.side1AllianceId === alliance && farmer) {
+              if (!players[farmer.id]) {
+                players[farmer.id] = {
+                  'n': farmer.n,
+                  xCoord: item.side1XCoord,
+                  yCoord: item.side1YCoord
+                };
+              }
+              aggregateRes(globalLoot, players[farmer.id], item.boxContent.loot);
+            } else if (!farmMode && item.side0AllianceId === alliance && loser) {
+              if (!players[loser.id]) {
+                players[loser.id] = {
+                  'n': loser.n,
+                  xCoord: item.side0XCoord,
+                  yCoord: item.side0YCoord
+                };
+              }
+              aggregateRes(globalLoot, players[loser.id], item.boxContent.loot);
             }
-            aggregateRes(globalFarmerLoot, farmers[user1.id], item.boxContent.loot);
 
             if (logLevel > 1) {
-              if (user1) {
-                console.log('attacker', user1.n || user1.name);
+              if (farmer) {
+                console.log('farmer', farmer.n || farmer.name);
               } else {
-                console.log('attacker', item.side1PlayerId, 'not found');
+                console.log('farmer', item.side1PlayerId, 'not found');
               }
-              if (user0) {
-                console.log('loser ', user0.n || user0.name);
+              if (loser) {
+                console.log('loser', loser.n || loser.name);
               } else {
                 console.log('loser', item.side0PlayerId, 'not found');
               }
@@ -114,30 +120,6 @@ data.loadDB('report', {
 
           }
 
-          if (item.side0AllianceId === loserAlliance && user0) {
-
-            if (!losers[user0.id]) {
-              losers[user0.id] = {
-                'n': user0.n,
-                xCoord: item.side0XCoord,
-                yCoord: item.side0YCoord
-              };
-            }
-            aggregateRes(globalLoserLoot, losers[user0.id], item.boxContent.loot);
-
-            if (logLevel > 1) {
-              if (user1) {
-                console.log('attacker', user1.n || user1.name);
-              } else {
-                console.log('attacker', item.side1PlayerId, 'not found');
-              }
-              if (user0) {
-                console.log('loser ', user0.n || user0.name);
-              } else {
-                console.log('loser', item.side0PlayerId, 'not found');
-              }
-            }
-          }
         } catch (e) {
           console.error(e);
         }
@@ -157,39 +139,32 @@ data.loadDB('report', {
     reportData.nowTime = {
       time: toSimpleTime(gameTime),
     };
-    reportData.losers = [];
-    reportData.farmers = [];
+    reportData.players = [];
 
     console.log('Start Time:    ', toSimpleTime(toGameTime(earliestTime)), earliestTime.getDayName());
     console.log('End Time:      ', toSimpleTime(toGameTime(latestTime)), latestTime.getDayName());
     console.log('Game Time Now: ', toSimpleTime(gameTime));
-    console.log('\nLosers');
+    if (farmMode) {
+      reportData.titleLabel = 'Farmers';
+      console.log('\nFarmers');
+    } else {
+      reportData.titleLabel = 'Losers';
+      console.log('\nLosers');
+    }
     console.log('======');
     formatHeader();
-    var sortLosers = _.sortBy(losers, function(item) {
+    var sortPlayers = _.sortBy(players, function (item) {
       return -item.loot.total;
     });
-    _.each(sortLosers, function(loser, id) {
-      formatStats(loser);
-      reportData.losers.push(loser);
+    _.each(sortPlayers, function (player, id) {
+      formatStats(player);
+      reportData.players.push(player);
     });
-    formatTotals(globalLoserLoot);
-    reportData.loserTotals = globalLoserLoot;
+    formatTotals(globalLoot);
+    reportData.totals = globalLoot;
+    reportData.farmMode = farmMode;
 
-    console.log('\nFarmers');
-    console.log('=======');
-    formatHeader();
-    var sortFarmers = _.sortBy(farmers, function(item) {
-      return -item.loot.total;
-    });
-    _.each(sortFarmers, function(farmer, id) {
-      formatStats(farmer);
-      reportData.farmers.push(farmer);
-    });
-    reportData.farmerTotals = globalFarmerLoot;
-    formatTotals(globalFarmerLoot);
-
-    fs.writeFileSync('index.html', generateReport(reportData));
+    fs.writeFileSync(farmMode ? 'farmers.html' : 'losers.html', generateReport(reportData));
 
     process.exit();
   });
@@ -276,7 +251,7 @@ function toSimpleTime(date) {
 function generateReport(reportData) {
   var templateFile = fs.readFileSync('farmerLoser.mu').toString();
 
-  console.log(reportData);
+//  console.log(reportData);
   // compile template
   var template = hogan.compile(templateFile);
 
@@ -284,15 +259,16 @@ function generateReport(reportData) {
 
 }
 
-(function() {
+(function () {
   var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-  Date.prototype.getMonthName = function() {
+  Date.prototype.getMonthName = function () {
     return months[this.getMonth()];
   };
-  Date.prototype.getDayName = function() {
+  Date.prototype.getDayName = function () {
     return days[this.getDay()];
   };
 })();
+
