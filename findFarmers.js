@@ -162,7 +162,6 @@ data.loadDB('report', {
 
     console.log('Start Time:    ', toSimpleTime(toGameTime(earliestTime)), earliestTime.getDayName());
     console.log('End Time:      ', toSimpleTime(toGameTime(latestTime)), latestTime.getDayName());
-    var gameTime = toGameTime(now);
     console.log('Game Time Now: ', toSimpleTime(gameTime));
     console.log('\nLosers');
     console.log('======');
