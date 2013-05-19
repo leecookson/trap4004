@@ -25,7 +25,7 @@
         <ul class="unstyled">
           <li>Start Time: {{startTime.time}} {{startTime.dayOfWeek}}</li>
           <li>End Time: <strong>{{endTime.time}}</strong></li>
-          <li>Game Time Now: {{nowTime.time}}</li>
+          <li>Time Now: {{nowTime.time}}</li>
         </ul>
       </section>
       <header>
@@ -35,7 +35,12 @@
         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th>F</th><th>W</th><th>S</th><th>O</th><th>T</th><th>Totals</th>
+              <th class="numeric">F</th>
+              <th class="numeric">W</th>
+              <th class="numeric">S</th>
+              <th class="numeric">O</th>
+              <th class="numeric">T</th>
+              <th>Totals</th>
             </tr>
           </thead>
           <tbody>
@@ -43,18 +48,18 @@
             <tr>
               <td class="numeric">{{loot.foodStr}}</td>
               <td class="numeric">{{loot.woodStr}}</td>
-              <td>{{loot.stoneStr}}</td>
-              <td>{{loot.oreStr}}</td>
-              <td>{{loot.totalStr}}</td>
+              <td class="numeric">{{loot.stoneStr}}</td>
+              <td class="numeric">{{loot.oreStr}}</td>
+              <td class="numeric">{{loot.totalStr}}</td>
               <th>{{n}}</th>
             </tr>
             {{/players}}
             <tr>
-              <td>{{loserTotals.foodStr}}</td>
-              <td>{{loserTotals.woodStr}}</td>
-              <td>{{loserTotals.stoneStr}}</td>
-              <td>{{loserTotals.oreStr}}</td>
-              <td>{{loserTotals.totalStr}}</td>
+              <td class="numeric">{{totals.foodStr}}</td>
+              <td class="numeric">{{totals.woodStr}}</td>
+              <td class="numeric">{{totals.stoneStr}}</td>
+              <td class="numeric">{{totals.oreStr}}</td>
+              <td class="numeric">{{totals.totalStr}}</td>
               <th>Totals</th>
             </tr>
          </tbody>
