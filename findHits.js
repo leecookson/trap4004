@@ -1,4 +1,3 @@
-  , traverse = require('traverse');
 var _ = require('underscore'),
   colors = require('colors'),
   path = require('path'),
@@ -35,8 +34,16 @@ process.on('uncaughtException', function(err) {
 });
 
 // TODO: filter reports by startDate
-data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTime.getTime() / 1000)).toString()}}}, function (err, reports) {
-  data.loadDB('user', {query: {}}, function (err, users) {
+data.loadDB('report', {
+  query: {
+    'reportUnixTime': {
+      $gt: (Math.floor(startReportTime.getTime() / 1000)).toString()
+    }
+  }
+}, function(err, reports) {
+  data.loadDB('user', {
+    query: {}
+  }, function(err, users) {
 
     var userHash = {};
     users.forEach(function(u) {
@@ -136,11 +143,15 @@ function getUserHits(reports, users, user) {
           stats.loot = refactorLoot(item.boxContent.loot);
 
           if (item.boxContent.fght) {
-            stats.attUnits = countUnits(item.boxContent.fght.s1);
-            stats.defUnits = countUnits(item.boxContent.fght.s0);
+            var s0 = item.boxContent.fght.s0;
+            var s1 = item.boxContent.fght.s1;
+            stats.attUnits = countUnits(s1);
+            stats.attMightLost = calculateMightLost(s1);
+            stats.defUnits = countUnits(s0);
+            stats.defMightLost = calculateMightLost(s0);
           }
 
-          if (stats.loot.total > 0) {
+          if (stats.loot.total > -1) {
             outputReport.push('  hit ===> ' + formatStats(stats));
           }
 
@@ -163,11 +174,15 @@ function getUserHits(reports, users, user) {
           stats.loot = refactorLoot(item.boxContent.loot);
 
           if (item.boxContent.fght) {
-            stats.attUnits = countUnits(item.boxContent.fght.s1);
-            stats.defUnits = countUnits(item.boxContent.fght.s0);
+            var s0 = item.boxContent.fght.s0;
+            var s1 = item.boxContent.fght.s1;
+            stats.attUnits = countUnits(s1);
+            stats.attMightLost = calculateMightLost(s1);
+            stats.defUnits = countUnits(s0);
+            stats.defMightLost = calculateMightLost(s0);
           }
 
-          if (stats.loot.total > 0) {
+          if (stats.loot.total > -1) {
             outputReport.push('<== hit by ' + formatStats(stats));
           }
 
@@ -191,15 +206,17 @@ function getUserHits(reports, users, user) {
 
   outputReport.push(userName + ' city coords ' + util.inspect(_.keys(userCoords)));
   //console.log(outputReport.join('\n'));
-
   fs.writeFileSync(outputFileName, outputReport.join('\n'));
 
 }
 
 var reportFormat = '%4s  %4s  %4s  %4s %4s  %s %s';
 var hitReportFormat = '%-15s (%3d %3d)  %4s %7s %s';
-function formatHeader() {
-  console.log(printf(reportFormat, '  F ', '  W ', '  S ', '  O ', '  T ', 'Totals'));
+
+
+function outputHeader() {
+  console.log(printf(reportFormat, '  hit opponent   opp coord   res  unitSent  time  ownCoord  mgtLost   mgtKild  ratio'));
+
 }
 
 function formatStats(stats) {
@@ -243,6 +260,93 @@ function refactorLoot(loot) {
   newLoot.total = newLoot.food + newLoot.wood + newLoot.stone + newLoot.ore;
   return newLoot;
 }
+/*
+ * boxContent.fght.s0 (receiver)
+ * boxContent.fght.s1 (attacker)
+ * boxContent.fght.s1.r1 (own troops?)
+ * boxContent.fght.s1.r2 (reinforcements?)
+ * boxContent.fght.s1.r2.u2 (wagons)
+ * boxContent.fght.s1.r2.u2[0] sent
+ * boxContent.fght.s1.r2.u2[1] survived
+ * boxContent.fght.s1.r2.u2[2] lost
+ *
+ *
+ * u1 = Porters
+ * u2 = Wagons
+ * u4 = Mounted Elves, Dwarves
+ * u5 = Elvin Militia, Dwarven
+ * u6 = Elvin Archers, Axe Throwers
+ * u7 = Elvin Warriors
+ * u8 = Mounted Hunters, Boar Rider
+ * u9 = Supply Carts
+ * u10 = Rams
+ * u11 = Scorpions, Seige Crossbows
+ * u12 = Ents, Catapults
+ * u13 = Galadhrim, Heavy Boar Riders
+ *
+ * u52 = Def Trebuchet - yes
+ * u53 = Traps - yes
+ * u54 = Caltrops - yes
+ * u55 = Def Crossbows - yes
+ * u56 = Rock Droppers - yes
+ * u57 = Dragon's Teeth - yes
+ * u58 = Fire Droppers, Boiling Lead - yes
+ * u59 = Mist Globes
+ * u60 = Fire Throwers - yes
+ *
+ * t0 = u[1-2,9]
+ * t1 = u[4-6]
+ * t2 = u[7-8,11]
+ * t4 = u[10,12-13]
+ * w1 = u[52-54]
+ */
+function calculateMightLost(fightSide) {
+
+  var troopMightLost = reinMightLost = 0;
+
+  var troops = fightSide.r1;
+  var reins = fightSide.r2;
+
+  return calculateMightLostRank(troops) + calculateMightRank(reins);
+}
+
+function calculateMightLostRank(rank) {
+  var totalMightLost = 0;
+
+  for (var u in might) {
+    var units = rank[u][2];
+    if (units) {
+      totalMightLost += (units * might[u]);
+    }
+  }
+  return totalMightLost;
+}
+
+
+var might = {
+  'u1': 1,
+  'u2': 0,
+  'u3': 0,
+  'u4': 4,
+  'u5': 4,
+  'u6': 4,
+  'u7': 16,
+  'u8': 16,
+  'u9': 0,
+  'u10': 24,
+  'u11': 16,
+  'u12': 24,
+  'u13': 24,
+  'u52': 30,
+  'u53': 18,
+  'u54': 18,
+  'u55': 18,
+  'u56': 30,
+  'u57': 30,
+  'u58': 56,
+  'u59': 56,
+  'u60': 56
+};
 
 function countUnits(fightSide) {
 
