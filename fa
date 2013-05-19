@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+echo 'Finding Hits'
+
+./fh
+
+echo 'Finding Members'
+
+./fm
+
+echo 'Finding Farmers'
+
+./ff
+
+sleep 60
+
+echo 'Fiding Enemies'
+
+./fe
