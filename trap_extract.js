@@ -3,7 +3,8 @@ var async = require('async'),
   BookmarkData = require('./bookmark_data'),
   MapData = require('./map_data'),
   ReportData = require('./report_data'),
-  UserData = require('./user_data');
+  UserData = require('./user_data'),
+  exec = require('child_process').exec;
 
 module.exports = TrapExtract;
 
@@ -89,7 +90,10 @@ TrapExtract.prototype.handlers['/ajax/getLeaderboard.php'] = function (report, c
     }
   );
 
-  cb(null);
+  console.log('leaderboard, about to run reports');
+
+  runReports();
+
 };
 
 TrapExtract.prototype.handlers['/ajax/tileBookmark.php'] = function (report, cb) {
@@ -103,3 +107,18 @@ TrapExtract.prototype.handlers['/ajax/tileBookmark.php'] = function (report, cb)
     });
 
 };
+
+var runLimit = false;
+
+function runReports() {
+  if (runLimit) return;
+
+  console.log('running reports', new Date());
+  runLimit = true;
+  setTimeout(function () {runLimit = false;}, 120000);
+
+  exec('./fa', function (err, stdout, stderr) {
+    console.log('stdout');
+    console.log('reports run');
+  });
+}
