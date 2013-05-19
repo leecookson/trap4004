@@ -45,6 +45,7 @@ data.loadDB('report', {
     query: {}
   }, function (err, users) {
     console.log('Users Loaded   ====', new Date(), users.length);
+    console.log('Users Loaded   ====', new Date(), users.length, '\n');
 
     var reportsSorted = [];
     var globalLoot = {
