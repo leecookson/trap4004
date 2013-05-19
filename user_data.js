@@ -6,6 +6,8 @@ var fs = require('fs'),
 
 module.exports = exports = UserData;
 
+var allianceId = '15740';
+
 function UserData() {
 
   this.me = 'UserData';
@@ -68,8 +70,10 @@ UserData.prototype.handleReportUsers = function (reportUsers, cb) {
     }
   );
 };
+
 UserData.prototype.handleAllianceUsers = function (allyUsers, cb) {
   var self = this;
+
 
   async.eachSeries(
     _.keys(allyUsers),
@@ -77,7 +81,7 @@ UserData.prototype.handleAllianceUsers = function (allyUsers, cb) {
       var user = allyUsers[key];
       user.id = 'u' + key;
       user.n = user.name;
-      user.a = "1018";
+      user.a = allianceId;
       user.m = user.might;
       user.r = user.race;
       self.update(user.id, user, function (err, data) {
@@ -89,6 +93,8 @@ UserData.prototype.handleAllianceUsers = function (allyUsers, cb) {
     }
   );
 };
+
+
 /*
   leaderboard: 
    [ { userId: '137590',
