@@ -251,7 +251,8 @@ function toSimpleTime(date) {
 }
 
 function generateReport(reportData) {
-  var templateFile = fs.readFileSync('farmerLoser.mu').toString();
+  var templateFile = fs.readFileSync('farmerLoser.mu', 'utf-8').toString();
+  var header = fs.readFileSync('header.mu', 'utf-8').toString();
 
 //  console.log(reportData);
   // compile template
