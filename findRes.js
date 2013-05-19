@@ -11,8 +11,6 @@ var hogan = require('hogan.js');
 var alliance = "15740";
 var farmMode = process.argv[2] || 0; // 1 = farm, 0 = lose
 
-console.log('farmMode', farmMode);
-
 var gameHoursShift = 0;
 
 var now = new Date();
@@ -46,7 +44,7 @@ data.loadDB('report', {
   data.loadDB('user', {
     query: {}
   }, function (err, users) {
-    console.log('Users Loaded   ====', new Date(), users.length);
+    console.log('Users Loaded   ====', new Date(), users.length, '\n');
 
     var reportsSorted = [];
     var globalLoot = {
@@ -85,7 +83,6 @@ data.loadDB('report', {
 
           if (item.side1AllianceId === alliance && farmer ||
             item.side0AllianceId === alliance && loser) {
-
             if (farmMode && item.side1AllianceId === alliance && farmer) {
               if (!players[farmer.id]) {
                 players[farmer.id] = {
@@ -251,13 +248,14 @@ function toSimpleTime(date) {
 }
 
 function generateReport(reportData) {
-  var templateFile = fs.readFileSync('farmerLoser.mu').toString();
+  var templateFile = fs.readFileSync('farmerLoser.mu', 'utf-8').toString();
+  var header = fs.readFileSync('header.mu', 'utf-8').toString();
 
 //  console.log(reportData);
   // compile template
   var template = hogan.compile(templateFile);
 
-  return template.render(reportData);
+  return template.render(reportData, {partial: {'header': header}});
 
 }
 
