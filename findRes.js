@@ -165,6 +165,7 @@ data.loadDB('report', {
     reportData.farmMode = farmMode;
 
     var outputFile = path.resolve('reports', farmMode ? 'farmers.html' : 'losers.html');
+    var outputFile = path.resolve( 'reports', farmMode ? 'farmers.html' : 'losers.html');
     fs.writeFileSync(outputFile, generateReport(reportData));
 
     process.exit();
