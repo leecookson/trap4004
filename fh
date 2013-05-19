@@ -1,3 +1,4 @@
 #!/bin/bash
 
-node findHits.js ${1}
+node findHits.js ${@}
+echo
