@@ -2,3 +2,4 @@
 
 node findMembers.js
 cat reports/allies.txt
+echo
