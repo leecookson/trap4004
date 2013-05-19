@@ -12,6 +12,7 @@
 	  td, th {text-align: left; white-space: nowrap;}
 	  td.numeric, th.numeric { text-align: right; }
 	  h2, h3 {margin-top: 0.5em;}
+	  pre {font-size: 0.8em; font-weight: bold;}
 	  section {padding-top: 10px;}
     </style>
 
@@ -32,6 +33,7 @@
       </header>
 
       <pre>
+      <pre style="width: 360px;">
 name            might      last login
 ----            -----      ----------
 {{alliList}}
