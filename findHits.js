@@ -3,6 +3,7 @@ var _ = require('underscore'),
   path = require('path'),
   fs = require('fs'),
   util = require('util'),
+  hogan = require('hogan.js'),
   traverse = require('traverse');
 
 var Data = require('./data');
@@ -89,7 +90,7 @@ function getUserHits(reports, users, user) {
   var farmers = {};
   var losers = {};
 
-  var totalLootFarmed = totalLootLost = 0;
+  var totalLootFarmed = totalLootLost = totalMightLost = totalMightKilled = 0;
   var outputPrefix = 'ally';
 
   if (user.a !== ourAlliance) {
@@ -99,15 +100,20 @@ function getUserHits(reports, users, user) {
   userNameForFile = user.n[0].toUpperCase() + user.n.substring(1);
 
   var outputFileName = path.resolve('reports', outputPrefix, userNameForFile + '.txt');
+  var htmlFileName = path.resolve('reports', outputPrefix, userNameForFile + '.html');
 
   var outputReport = [];
   var userCoords = [];
+
+  var reportData = {'name': user.n, table: []};
 
   // TODO: write this out to a specific file automatically, not std out
   var counter = 0;
   if (logLevel > 1) console.log(reports.length, 'reports');
 
   console.log('reports for', user.n);
+  outputReport.push(outputHeader());
+
   reports.forEach(function(item) {
     var user0, user1;
     var reportDate = new Date(item.reportUnixTime * 1000);
@@ -126,6 +132,7 @@ function getUserHits(reports, users, user) {
         user1 = users['u' + item.side1PlayerId] || {
           n: 'unknown'
         };
+
 
         item.boxContent.n = user0.n;
 
@@ -162,7 +169,8 @@ function getUserHits(reports, users, user) {
 
           if (stats.loot.total >= minLootForReport) {
             outputReport.push('  hit ===> ' + formatStats(stats));
-          }
+            reportData.table.push('  hit ===> ' + formatStats(stats));
+	  }
           totalLootFarmed += stats.loot.total;
 
           userCoords[item.side1XCoord + ',' + item.side1YCoord] = item.side1XCoord + ',' + item.side1YCoord;
@@ -201,8 +209,11 @@ function getUserHits(reports, users, user) {
 
           if (stats.loot.total >= minLootForReport) {
             outputReport.push('<== hit by ' + formatStats(stats));
+            reportData.table.push('<== hit by ' + formatStats(stats));
           }
           totalLootLost += stats.loot.total;
+          totalMightLost += stats.attMightLost;
+          totalMightKilled += stats.attMightKilled;
 
           userCoords[item.side0XCoord + ',' + item.side0YCoord] = item.side0XCoord + ',' + item.side0YCoord;
         }
@@ -212,6 +223,16 @@ function getUserHits(reports, users, user) {
     }
   });
 
+  reportData.earliestTime = toSimpleTime(toGameTime(earliestTime));
+  reportData.latestTime = toSimpleTime(toGameTime(latestTime));
+  reportData.gameTime = toSimpleTime(toGameTime(gameTime));
+  reportData.totalResFarmed = formatRes(totalLootFarmed);
+  reportData.totalResLost = formatRes(totalLootLost);
+  reportData.totalMightKilled = formatRes(totalMightKilled);
+  reportData.totalMightLost = formatRes(totalMightLost);
+  reportData.table = reportData.table.join('\n');
+
+  outputReport.push('  ------------             --------- ----- ------- ----- --------- ------- ------- -----');
   outputReport.push('Start Time:     ' + toSimpleTime(toGameTime(earliestTime)) + ' ' + earliestTime.getDayName());
   outputReport.push('End Time:       ' + toSimpleTime(toGameTime(latestTime)) + ' ' + latestTime.getDayName());
   var gameTime = toGameTime(now);
@@ -225,6 +246,8 @@ function getUserHits(reports, users, user) {
   outputReport.push('');
   outputReport.push('Loot Farmed: ' + formatRes(totalLootFarmed));
   outputReport.push('Loot Lost:   ' + formatRes(totalLootLost));
+  outputReport.push('Might Farmed: ' + formatRes(totalMightKilled));
+  outputReport.push('Might Lost:   ' + formatRes(totalMightLost));
   outputReport.push('');
 
   outputReport.push(userName + ' city coords ' + util.inspect(_.keys(userCoords)));
@@ -232,13 +255,18 @@ function getUserHits(reports, users, user) {
 
   fs.writeFileSync(outputFileName, outputReport.join('\n'));
 
+  fs.writeFileSync(htmlFileName, generateReport(reportData));
+
 }
 
 var reportFormat = '%4s  %4s  %4s  %4s %4s  %s %s';
 var hitReportFormat = '%-15s (%3d %3d)  %4s %7s %s (%3d %3d) %7d %7d %4.1f';
-function formatHeader() {
-  console.log(printf(reportFormat, '  F ', '  W ', '  S ', '  O ', '  T ', 'Totals'));
+
+function outputHeader() {
+ return '  hit opponent             opp coord   res unitSnt time  own coord mgtLost mgtKild ratio\n' +
+        '  ------------             --------- ----- ------- ----- --------- ------- ------- -----';
 }
+
 
 function formatStats(stats) {
   if (stats.loot) {
@@ -403,13 +431,26 @@ function countUnits(fightSide) {
 }
 
 function toGameTime(date) {
+  if (!date) return new Date();
+
   var gameTime = new Date(date);
   gameTime.setHours(date.getHours() - gameHoursShift);
   return gameTime;
 }
 
 function toSimpleTime(date) {
+  if (!date) return '00:00';
   return printf('%02d:%02d', date.getHours(), date.getMinutes());
+}
+function generateReport(reportData) {
+  var templateFile = fs.readFileSync('hits.mu').toString();
+
+//  console.log(reportData);
+  // compile template
+  var template = hogan.compile(templateFile);
+
+  return template.render(reportData);
+
 }
 
 (function() {
