@@ -112,9 +112,13 @@ TrapExtract.prototype.handlers['/ajax/tileBookmark.php'] = function (report, cb)
 
 var runLimit = false;
 
+function runReports() {
+  if (runLimit) return;
 
   console.log('running reports', new Date());
+  runLimit = true;
   setTimeout(function () {runLimit = false;}, 120000);
+
   exec('./fa', function (err, stdout, stderr) {
     console.log('stdout');
     console.log('reports run');
