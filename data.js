@@ -100,6 +100,9 @@ Data.prototype.loadDB = function (type, options, cb) {
         console.error('error', err);
         return cb(new Error('db error'));
       }
+      collection.ensureIndex('reportUnixTime', true, function (err, replies) {});
+      collection.ensureIndex('id', true, function (err, replies) {});
+
       collection.find(options.query).limit(options.limit).sort('_id').toArray(function (err, data) {
         if (!data) return;
         if (self.options.logLevel) console.log('    loaded', data ? data.length : -1, type);
@@ -193,6 +196,25 @@ Data.prototype.saveDB = function (type, cb) {
       }
       );
     });
+  });
+};
+
+Data.prototype.update = function (type, criteria, values, options, cb) {
+  self.db.collection(type + 'Data', function (err, collection) {
+
+    if (err) {
+      console.error('error', err);
+      return cb(new Error('db error'));
+    }
+    collection.update(
+      criteria,
+      values,
+      options,
+      function (err, docs) {
+        if (err) return cb(err);
+        cb(null, docs[0]);
+      }
+    );
   });
 };
 
