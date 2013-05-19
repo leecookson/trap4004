@@ -2,7 +2,8 @@ var _ = require('underscore')
   , colors = require('colors')
   , path = require('path')
   , fs = require('fs')
-  , util = require('util');
+  , util = require('util')
+  , hogan = require('hogan.js');
 
 var Data = require('./data');
 var dist = require('./dist');
@@ -13,7 +14,7 @@ var outputFileName = path.resolve('reports', 'allies.txt');
 var outputReport = [];
 var userCoords = [];
 
-var searchAlliance = "1018";
+var searchAlliance = "15740";
 
 var gameHoursShift = 0; //0 for AWS, -4 for local TODO: fix the delta
 
@@ -65,8 +66,13 @@ data.loadDB('user', {query: {}}, function (err, users) {
   var gameTime = toGameTime(now);
   outputReport.push('Game Time Now:  ' + toSimpleTime(gameTime));
 
-  fs.writeFileSync(outputFileName, outputReport.join('\n'));
+  var outputReportText = outputReport.join('\n');
+  fs.writeFileSync(outputFileName, outputReportText);
 
+  var reportData = { alliList: outputReportText, now: toSimpleTime(gameTime) };
+
+  var outputFile = path.resolve('reports', 'allies.html');
+  fs.writeFileSync(outputFile, generateReport(reportData));
   process.exit();
 });
 
@@ -188,6 +194,14 @@ function toSimpleTime(date) {
   return printf('%02d:%02d',  date.getHours(), date.getMinutes());
 }
 
+function generateReport(reportData) {
+  var templateFile = fs.readFileSync('allies.mu').toString();
+
+  var template = hogan.compile(templateFile);
+
+  return template.render(reportData);
+
+}
 (function () {
   var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
