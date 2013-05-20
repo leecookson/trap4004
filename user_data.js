@@ -1,8 +1,6 @@
-var fs = require('fs'),
-  async = require('async'),
+var async = require('async'),
   _ = require('underscore'),
-  Data = require('./data'),
-  mongodb = require('mongodb');
+  Data = require('./data');
 
 module.exports = exports = UserData;
 
