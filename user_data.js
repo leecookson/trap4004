@@ -33,20 +33,19 @@ UserData.prototype.handleMapUsers = function (mapUsers, cb) {
   var self = this;
 
   async.eachSeries(
-    _.keys(mapUsers),
-   function (key, next) {
-      //console.log('key', key);
-      var user = mapUsers[key];
-      user.id = key;
-      var do_it = _.once(function (err, data) { next(err, data); });
-      self.update(key, user, function (err, data) {
-        do_it(err, data);
-      });
-    },
-    function (err) {
-      cb(err);
-    }
-  );
+  _.keys(mapUsers), function (key, next) {
+    //console.log('key', key);
+    var user = mapUsers[key];
+    user.id = key;
+    var do_it = _.once(function (err, data) {
+      next(err, data);
+    });
+    self.update(key, user, function (err, data) {
+      do_it(err, data);
+    });
+  }, function (err) {
+    cb(err);
+  });
 };
 
 UserData.prototype.handleReportUsers = function (reportUsers, cb) {
@@ -55,41 +54,38 @@ UserData.prototype.handleReportUsers = function (reportUsers, cb) {
   var users = this.blendUser(reportUsers);
 
   async.each(
-    _.keys(users),
-    function (key, next) {
-      var user = users[key];
-      user.id = key;
-      self.update(key, user, function (err, data) {
-        next(err, data);
-      });
-    },
-    function (err) {
-      cb(err);
-    }
-  );
+  _.keys(users), function (key, next) {
+    var user = users[key];
+    user.id = key;
+    self.update(key, user, function (err, data) {
+      next(err, data);
+    });
+  }, function (err) {
+    cb(err);
+  });
 };
+
 UserData.prototype.handleAllianceUsers = function (allyUsers, cb) {
   var self = this;
 
 
   async.eachSeries(
-    _.keys(allyUsers),
-    function (key, next) {
-      var user = allyUsers[key];
-      user.id = 'u' + key;
-      user.n = user.name;
-      user.m = user.might;
-      user.r = user.race;
-      self.update(user.id, user, function (err, data) {
-        next(err, data);
-      });
-    },
-    function (err) {
-      cb(err);
-    }
-  );
+  _.keys(allyUsers), function (key, next) {
+    var user = allyUsers[key];
+    user.id = 'u' + key;
+    user.n = user.name;
     user.a = allianceId;
+    user.m = user.might;
+    user.r = user.race;
+    self.update(user.id, user, function (err, data) {
+      next(err, data);
+    });
+  }, function (err) {
+    cb(err);
+  });
 };
+
+
 /*
   leaderboard:
    [ { userId: '137590',
@@ -113,7 +109,9 @@ UserData.prototype.handleLeaderboard = function (leaderboard, cb) {
       user.r = item.race;
       user.a = item.allianceId;
       user.n = item.displayName;
-      var do_it = _.once(function (err, data) { next(err, data); });
+      var do_it = _.once(function (err, data) {
+        next(err, data);
+      });
       self.update(user.id, user, function (err, data) {
         do_it(err, data);
       });
@@ -132,7 +130,9 @@ UserData.prototype.blendUser = function (userData) {
     var userKey = 'u' + key.slice(1);
 
     if (!users[userKey]) {
-      users[userKey] = {id: userKey};
+      users[userKey] = {
+        id: userKey
+      };
     }
 
     if (key[0] === 'g') {
