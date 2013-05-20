@@ -1,5 +1,4 @@
-var fs = require('fs'),
-  async = require('async'),
+var async = require('async'),
   _ = require('underscore'),
   mongodb = require('mongodb'),
   mongo = require('mongoskin');
