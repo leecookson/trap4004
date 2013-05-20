@@ -3,7 +3,6 @@ var async = require('async'),
   BookmarkData = require('./bookmark_data'),
   MapData = require('./map_data'),
   ReportData = require('./report_data'),
-  UserData = require('./user_data');
   UserData = require('./user_data'),
   exec = require('child_process').exec;
 
@@ -91,7 +90,6 @@ TrapExtract.prototype.handlers['/ajax/getLeaderboard.php'] = function (report, c
     }
   );
 
-  cb(null);
   console.log('leaderboard, about to run reports');
 
   runReports();
