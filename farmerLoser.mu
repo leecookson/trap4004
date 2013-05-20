@@ -27,6 +27,7 @@
           <li>Start Time: {{startTime.time}} {{startTime.dayOfWeek}}</li>
           <li>End Time: <strong>{{endTime.time}}</strong></li>
           <li>Time Now: {{nowTime.time}}</li>
+          <li>Total Res: {{totals.totalStr}}</li>
         </ul>
       </section>
       <header>
