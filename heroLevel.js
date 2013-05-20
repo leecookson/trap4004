@@ -1,3 +1,4 @@
+
 var currentScore = process.argv[2] || 1;
 var currentNext = process.argv[3] || 20;
 
@@ -29,7 +30,7 @@ if (currentLevel) {
 
   console.log('current Level   :', currentLevel);
   console.log('current XP      :', currentXp);
-//  console.log('next level XP   :', nextXp[currentLevel]);
+  //  console.log('next level XP   :', nextXp[currentLevel]);
   console.log('max to get 199  :', maxGoodXp);
   console.log('XP needed       :', xpNeeded);
   console.log('--------------------------');
