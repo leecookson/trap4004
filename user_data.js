@@ -117,6 +117,9 @@ UserData.prototype.handleLeaderboard = function (leaderboard, cb) {
       self.update(user.id, user, function (err, data) {
         do_it(err, data);
       });
+    },
+    function (err) {
+      cb(err);
     }
   );
 };
