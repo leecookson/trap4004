@@ -3,6 +3,7 @@ var _ = require('underscore'),
   path = require('path'),
   fs = require('fs'),
   util = require('util'),
+  hogan = require('hogan.js'),
   traverse = require('traverse');
 
 var Data = require('./data');
@@ -12,13 +13,20 @@ var printf = require('printf');
 
 var userName = process.argv[2] || 'all';
 
-var ourAlliance = "1018";
+console.log('report for user:', userName);
+
+var startDaysAgo = process.argv[3] || 1;
+
+console.log('start days ago:', startDaysAgo);
+
+var ourAlliance = "15740";
 
 var gameHoursShift = 0;
 
+var minLootForReport = -1;
+
 var now = new Date();
 
-var startDaysAgo = 1;
 var startReportTime = new Date();
 startReportTime.setDate(now.getDate() - startDaysAgo);
 
@@ -89,21 +97,33 @@ function getUserHits(reports, users, user) {
   var farmers = {};
   var losers = {};
 
+  var totalLootFarmed = totalLootLost = totalMightLost = totalMightKilled = 0;
   var outputPrefix = 'ally';
 
   if (user.a !== ourAlliance) {
     outputPrefix = 'enemy';
   }
-  var outputFileName = path.resolve('reports', outputPrefix, user.n + '.txt');
+  var userNameForFile = user.n;
+  userNameForFile = user.n[0].toUpperCase() + user.n.substring(1);
+
+  var outputFileName = path.resolve('reports', outputPrefix, userNameForFile + '.txt');
+  var htmlFileName = path.resolve('reports', outputPrefix, userNameForFile + '.html');
 
   var outputReport = [];
   var userCoords = [];
+
+  var reportData = {
+    'name': user.n,
+    table: []
+  };
 
   // TODO: write this out to a specific file automatically, not std out
   var counter = 0;
   if (logLevel > 1) console.log(reports.length, 'reports');
 
   console.log('reports for', user.n);
+  outputReport.push(outputHeader());
+
   reports.forEach(function(item) {
     var user0, user1;
     var reportDate = new Date(item.reportUnixTime * 1000);
@@ -123,6 +143,7 @@ function getUserHits(reports, users, user) {
           n: 'unknown'
         };
 
+
         item.boxContent.n = user0.n;
 
         // TODO: filter by alliance, not user, optional
@@ -131,17 +152,22 @@ function getUserHits(reports, users, user) {
           if (!farmers[user0.id]) farmers[user0.id] = {
             'n': user0.n,
             xCoord: item.side0XCoord,
-            yCoord: item.side0YCoord
+            yCoord: item.side0YCoord,
+            xCoordFrom: item.side1XCoord,
+            yCoordFrom: item.side1YCoord
           };
 
           stats = {
             n: user0.n,
             xCoord: item.side0XCoord,
             yCoord: item.side0YCoord,
+            xCoordFrom: item.side1XCoord,
+            yCoordFrom: item.side1YCoord,
             reportUnixTime: item.reportUnixTime
           };
           stats.loot = refactorLoot(item.boxContent.loot);
 
+          stats.attUnits = stats.defUnits = 0;
           if (item.boxContent.fght) {
             var s0 = item.boxContent.fght.s0;
             var s1 = item.boxContent.fght.s1;
@@ -153,26 +179,35 @@ function getUserHits(reports, users, user) {
 
           if (stats.loot.total > -1) {
             outputReport.push('  hit ===> ' + formatStats(stats));
+            reportData.table.push('  hit ===> ' + formatStats(stats));
           }
+          totalLootFarmed += stats.loot.total;
 
           userCoords[item.side1XCoord + ',' + item.side1YCoord] = item.side1XCoord + ',' + item.side1YCoord;
         }
 
         if (user0 && user0.n === user.n) {
 
-          if (!losers[user1.id]) losers[user1.id] = {
-            'n': user1.n,
-            xCoord: item.side1XCoord,
-            yCoord: item.side1YCoord
-          };
+          if (!losers[user1.id]) {
+            losers[user1.id] = {
+              'n': user1.n,
+              xCoord: item.side1XCoord,
+              yCoord: item.side1YCoord,
+              xCoordFrom: item.side0XCoord,
+              yCoordFrom: item.side0YCoord
+            };
+          }
           stats = {
             n: user1.n,
             xCoord: item.side1XCoord,
             yCoord: item.side1YCoord,
+            xCoordFrom: item.side0XCoord,
+            yCoordFrom: item.side0YCoord,
             reportUnixTime: item.reportUnixTime
           };
           stats.loot = refactorLoot(item.boxContent.loot);
 
+          stats.attUnits = stats.defUnits = 0;
           if (item.boxContent.fght) {
             var s0 = item.boxContent.fght.s0;
             var s1 = item.boxContent.fght.s1;
@@ -184,7 +219,11 @@ function getUserHits(reports, users, user) {
 
           if (stats.loot.total > -1) {
             outputReport.push('<== hit by ' + formatStats(stats));
+            reportData.table.push('<== hit by ' + formatStats(stats));
           }
+          totalLootLost += stats.loot.total;
+          totalMightLost += stats.attMightLost;
+          totalMightKilled += stats.attMightKilled;
 
           userCoords[item.side0XCoord + ',' + item.side0YCoord] = item.side0XCoord + ',' + item.side0YCoord;
         }
@@ -194,6 +233,16 @@ function getUserHits(reports, users, user) {
     }
   });
 
+  reportData.earliestTime = toSimpleTime(toGameTime(earliestTime));
+  reportData.latestTime = toSimpleTime(toGameTime(latestTime));
+  reportData.gameTime = toSimpleTime(toGameTime(gameTime));
+  reportData.totalResFarmed = formatRes(totalLootFarmed);
+  reportData.totalResLost = formatRes(totalLootLost);
+  reportData.totalMightKilled = formatRes(totalMightKilled);
+  reportData.totalMightLost = formatRes(totalMightLost);
+  reportData.table = reportData.table.join('\n');
+
+  outputReport.push('  ------------             --------- ----- ------- ----- --------- ------- ------- -----');
   outputReport.push('Start Time:     ' + toSimpleTime(toGameTime(earliestTime)) + ' ' + earliestTime.getDayName());
   outputReport.push('End Time:       ' + toSimpleTime(toGameTime(latestTime)) + ' ' + latestTime.getDayName());
   var gameTime = toGameTime(now);
@@ -204,30 +253,42 @@ function getUserHits(reports, users, user) {
     outputReport.push('Last Login:     ' + toSimpleTime(toGameTime(llTime)) + ' ' + llTime.getDayName());
   }
 
+  outputReport.push('');
+  outputReport.push('Loot Farmed: ' + formatRes(totalLootFarmed));
+  outputReport.push('Loot Lost:   ' + formatRes(totalLootLost));
+  outputReport.push('Might Farmed: ' + formatRes(totalMightKilled));
+  outputReport.push('Might Lost:   ' + formatRes(totalMightLost));
+  outputReport.push('');
+
   outputReport.push(userName + ' city coords ' + util.inspect(_.keys(userCoords)));
   //console.log(outputReport.join('\n'));
   fs.writeFileSync(outputFileName, outputReport.join('\n'));
 
+  fs.writeFileSync(htmlFileName, generateReport(reportData));
+
 }
 
 var reportFormat = '%4s  %4s  %4s  %4s %4s  %s %s';
-var hitReportFormat = '%-15s (%3d %3d)  %4s %7s %s';
 
+var hitReportFormat = '%-15s (%3d %3d)  %4s %7s %s (%3d %3d) %7d %7d %4.1f';
 
 function outputHeader() {
-  console.log(printf(reportFormat, '  hit opponent   opp coord   res  unitSent  time  ownCoord  mgtLost   mgtKild  ratio'));
-
+  return '  hit opponent             opp coord   res unitSnt time  own coord mgtLost mgtKild ratio\n' + '  ------------             --------- ----- ------- ----- --------- ------- ------- -----';
 }
+
 
 function formatStats(stats) {
   if (stats.loot) {
     try {
+      var attMightLost = stats.attMightLost || 0;
+      var defMightLost = stats.defMightLost || 0;
+      var ratio = defMightLost / attMightLost;
       return printf(hitReportFormat, stats.n, stats.xCoord, stats.yCoord,
       /*        formatRes(stats.loot.food),
         formatRes(stats.loot.wood),
         formatRes(stats.loot.stone),
         formatRes(stats.loot.ore),*/
-      formatRes(stats.loot.total), stats.attUnits, toSimpleTime(toGameTime(new Date(stats.reportUnixTime * 1000))));
+      formatRes(stats.loot.total), stats.attUnits, toSimpleTime(toGameTime(new Date(stats.reportUnixTime * 1000))), stats.xCoordFrom, stats.yCoordFrom, attMightLost, defMightLost, ratio);
     } catch (e) {
       console.error(e, e.stack);
       return "error";
@@ -260,6 +321,7 @@ function refactorLoot(loot) {
   newLoot.total = newLoot.food + newLoot.wood + newLoot.stone + newLoot.ore;
   return newLoot;
 }
+
 /*
  * boxContent.fght.s0 (receiver)
  * boxContent.fght.s1 (attacker)
@@ -302,21 +364,26 @@ function refactorLoot(loot) {
  */
 function calculateMightLost(fightSide) {
 
-  var troopMightLost = reinMightLost = 0;
-
   var troops = fightSide.r1;
   var reins = fightSide.r2;
 
-  return calculateMightLostRank(troops) + calculateMightRank(reins);
+  return calculateMightLostRank(troops) + calculateMightLostRank(reins);
 }
 
 function calculateMightLostRank(rank) {
+  if (!rank) {
+    return 0;
+  }
+
   var totalMightLost = 0;
 
   for (var u in might) {
-    var units = rank[u][2];
-    if (units) {
-      totalMightLost += (units * might[u]);
+    var unitList = rank[u];
+    if (unitList) {
+      var unitsLost = unitList[2];
+      if (unitsLost) {
+        totalMightLost += (unitsLost * might[u]);
+      }
     }
   }
   return totalMightLost;
@@ -361,24 +428,39 @@ function countUnits(fightSide) {
 }
 
 function toGameTime(date) {
+  if (!date) return new Date();
+
   var gameTime = new Date(date);
   gameTime.setHours(date.getHours() - gameHoursShift);
   return gameTime;
 }
 
 function toSimpleTime(date) {
+  if (!date) return '00:00';
   return printf('%02d:%02d', date.getHours(), date.getMinutes());
 }
 
-(function() {
+function generateReport(reportData) {
+  var templateFile = fs.readFileSync('hits.mu').toString();
+
+  //  console.log(reportData);
+  // compile template
+  var template = hogan.compile(templateFile);
+
+  return template.render(reportData);
+
+}
+
+(function () {
   var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-  Date.prototype.getMonthName = function() {
+  Date.prototype.getMonthName = function () {
     return months[this.getMonth()];
   };
-  Date.prototype.getDayName = function() {
+
+  Date.prototype.getDayName = function () {
     return days[this.getDay()];
   };
 })();
