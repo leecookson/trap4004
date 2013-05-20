@@ -251,7 +251,6 @@ function generateReport(reportData) {
   var templateFile = fs.readFileSync('farmerLoser.mu', 'utf-8').toString();
   var header = fs.readFileSync('header.mu', 'utf-8').toString();
 
-//  console.log(reportData);
   // compile template
   var template = hogan.compile(templateFile);
 
@@ -275,4 +274,3 @@ function generateReport(reportData) {
     return days[this.getDay()];
   };
 })();
-
