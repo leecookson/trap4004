@@ -6,6 +6,8 @@ var fs = require('fs'),
 
 module.exports = exports = UserData;
 
+var allianceId = '15740';
+
 function UserData() {
 
   this.me = 'UserData';
@@ -78,7 +80,6 @@ UserData.prototype.handleAllianceUsers = function (allyUsers, cb) {
       var user = allyUsers[key];
       user.id = 'u' + key;
       user.n = user.name;
-      user.a = "15740";
       user.m = user.might;
       user.r = user.race;
       self.update(user.id, user, function (err, data) {
@@ -89,6 +90,7 @@ UserData.prototype.handleAllianceUsers = function (allyUsers, cb) {
       cb(err);
     }
   );
+    user.a = allianceId;
 };
 /*
   leaderboard:
