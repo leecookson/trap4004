@@ -32,7 +32,6 @@
 
       </header>
 
-      <pre>
       <pre style="width: 360px;">
 name            might      last login
 ----            -----      ----------
@@ -41,3 +40,4 @@ name            might      last login
     </div>
   </body>
 </html>
+
