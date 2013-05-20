@@ -366,8 +366,6 @@ function refactorLoot(loot) {
  */
 function calculateMightLost(fightSide) {
 
-  var troopMightLost = reinMightLost = 0;
-
   var troops = fightSide.r1;
   var reins = fightSide.r2;
 
@@ -418,6 +416,7 @@ var might = {
   'u59': 56,
   'u60': 56
 };
+
 function countUnits(fightSide) {
 
   var totalUnits = 0;
@@ -442,6 +441,7 @@ function toSimpleTime(date) {
   if (!date) return '00:00';
   return printf('%02d:%02d', date.getHours(), date.getMinutes());
 }
+
 function generateReport(reportData) {
   var templateFile = fs.readFileSync('hits.mu').toString();
 
@@ -453,15 +453,15 @@ function generateReport(reportData) {
 
 }
 
-(function() {
+(function () {
   var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-  Date.prototype.getMonthName = function() {
+  Date.prototype.getMonthName = function () {
     return months[this.getMonth()];
   };
-  Date.prototype.getDayName = function() {
+  Date.prototype.getDayName = function () {
     return days[this.getDay()];
   };
 })();
