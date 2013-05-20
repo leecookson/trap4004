@@ -81,8 +81,7 @@ data.loadDB('report', {
             'id': 'u' + item.side1PlayerId
           }));
 
-          if (item.side1AllianceId === alliance && farmer ||
-            item.side0AllianceId === alliance && loser) {
+          if (item.side1AllianceId === alliance && farmer || item.side0AllianceId === alliance && loser) {
 
             if (farmMode && item.side1AllianceId === alliance && farmer) {
               if (!players[farmer.id]) {
@@ -164,7 +163,6 @@ data.loadDB('report', {
     reportData.farmMode = farmMode;
 
     var outputFile = path.resolve('reports', farmMode ? 'farmers.html' : 'losers.html');
-    var outputFile = path.resolve( 'reports', farmMode ? 'farmers.html' : 'losers.html');
     fs.writeFileSync(outputFile, generateReport(reportData));
 
     process.exit();
@@ -257,7 +255,11 @@ function generateReport(reportData) {
   // compile template
   var template = hogan.compile(templateFile);
 
-  return template.render(reportData);
+  return template.render(reportData, {
+    partial: {
+      'header': header
+    }
+  });
 
 }
 
