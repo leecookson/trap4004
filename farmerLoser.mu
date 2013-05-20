@@ -15,7 +15,7 @@
       section {padding-top: 10px;}
     </style>
 
-    <link href="http://elvery.net/demo/responsive-tables/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
 
   </head>
   <body>
