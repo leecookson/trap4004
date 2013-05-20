@@ -36,7 +36,7 @@ var data = new Data();
 var earliestTime = new Date();
 var latestTime = startReportTime;
 
-process.on('uncaughtException', function(err) {
+process.on('uncaughtException', function (err) {
   console.log('Caught exception:', err, err.stack);
   process.exit(-1);
 });
@@ -48,26 +48,26 @@ data.loadDB('report', {
       $gt: (Math.floor(startReportTime.getTime() / 1000)).toString()
     }
   }
-}, function(err, reports) {
+}, function (err, reports) {
   data.loadDB('user', {
     query: {}
-  }, function(err, users) {
+  }, function (err, users) {
 
     var userHash = {};
-    users.forEach(function(u) {
+    users.forEach(function (u) {
       userHash[u.id] = u;
     });
 
     console.log(reports.length, 'reports');
     console.log(users.length, 'users');
-    var reportsSorted = _.sortBy(reports, function(item) {
+    var reportsSorted = _.sortBy(reports, function (item) {
       return -(item.reportUnixTime);
     });
 
     if (userName === 'all') {
       console.log('looping over all users');
 
-      users.forEach(function(user) {
+      users.forEach(function (user) {
         if (user.a === ourAlliance) {
           getUserHits(reportsSorted, userHash, user);
         }
@@ -97,7 +97,7 @@ function getUserHits(reports, users, user) {
   var farmers = {};
   var losers = {};
 
-  var totalLootFarmed = totalLootLost = totalMightLost = totalMightKilled = 0;
+  var totalLootFarmed = 0, totalLootLost = 0, totalMightLost = 0, totalMightKilled = 0;
   var outputPrefix = 'ally';
 
   if (user.a !== ourAlliance) {
@@ -124,7 +124,7 @@ function getUserHits(reports, users, user) {
   console.log('reports for', user.n);
   outputReport.push(outputHeader());
 
-  reports.forEach(function(item) {
+  reports.forEach(function (item) {
     var user0, user1;
     var reportDate = new Date(item.reportUnixTime * 1000);
     var stats;
