@@ -44,6 +44,7 @@ data.loadDB('user', {query: {}}, function (err, users) {
 
   // TODO: write this out to a specific file automatically, not std out
   var counter = 0;
+  var prevMight = Infinity;
   if (logLevel > 1) console.log(users.length, 'users');
 
   usersSorted.forEach(function (item) {
@@ -55,7 +56,13 @@ data.loadDB('user', {query: {}}, function (err, users) {
       //console.log(item);
       // TODO: filter by alliance, not user, optional
       if (item.a === searchAlliance) {
-        outputReport.push(formatMember(item));
+        if (prevMight === Infinity) {
+          delta = '';
+        } else {
+          delta = formatRes(0 + prevMight - item.m);
+        }
+        prevMight = item.m
+        outputReport.push(formatMember(item, delta));
       }
 
     } catch (e) {
@@ -65,7 +72,6 @@ data.loadDB('user', {query: {}}, function (err, users) {
 
   var gameTime = toGameTime(now);
   outputReport.push('Game Time Now:  ' + toSimpleTime(gameTime));
-
   var outputReportText = outputReport.join('\n');
   fs.writeFileSync(outputFileName, outputReportText);
 
@@ -73,24 +79,26 @@ data.loadDB('user', {query: {}}, function (err, users) {
 
   var outputFile = path.resolve('reports', 'allies.html');
   fs.writeFileSync(outputFile, generateReport(reportData));
+
   process.exit();
 });
 
 var reportFormat = '%4s  %4s  %4s  %4s  %4s  %s';
 var hitReportFormat = '%-15s (%3d %3d)  %4s  %4s  %4s  %4s  %4s  %s';
-var memberFormat = '%-15s %-10s %s %s';
+var memberFormat = '%-15s %-10s %s %s %s';
 function formatHeader() {
   console.log(printf(reportFormat,
         '  F ', '  W ', '  S ', '  O ', '  T ', 'Totals'));
 }
 
-function formatMember(member) {
+function formatMember(member, delta) {
   var d = new Date(member.lastLogin);
   return printf(memberFormat,
       member.n,
       member.m,
       toSimpleTime(d),
-      d.getDayName());
+      d.getDayName(),
+      delta);
 }
 
 function formatStats(stats) {
@@ -196,12 +204,18 @@ function toSimpleTime(date) {
 
 function generateReport(reportData) {
   var templateFile = fs.readFileSync('allies.mu').toString();
+  var headerFile = fs.readFileSync('header.mu', 'utf-8').toString();
 
+  // compile template
   var template = hogan.compile(templateFile);
+  var header = hogan.compile(headerFile);
 
-  return template.render(reportData);
+  return template.render(reportData, {
+    'header': header
+  });
 
 }
+
 (function () {
   var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
