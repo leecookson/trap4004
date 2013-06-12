@@ -27,7 +27,7 @@ AllianceData.prototype.update = function (id, item, cb) {
   self.data.saveItem(id, item, 'alliance', cb);
 };
 
-AllianceData.prototype.handleAlliance = function (allianceData, cb) {
+AllianceData.prototype.handleAlliances = function (allianceData, cb) {
   var self = this;
 
   async.each(
