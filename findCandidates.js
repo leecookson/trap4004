@@ -13,7 +13,7 @@ var outputFileName = path.resolve('reports', 'candidates.txt');
 var outputReport = [];
 var userCoords = [];
 
-var searchAlliance = "1018";
+var searchAlliance = "15740";
 
 var gameHoursShift = 0; //0 for AWS, -4 for local TODO: fix the delta
 
@@ -38,7 +38,7 @@ data.loadDB('user', {query: {}}, function (err, users) {
 
   var usersCan, usersSorted = [];
 
-  usersCan = _.filter(users, function (item) {return (item.a === "0"); });
+  usersCan = _.filter(users, function (item) {return (item.a === "0" && 0 + item.m > -1); });
   usersSorted = _.sortBy(usersCan, function (item) {return -(0 + item.m); });
 
   // TODO: write this out to a specific file automatically, not std out
