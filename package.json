@@ -16,10 +16,10 @@
   "author": "LeeCookson@gmail.com",
   "license": "BSD",
   "dependencies": {
-    "async": "~0.2.5",
+    "async": "~0.2.9",
     "underscore": "~1.4.4",
-    "mongodb": "~1.2.13",
-    "printf": "~0.1.1",
+    "mongodb": "~1.2.14",
+    "printf": "~0.1.2",
     "traverse": "~0.6.3",
     "colors": "~0.6.0-1",
     "mongoskin": "~0.5.0",
