@@ -57,9 +57,11 @@ data.loadDB('report', {
     };
     var players = {};
 
+    console.log('before sort', new Date());
     reportsSorted = _.sortBy(reports, function (item) {
       return -(item.reportUnixTime);
     });
+    console.log('after sort', new Date());
 
     // TODO: write this out to a specific file automatically, not std out
     if (logLevel > 1) console.log(reports.length, 'reports');
@@ -81,8 +83,8 @@ data.loadDB('report', {
             'id': 'u' + item.side1PlayerId
           }));
 
-          if (item.side1AllianceId === alliance && farmer ||
-            item.side0AllianceId === alliance && loser) {
+          if (item.side1AllianceId === alliance && farmer || item.side0AllianceId === alliance && loser) {
+
             if (farmMode && item.side1AllianceId === alliance && farmer) {
               if (!players[farmer.id]) {
                 players[farmer.id] = {
@@ -162,7 +164,7 @@ data.loadDB('report', {
     reportData.totals = globalLoot;
     reportData.farmMode = farmMode;
 
-    var outputFile = path.resolve( 'reports', farmMode ? 'farmers.html' : 'losers.html');
+    var outputFile = path.resolve('reports', farmMode ? 'farmers.html' : 'losers.html');
     fs.writeFileSync(outputFile, generateReport(reportData));
 
     process.exit();
@@ -249,14 +251,15 @@ function toSimpleTime(date) {
 
 function generateReport(reportData) {
   var templateFile = fs.readFileSync('farmerLoser.mu', 'utf-8').toString();
-  var header = fs.readFileSync('header.mu', 'utf-8').toString();
+  var headerFile = fs.readFileSync('header.mu', 'utf-8').toString();
 
-//  console.log(reportData);
   // compile template
   var template = hogan.compile(templateFile);
+  var header = hogan.compile(headerFile);
 
-  return template.render(reportData, {partial: {'header': header}});
-
+  return template.render(reportData, {
+    'header': header
+  });
 }
 
 (function () {
@@ -271,4 +274,3 @@ function generateReport(reportData) {
     return days[this.getDay()];
   };
 })();
-
