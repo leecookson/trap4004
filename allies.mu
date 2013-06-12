@@ -20,6 +20,7 @@
 
   </head>
   <body>
+    {{> header }}
 
     <div class="container-fluid">
       <section>
@@ -33,8 +34,8 @@
       </header>
 
       <pre style="width: 360px;">
-name            might      last login
-----            -----      ----------
+name            might      last login behind
+----            -----      ---------- ------
 {{alliList}}
       </pre>
     </div>
