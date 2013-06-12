@@ -1,5 +1,6 @@
 var async = require('async'),
   _ = require('underscore'),
+  AllianceData = require('./alliance_data'),
   BookmarkData = require('./bookmark_data'),
   MapData = require('./map_data'),
   ReportData = require('./report_data'),
@@ -59,9 +60,15 @@ TrapExtract.prototype.handlers['/ajax/listReports.php'] = function (report, cb) 
     var reportData = new ReportData();
 
     reportData.handleReports(report.arReports, function (err) {
-      reportData.close();
-      userData.close();
-      cb(err);
+      var allianceData = new AllianceData();
+
+      allianceData.handleReportAlliances(report.arAllianceNames, function (err) {
+
+        allianceData.close();
+        reportData.close();
+        userData.close();
+        cb(err);
+      });
     });
   });
 };
@@ -102,9 +109,21 @@ TrapExtract.prototype.handlers['/ajax/tileBookmark.php'] = function (report, cb)
   var bookmarkData = new BookmarkData();
 
   bookmarkData.handleBookmarks(report.bookmarkInfo, function (err) {
-      bookmarkData.close();
-      cb(err);
-    });
+    bookmarkData.close();
+    cb(err);
+  });
+
+};
+
+TrapExtract.prototype.handlers['/ajax/allianceGetOtherInfo.php'] = function (report, cb) {
+
+  //console.log('report data', report);
+  var allianceData = new AllianceData();
+
+  allianceData.handleAlliances(report.otherAlliances, function (err) {
+    allianceData.close();
+    cb(err);
+  });
 
 };
 
