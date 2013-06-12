@@ -13,8 +13,16 @@ echo 'Finding Farmers'
 
 ./ff
 
-sleep 60 
+echo 'Finding Alliances hitting us'
+
+node findHits incoming
+
+sleep 60
 
 echo 'Fiding Enemies'
 
 ./fe
+
+node generateIndex
+node generateFolderIndex ally
+node generateFolderIndex enemy
