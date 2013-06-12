@@ -1,5 +1,7 @@
 /reports
 /raw
 /dump
+/trap2.log
+/tips
 nohup.out
 
