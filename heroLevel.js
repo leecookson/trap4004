@@ -9,10 +9,10 @@ var nextMap = [];
 var nextXp = [];
 
 var xp = 0;
-for (var lvl=1; lvl < 216; lvl++) {
-  var lvlPts = lvl*20;
+for (var lvl = 1; lvl < 216; lvl++) {
+  var lvlPts = lvl * 20;
   xp += lvlPts;
-  // console.log('level', lvl, ', nextForLevel', lvlPts, 'nextXp', xp);
+  //console.log('lvl', lvl + ',  needed for next level', lvlPts + ',   next level XP', xp);
   nextMap[lvlPts] = lvl;
   nextXp[lvl] = xp;
 }
@@ -30,7 +30,7 @@ if (currentLevel) {
 
   console.log('current Level   :', currentLevel);
   console.log('current XP      :', currentXp);
-  console.log('next level XP   :', nextXp[currentLevel]);
+  //  console.log('next level XP   :', nextXp[currentLevel]);
   console.log('max to get 199  :', maxGoodXp);
   console.log('XP needed       :', xpNeeded);
   console.log('--------------------------');
@@ -47,26 +47,25 @@ if (currentLevel) {
 /* returns array [ gandalfs, archers, warriors, hits ] */
 function calcTrains(xpNeeded) {
 
-var returnVal = [0, 0, 0, 0];
+  var returnVal = [0, 0, 0, 0];
 
-while (xpNeeded > 50000) {
-  returnVal[0]++;
-  xpNeeded -= 50000;
+  while (xpNeeded > 50000) {
+    returnVal[0]++;
+    xpNeeded -= 50000;
+  }
+
+  while (xpNeeded > 10000) {
+    returnVal[1]++;
+    xpNeeded -= 10000;
+  }
+
+  while (xpNeeded > 1000) {
+    returnVal[2]++;
+    xpNeeded -= 1000;
+  }
+
+  returnVal[3] = Math.floor(xpNeeded / 20);
+
+  return returnVal;
+
 }
-
-while (xpNeeded > 10000) {
-  returnVal[1]++;
-  xpNeeded -= 10000;
-}
-
-while (xpNeeded > 1000) {
-  returnVal[2]++;
-  xpNeeded -= 1000;
-}
-
-returnVal[3] = Math.floor(xpNeeded / 20);
-
-return returnVal;
-
-}
-

@@ -1,5 +1,4 @@
-var fs = require('fs'),
-  async = require('async'),
+var async = require('async'),
   _ = require('underscore'),
   mongodb = require('mongodb'),
   mongo = require('mongoskin');
@@ -41,9 +40,10 @@ Data.prototype.loadAll = function (cb) {
 
   async.map(allFiles, function (item, next) {
     self.loadDB(item, {}, next);
-  },
-  function (err, results) {
-    if (self.options.logLevel) {console.log('    all loaded'); }
+  }, function (err, results) {
+    if (self.options.logLevel) {
+      console.log('    all loaded');
+    }
     cb(err, null);
   });
 };
@@ -87,7 +87,10 @@ Data.prototype.loadDB = function (type, options, cb) {
     cb = options;
     options = {};
   }
-  _.defaults(options, {query: {}, limit: 99999});
+  _.defaults(options, {
+    query: {},
+    limit: 99999
+  });
 
   if (self.options.logLevel > 1) console.log('  loading', type);
 
@@ -100,8 +103,8 @@ Data.prototype.loadDB = function (type, options, cb) {
         console.error('error', err);
         return cb(new Error('db error'));
       }
-      collection.ensureIndex('reportUnixTime', true, function (err, replies) {});
-      collection.ensureIndex('id', true, function (err, replies) {});
+      collection.ensureIndex('reportUnixTime', true, function () {});
+      collection.ensureIndex('id', true, function () {});
 
       collection.find(options.query).limit(options.limit).sort('_id').toArray(function (err, data) {
         if (!data) return;
@@ -118,7 +121,9 @@ Data.prototype.findItem = function (id, type, cb) {
   var self = this;
   self.db.collection(type + 'Data', function (err, collection) {
 
-    collection.findOne({'id': id}).toArray(function (err, data) {
+    collection.findOne({
+      'id': id
+    }).toArray(function (err, data) {
       cb(err, data);
     });
   });
@@ -128,8 +133,10 @@ Data.prototype.findItem = function (id, type, cb) {
 Data.prototype.find = function (type, limit, cb) {
   var self = this;
   var l = limit || 150;
-// TODO: use collection, not DB
-  var results = self.db.find({}).limit(limit).sort({'_id': 1}).toArray(function (err, data) {
+  // TODO: use collection, not DB
+  var results = self.db.find({}).limit(limit).sort({
+    '_id': 1
+  }).toArray(function (err, data) {
     cb(err, data);
   });
 };
@@ -140,17 +147,18 @@ Data.prototype.saveItem = function (id, item, type, cb) {
   if (self.options.logLevel > 1) console.log('id', id, 'item', item, 'type', type, typeof cb);
   if (self.options.logLevel > 0) console.log('saving', id);
 
-  db.collection(type + 'Data').update(
-      {'id': id},
-      {$set: item},
-      {'upsert': true},
-      function (err, docs) {
-        if (err) return cb(err);
+  db.collection(type + 'Data').update({
+    'id': id
+  }, {
+    $set: item
+  }, {
+    'upsert': true
+  }, function (err, docs) {
+    if (err) return cb(err);
 
-        if (self.options.logLevel > 0) console.log('id', id, 'saved');
-        cb(null, docs[0]);
-      }
-    );
+    if (self.options.logLevel > 0) console.log('id', id, 'saved');
+    cb(null, docs[0]);
+  });
 
 
 };
@@ -177,12 +185,10 @@ Data.prototype.saveDB = function (type, cb) {
       }
       async.each(aData, function (item, next) {
 
-        self._updateOne(item, type, collection,
-          function (err, docs) {
-            if (err) return next(err);
-            next(null);
-          }
-        );
+        self._updateOne(item, type, collection, function (err, docs) {
+          if (err) return next(err);
+          next(null);
+        });
 
       }, function (err) {
         self.db.close();
@@ -193,41 +199,37 @@ Data.prototype.saveDB = function (type, cb) {
         }
         console.log('saved', type);
         cb();
-      }
-      );
+      });
     });
   });
 };
 
 Data.prototype.update = function (type, criteria, values, options, cb) {
-  self.db.collection(type + 'Data', function (err, collection) {
+  this.db.collection(type + 'Data', function (err, collection) {
 
     if (err) {
       console.error('error', err);
       return cb(new Error('db error'));
     }
     collection.update(
-      criteria,
-      values,
-      options,
-      function (err, docs) {
-        if (err) return cb(err);
-        cb(null, docs[0]);
-      }
-    );
+    criteria, values, options, function (err, docs) {
+      if (err) return cb(err);
+      cb(null, docs[0]);
+    });
   });
 };
 
 Data.prototype._updateOne = function (id, item, type, collection, cb) {
-  collection.update(
-    {'id': id},
-    {$set: item},
-    {'upsert': true},
-    function (err, docs) {
-      if (err) return cb(err);
-      cb(null, docs[0]);
-    }
-  );
+  collection.update({
+    'id': id
+  }, {
+    $set: item
+  }, {
+    'upsert': true
+  }, function (err, docs) {
+    if (err) return cb(err);
+    cb(null, docs[0]);
+  });
 
 };
 
@@ -261,9 +263,9 @@ Data.prototype.initDB = function (cb) {
     new mongodb.Server('ds051977.mongolab.com', 51977, {}), {w: 1}
   );
   */
-  self.db = new mongodb.Db('trap4004',
-    new mongodb.Server('localhost', 27017, {}), {w: 1}
-  );
+  self.db = new mongodb.Db('trap4004', new mongodb.Server('localhost', 27017, {}), {
+    w: 1
+  });
 
   self.db.open(function (err, db_p) {
     if (err) {
@@ -293,5 +295,6 @@ Data.prototype.closeDB = function () {
 
 };
 
-var db = mongo.db('localhost:27017/trap4004', {w: 1});
-
+var db = mongo.db('localhost:27017/trap4004', {
+  w: 1
+});

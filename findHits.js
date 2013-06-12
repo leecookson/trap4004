@@ -36,31 +36,38 @@ var data = new Data();
 var earliestTime = new Date();
 var latestTime = startReportTime;
 
-process.on('uncaughtException', function(err) {
+process.on('uncaughtException', function (err) {
   console.log('Caught exception:', err, err.stack);
   process.exit(-1);
 });
 
 // TODO: filter reports by startDate
-data.loadDB('report', {query: {'reportUnixTime': {$gt: (Math.floor(startReportTime.getTime() / 1000)).toString()}}},
-  function (err, reports) {
-    data.loadDB('user', {query: {}}, function (err, users) {
+data.loadDB('report', {
+  query: {
+    'reportUnixTime': {
+      $gt: (Math.floor(startReportTime.getTime() / 1000)).toString()
+    }
+  }
+}, function (err, reports) {
+  data.loadDB('user', {
+    query: {}
+  }, function (err, users) {
 
     var userHash = {};
-    users.forEach(function(u) {
+    users.forEach(function (u) {
       userHash[u.id] = u;
     });
 
     console.log(reports.length, 'reports');
     console.log(users.length, 'users');
-    var reportsSorted = _.sortBy(reports, function(item) {
+    var reportsSorted = _.sortBy(reports, function (item) {
       return -(item.reportUnixTime);
     });
 
     if (userName === 'all') {
       console.log('looping over all users');
 
-      users.forEach(function(user) {
+      users.forEach(function (user) {
         if (user.a === ourAlliance) {
           getUserHits(reportsSorted, userHash, user);
         }
@@ -90,7 +97,7 @@ function getUserHits(reports, users, user) {
   var farmers = {};
   var losers = {};
 
-  var totalLootFarmed = totalLootLost = totalMightLost = totalMightKilled = 0;
+  var totalLootFarmed = 0, totalLootLost = 0, totalMightLost = 0, totalMightKilled = 0;
   var outputPrefix = 'ally';
 
   if (user.a !== ourAlliance) {
@@ -105,7 +112,10 @@ function getUserHits(reports, users, user) {
   var outputReport = [];
   var userCoords = [];
 
-  var reportData = {'name': user.n, table: []};
+  var reportData = {
+    'name': user.n,
+    table: []
+  };
 
   // TODO: write this out to a specific file automatically, not std out
   var counter = 0;
@@ -114,7 +124,7 @@ function getUserHits(reports, users, user) {
   console.log('reports for', user.n);
   outputReport.push(outputHeader());
 
-  reports.forEach(function(item) {
+  reports.forEach(function (item) {
     var user0, user1;
     var reportDate = new Date(item.reportUnixTime * 1000);
     var stats;
@@ -167,10 +177,10 @@ function getUserHits(reports, users, user) {
             stats.defMightLost = calculateMightLost(s0);
           }
 
-          if (stats.loot.total >= minLootForReport) {
+          if (stats.loot.total > -1) {
             outputReport.push('  hit ===> ' + formatStats(stats));
             reportData.table.push('  hit ===> ' + formatStats(stats));
-	  }
+          }
           totalLootFarmed += stats.loot.total;
 
           userCoords[item.side1XCoord + ',' + item.side1YCoord] = item.side1XCoord + ',' + item.side1YCoord;
@@ -207,7 +217,7 @@ function getUserHits(reports, users, user) {
             stats.defMightLost = calculateMightLost(s0);
           }
 
-          if (stats.loot.total >= minLootForReport) {
+          if (stats.loot.total > -1) {
             outputReport.push('<== hit by ' + formatStats(stats));
             reportData.table.push('<== hit by ' + formatStats(stats));
           }
@@ -252,7 +262,6 @@ function getUserHits(reports, users, user) {
 
   outputReport.push(userName + ' city coords ' + util.inspect(_.keys(userCoords)));
   //console.log(outputReport.join('\n'));
-
   fs.writeFileSync(outputFileName, outputReport.join('\n'));
 
   fs.writeFileSync(htmlFileName, generateReport(reportData));
@@ -260,11 +269,11 @@ function getUserHits(reports, users, user) {
 }
 
 var reportFormat = '%4s  %4s  %4s  %4s %4s  %s %s';
+
 var hitReportFormat = '%-15s (%3d %3d)  %4s %7s %s (%3d %3d) %7d %7d %4.1f';
 
 function outputHeader() {
- return '  hit opponent             opp coord   res unitSnt time  own coord mgtLost mgtKild ratio\n' +
-        '  ------------             --------- ----- ------- ----- --------- ------- ------- -----';
+  return '  hit opponent             opp coord   res unitSnt time  own coord mgtLost mgtKild ratio\n' + '  ------------             --------- ----- ------- ----- --------- ------- ------- -----';
 }
 
 
@@ -274,23 +283,12 @@ function formatStats(stats) {
       var attMightLost = stats.attMightLost || 0;
       var defMightLost = stats.defMightLost || 0;
       var ratio = defMightLost / attMightLost;
-      return printf(hitReportFormat,
-        stats.n,
-        stats.xCoord,
-        stats.yCoord,
-/*        formatRes(stats.loot.food),
+      return printf(hitReportFormat, stats.n, stats.xCoord, stats.yCoord,
+      /*        formatRes(stats.loot.food),
         formatRes(stats.loot.wood),
         formatRes(stats.loot.stone),
         formatRes(stats.loot.ore),*/
-        formatRes(stats.loot.total),
-        stats.attUnits,
-        toSimpleTime(toGameTime(new Date(stats.reportUnixTime * 1000))),
-        stats.xCoordFrom,
-        stats.yCoordFrom,
-        attMightLost,
-        defMightLost,
-        ratio
-      );
+      formatRes(stats.loot.total), stats.attUnits, toSimpleTime(toGameTime(new Date(stats.reportUnixTime * 1000))), stats.xCoordFrom, stats.yCoordFrom, attMightLost, defMightLost, ratio);
     } catch (e) {
       console.error(e, e.stack);
       return "error";
@@ -372,7 +370,7 @@ function calculateMightLost(fightSide) {
   return calculateMightLostRank(troops) + calculateMightLostRank(reins);
 }
 
-function calculateMightLostRank (rank) {
+function calculateMightLostRank(rank) {
   if (!rank) {
     return 0;
   }
@@ -445,7 +443,7 @@ function toSimpleTime(date) {
 function generateReport(reportData) {
   var templateFile = fs.readFileSync('hits.mu').toString();
 
-//  console.log(reportData);
+  //  console.log(reportData);
   // compile template
   var template = hogan.compile(templateFile);
 
