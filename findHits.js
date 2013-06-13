@@ -4,14 +4,18 @@ var _ = require('underscore'),
   fs = require('fs'),
   util = require('util'),
   hogan = require('hogan.js'),
-  traverse = require('traverse');
+  traverse = require('traverse'),
+  toGameTime = require('./gameTime'),
+  toSimpleTime = require('./simpleTime');
 
-var Data = require('./data');
-var dist = require('./dist');
-var formatRes = require('./format_res');
-var printf = require('printf');
+var Data = require('./data'),
+  dist = require('./dist'),
+  formatRes = require('./format_res'),
+  printf = require('printf');
 
 var userName = process.argv[2] || 'all';
+
+var incomingMode = (userName === 'incoming');
 
 console.log('report for user:', userName);
 
@@ -36,7 +40,7 @@ var data = new Data();
 var earliestTime = new Date();
 var latestTime = startReportTime;
 
-process.on('uncaughtException', function (err) {
+process.on('uncaughtException', function(err) {
   console.log('Caught exception:', err, err.stack);
   process.exit(-1);
 });
@@ -48,30 +52,45 @@ data.loadDB('report', {
       $gt: (Math.floor(startReportTime.getTime() / 1000)).toString()
     }
   }
-}, function (err, reports) {
+}, function(err, reports) {
   data.loadDB('user', {
     query: {}
-  }, function (err, users) {
+  }, function(err, users) {
+    data.loadDB('alliance', {
+      query: {}
+    }, function(err, alliances) {
 
     var userHash = {};
-    users.forEach(function (u) {
+    users.forEach(function(u) {
       userHash[u.id] = u;
     });
 
-    console.log(reports.length, 'reports');
-    console.log(users.length, 'users');
-    var reportsSorted = _.sortBy(reports, function (item) {
+    var allianceHash = {};
+    alliances.forEach(function(a) {
+      allianceHash[a.id] = a;
+//      console.log('a', a);
+//      console.log('allianceHash', allianceHash);
+    });
+
+//    console.log(reports.length, 'reports');
+//    console.log(users.length, 'users');
+//    console.log(alliances.length, 'alliances');
+    var reportsSorted = _.sortBy(reports, function(item) {
       return -(item.reportUnixTime);
     });
 
     if (userName === 'all') {
       console.log('looping over all users');
 
-      users.forEach(function (user) {
+      users.forEach(function(user) {
         if (user.a === ourAlliance) {
           getUserHits(reportsSorted, userHash, user);
         }
       });
+
+    } else if (incomingMode) {
+
+      getAllianceHits(reportsSorted, userHash, allianceHash);
 
     } else {
 
@@ -90,14 +109,14 @@ data.loadDB('report', {
     data.closeDB();
     process.exit();
   });
+  });
 });
-
 
 function getUserHits(reports, users, user) {
   var farmers = {};
   var losers = {};
 
-  var totalLootFarmed = 0, totalLootLost = 0, totalMightLost = 0, totalMightKilled = 0;
+  var totalLootFarmed = totalLootLost = totalMightLost = totalMightKilled = 0;
   var outputPrefix = 'ally';
 
   if (user.a !== ourAlliance) {
@@ -106,7 +125,7 @@ function getUserHits(reports, users, user) {
   var userNameForFile = user.n;
   userNameForFile = user.n[0].toUpperCase() + user.n.substring(1);
 
-  var outputFileName = path.resolve('reports', outputPrefix, userNameForFile + '.txt');
+//  var outputFileName = path.resolve('reports', outputPrefix, userNameForFile + '.txt');
   var htmlFileName = path.resolve('reports', outputPrefix, userNameForFile + '.html');
 
   var outputReport = [];
@@ -124,7 +143,7 @@ function getUserHits(reports, users, user) {
   console.log('reports for', user.n);
   outputReport.push(outputHeader());
 
-  reports.forEach(function (item) {
+  reports.forEach(function(item) {
     var user0, user1;
     var reportDate = new Date(item.reportUnixTime * 1000);
     var stats;
@@ -233,6 +252,7 @@ function getUserHits(reports, users, user) {
     }
   });
 
+  var gameTime = toGameTime(now);
   reportData.earliestTime = toSimpleTime(toGameTime(earliestTime));
   reportData.latestTime = toSimpleTime(toGameTime(latestTime));
   reportData.gameTime = toSimpleTime(toGameTime(gameTime));
@@ -245,7 +265,6 @@ function getUserHits(reports, users, user) {
   outputReport.push('  ------------             --------- ----- ------- ----- --------- ------- ------- -----');
   outputReport.push('Start Time:     ' + toSimpleTime(toGameTime(earliestTime)) + ' ' + earliestTime.getDayName());
   outputReport.push('End Time:       ' + toSimpleTime(toGameTime(latestTime)) + ' ' + latestTime.getDayName());
-  var gameTime = toGameTime(now);
   outputReport.push('Game Time Now:  ' + toSimpleTime(gameTime));
 
   if (user.lastLoginTimestamp) {
@@ -262,9 +281,111 @@ function getUserHits(reports, users, user) {
 
   outputReport.push(userName + ' city coords ' + util.inspect(_.keys(userCoords)));
   //console.log(outputReport.join('\n'));
-  fs.writeFileSync(outputFileName, outputReport.join('\n'));
+//  fs.writeFileSync(outputFileName, outputReport.join('\n'));
 
   fs.writeFileSync(htmlFileName, generateReport(reportData));
+
+}
+
+function getAllianceHits(reports, users, alliances) {
+  var reportData = {};
+  var allianceHits = {};
+
+  var gameTime = toGameTime(now);
+  reports.forEach(function (item) {
+    var reportDate = new Date(item.reportUnixTime * 1000);
+
+    if (item.side0AllianceId === ourAlliance) {
+
+      if (reportDate.getTime() < earliestTime.getTime()) earliestTime = reportDate;
+      if (reportDate.getTime() > latestTime.getTime()) latestTime = reportDate;
+
+      var alliance = alliances[item.side1AllianceId];
+      if (alliance) {
+        if (!allianceHits[item.side1AllianceId]) {
+          allianceHits[item.side1AllianceId] = {
+            hits:[],
+            allianceId: item.side1AllianceId,
+            id: alliance.id,
+            name: alliance.name,
+            a: item.side1AllianceId,
+            totalLootFarmed: 0,
+            totalMightLost: 0,
+            totalMightKilled: 0
+          };
+        }
+        addAllianceHit(allianceHits[item.side1AllianceId], item, users, alliances);
+      }
+    }
+  });
+
+  reportData.allianceHits = _.toArray(allianceHits);
+  reportData.earliestTime = toSimpleTime(toGameTime(earliestTime));
+  reportData.latestTime = toSimpleTime(toGameTime(latestTime));
+  reportData.gameTime = toSimpleTime(toGameTime(gameTime));
+
+  _.each(allianceHits, function (item) {
+    console.log('\n==', item.name, '==');
+    item.totalLootFarmed = formatRes(item.totalLootFarmed);
+    item.totalMightKilled = formatRes(item.totalMightKilled);
+    item.totalMightLost = formatRes(item.totalMightLost);
+    _.each(item.hits, function (hit) {
+      hit.stats.loot = refactorLoot(hit.boxContent.loot);
+      hit.reportLine = 'hit ==> ' + formatStats(hit.stats) + '  ' + hit.by;
+      console.log('hit ==>', formatStats(hit.stats));
+    });
+
+  });
+
+  reportData.allianceHits = _.sortBy(reportData.allianceHits, function (item) {
+    return -item.hits.length;
+  });
+
+  var htmlFileName = path.resolve('reports', 'incomingByAlliance.html');
+  fs.writeFileSync(htmlFileName, generateIncomingReport(reportData));
+}
+
+function addAllianceHit(allianceHit, hit, users, alliances) {
+  var user0, user1;
+  allianceHit.hits.push(hit);
+
+  user0 = users['u' + hit.side0PlayerId] || {
+    n: 'unknown'
+  };
+  user1 = users['u' + hit.side1PlayerId] || {
+    n: 'unknown'
+  };
+
+  hit.on = user0.n;
+  hit.by = user1.n;
+
+  hit.stats = {
+    n: user0.n,
+    xCoord: hit.side0XCoord,
+    yCoord: hit.side0YCoord,
+    xCoordFrom: hit.side1XCoord,
+    yCoordFrom: hit.side1YCoord,
+    reportUnixTime: hit.reportUnixTime
+  };
+
+  hit.boxContent.n = user0.n;
+  hit.stats.loot = refactorLoot(hit.boxContent.loot);
+
+  hit.stats.attUnits = hit.stats.defUnits = 0;
+  if (hit.boxContent.fght) {
+    var s0 = hit.boxContent.fght.s0;
+    var s1 = hit.boxContent.fght.s1;
+    hit.stats.attUnits = countUnits(s1);
+    hit.stats.attMightLost = calculateMightLost(s1);
+    hit.stats.defUnits = countUnits(s0);
+    hit.stats.defMightLost = calculateMightLost(s0);
+  }
+
+  allianceHit.totalLootFarmed += hit.stats.loot.total;
+  if (hit.stats.attMightLost)
+    allianceHit.totalMightLost += hit.stats.attMightLost;
+  if (hit.stats.defMightLost)
+    allianceHit.totalMightKilled += hit.stats.defMightLost;
 
 }
 
@@ -427,27 +548,31 @@ function countUnits(fightSide) {
   return totalUnits;
 }
 
-function toGameTime(date) {
-  if (!date) return new Date();
-
-  var gameTime = new Date(date);
-  gameTime.setHours(date.getHours() - gameHoursShift);
-  return gameTime;
-}
-
-function toSimpleTime(date) {
-  if (!date) return '00:00';
-  return printf('%02d:%02d', date.getHours(), date.getMinutes());
-}
-
 function generateReport(reportData) {
-  var templateFile = fs.readFileSync('hits.mu').toString();
+  var templateFile = fs.readFileSync('hits.mu', 'utf-8').toString();
+  var headerFile = fs.readFileSync('header.mu', 'utf-8').toString();
 
-  //  console.log(reportData);
   // compile template
   var template = hogan.compile(templateFile);
+  var header = hogan.compile(headerFile);
 
-  return template.render(reportData);
+  return template.render(reportData, {
+    'header': header
+  });
+
+}
+
+function generateIncomingReport(allianceHits) {
+  var templateFile = fs.readFileSync('incoming.mu', 'utf-8').toString();
+  var headerFile = fs.readFileSync('header.mu', 'utf-8').toString();
+
+  // compile template
+  var template = hogan.compile(templateFile);
+  var header = hogan.compile(headerFile);
+
+  return template.render(allianceHits, {
+    'header': header
+  });
 
 }
 
@@ -459,6 +584,7 @@ function generateReport(reportData) {
   Date.prototype.getMonthName = function () {
     return months[this.getMonth()];
   };
+
   Date.prototype.getDayName = function () {
     return days[this.getDay()];
   };
