@@ -62,13 +62,13 @@ TrapExtract.prototype.handlers['/ajax/listReports.php'] = function (report, cb) 
     reportData.handleReports(report.arReports, function (err) {
       var allianceData = new AllianceData();
 
-//      allianceData.handleReportAlliances(report.arAllianceNames, function (err) {
+      allianceData.handleReportAlliances(report.arAllianceNames, function (err) {
 
-//        allianceData.close();
+        allianceData.close();
         reportData.close();
         userData.close();
         cb(err);
-//      });
+      });
     });
   });
 };
