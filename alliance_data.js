@@ -47,3 +47,26 @@ AllianceData.prototype.handleAlliances = function (allianceData, cb) {
   );
 };
 
+
+AllianceData.prototype.handleReportAlliances = function (allianceData, cb) {
+  var self = this;
+
+  async.each(
+  _.keys(allianceData), function (key, next) {
+    var allianceId = key.substring(1);
+    var allianceName = allianceData[key];
+    var alliance = {
+      id: allianceId,
+      allianceId: allianceId,
+      name: allianceName
+    };
+    self.update(key, alliance, function (err, data) {
+      next(err, data);
+    });
+
+    },
+    function (err) {
+      cb(err);
+    }
+  );
+};
