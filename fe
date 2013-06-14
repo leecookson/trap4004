@@ -1,5 +1,5 @@
 #!/bin/bash
 
-enemies=$(grep hit reports/ally/*.txt | grep '<==' | cut -d ' ' -f 4 | sort -u)
+enemies=$(grep hit reports/ally/*.html | grep 'hit by' | cut -d ' ' -f 4 | sort -u)
 
-for enemy in $enemies; do ./fh $enemy; done
+for enemy in $enemies; do ./fh $enemy; echo "Report for: $enemy"; done
