@@ -7,6 +7,7 @@ var path = require('path');
 var printf = require('printf');
 var fs = require('fs');
 var hogan = require('hogan.js');
+var userToFileName = require('./userToFileName');
 
 var alliance = "15740";
 var farmMode = process.argv[2] || 0; // 1 = farm, 0 = lose
@@ -89,6 +90,7 @@ data.loadDB('report', {
               if (!players[farmer.id]) {
                 players[farmer.id] = {
                   'n': farmer.n,
+                  'fn' : userToFileName(farmer.n),
                   xCoord: item.side1XCoord,
                   yCoord: item.side1YCoord
                 };
@@ -98,6 +100,7 @@ data.loadDB('report', {
               if (!players[loser.id]) {
                 players[loser.id] = {
                   'n': loser.n,
+                  'fn' : userToFileName(farmer.n),
                   xCoord: item.side0XCoord,
                   yCoord: item.side0YCoord
                 };
