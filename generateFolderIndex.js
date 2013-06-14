@@ -25,7 +25,7 @@ var files = fs.readdirSync(folderPath);
 
 files.forEach(function (item) {
   var name = path.basename(item, '.html');
-  if (name !== 'index') {
+  if (name !== 'index' && name !== item) {
     indexData.files.push({name: name, file: item});
   }
 });
