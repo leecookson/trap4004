@@ -19,19 +19,20 @@
   a:link { text-decoration: none; }
   body {line-height: 0.9em; padding-left: 5px;}
   li {margin-top: 3px;}
+  .table td {padding: 5px;}
 </style>
 <body bgcolor="white" style="font-size: 1.4em; text-decoration: none">
     {{> header }}
 
 <h3>{{name}} Reports - {{now}}</h3>
 <hr>
-<ul class="unstyled" style="width: 300px;">
+<table class="table" style="width: 400px;">
 {{#files}}
-  <li>
-    <a href="{{file}}">{{name}}</a>
-  </li>
+  <tr>
+    <td><a href="{{file}}">{{name}}</a></td><td>{{stats.mDate}} {{stats.mTime}}</td>
+  </tr>
 {{/files}}
-</ul>
+</table>
 <hr></body>
 </html>
 
