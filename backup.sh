@@ -1,7 +1,8 @@
 #!/bin/bash -x
 
 date=$(date +%F)
-cd /home/ec2-user/trap4004/reports
+trapHome = /home/ec2-user/trap4004
+cd ${trapHome}/reports
 
 files="*.txt *.html"
 
@@ -15,3 +16,6 @@ done
 
 cp -R ally history/${date}/ally
 cp -R enemy history/${date}/enemy
+
+cd ${trapHome}
+node generateFolderIndex history
