@@ -6,20 +6,34 @@ var _ = require('underscore'),
   hogan = require('hogan.js'),
   traverse = require('traverse'),
   toGameTime = require('./gameTime'),
-  toSimpleTime = require('./simpleTime');
+  toSimpleTime = require('./simpleTime'),
+  toSimpleDate = require('./simpleDate');
 
 var Data = require('./data'),
   dist = require('./dist'),
   formatRes = require('./format_res'),
   printf = require('printf');
 
-var userName = process.argv[2] || 'all';
+var numParams = process.argv.length;
 
-var incomingMode = (userName === 'incoming');
+var userNames = [];
 
-console.log('report for user:', userName);
+if (numParams > 3) {
+  userNames = process.argv.slice(2);
+} else {
+  userNames.push(process.argv[2] || 'all');
+}
 
+var incomingMode = (userNames[0] === 'incoming');
+
+console.log('report for users:', userNames);
+
+//TODO: change this to a command flag (optimist, maybe)
 var startDaysAgo = process.argv[3] || 1;
+
+if (typeof startDaysAgo !== 'number') {
+  startDaysAgo = 1;
+}
 
 console.log('start days ago:', startDaysAgo);
 
@@ -79,7 +93,7 @@ data.loadDB('report', {
       return -(item.reportUnixTime);
     });
 
-    if (userName === 'all') {
+    if (userNames[0] === 'all') {
       console.log('looping over all users');
 
       users.forEach(function(user) {
@@ -95,15 +109,18 @@ data.loadDB('report', {
     } else {
 
 
-      var user = (_.findWhere(users, {
-        'n': userName
-      }));
-      if (!user) {
-        console.error('User', userName, 'Not Found');
-        process.exit(-1);
-      }
-      console.log('report for', user.n);
-      getUserHits(reportsSorted, userHash, user);
+      userNames.forEach(function (name) {
+        name = name.replace('&#39;', '\'');
+        var user = (_.findWhere(users, {
+          'n': name
+        }));
+        if (!user) {
+          console.error('User',name, 'Not Found');
+          return;
+        }
+        console.log('report for', user.n);
+        getUserHits(reportsSorted, userHash, user);
+      });
     }
 
     data.closeDB();
@@ -133,6 +150,7 @@ function getUserHits(reports, users, user) {
 
   var reportData = {
     'name': user.n,
+    'userMight': user.m,
     table: []
   };
 
@@ -140,7 +158,6 @@ function getUserHits(reports, users, user) {
   var counter = 0;
   if (logLevel > 1) console.log(reports.length, 'reports');
 
-  console.log('reports for', user.n);
   outputReport.push(outputHeader());
 
   reports.forEach(function(item) {
@@ -241,8 +258,8 @@ function getUserHits(reports, users, user) {
             reportData.table.push('<== hit by ' + formatStats(stats));
           }
           totalLootLost += stats.loot.total;
-          totalMightLost += stats.attMightLost;
-          totalMightKilled += stats.attMightKilled;
+          totalMightLost += stats.defMightLost;
+          totalMightKilled += stats.attMightLost;
 
           userCoords[item.side0XCoord + ',' + item.side0YCoord] = item.side0XCoord + ',' + item.side0YCoord;
         }
@@ -255,7 +272,9 @@ function getUserHits(reports, users, user) {
   var gameTime = toGameTime(now);
   reportData.earliestTime = toSimpleTime(toGameTime(earliestTime));
   reportData.latestTime = toSimpleTime(toGameTime(latestTime));
+  reportData.latestDate = toSimpleDate(toGameTime(latestTime));
   reportData.gameTime = toSimpleTime(toGameTime(gameTime));
+  reportData.gameDate = toSimpleDate(toGameTime(gameTime));
   reportData.totalResFarmed = formatRes(totalLootFarmed);
   reportData.totalResLost = formatRes(totalLootLost);
   reportData.totalMightKilled = formatRes(totalMightKilled);
@@ -279,7 +298,7 @@ function getUserHits(reports, users, user) {
   outputReport.push('Might Lost:   ' + formatRes(totalMightLost));
   outputReport.push('');
 
-  outputReport.push(userName + ' city coords ' + util.inspect(_.keys(userCoords)));
+  outputReport.push(user.n + ' city coords ' + util.inspect(_.keys(userCoords)));
   //console.log(outputReport.join('\n'));
 //  fs.writeFileSync(outputFileName, outputReport.join('\n'));
 

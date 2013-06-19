@@ -34,12 +34,13 @@
       <section>
         <ul class="unstyled">
           <li>Earliest: {{earliestTime}}</li>
-          <li>Latest: <strong>{{latestTime}}</strong></li>
+          <li>Latest: <strong>{{latestTime}} {{latestDate}}</strong></li>
           <li>Now: {{gameTime}}</li>
           <li>Res Farmed: {{totalResFarmed}}</li>
           <li>Res Lost: {{totalResLost}}</li>
           <li>Might Killed: {{totalMightKilled}}</li>
           <li>Might Lost: {{totalMightLost}}</li>
+          <li>Might: {{userMight}}</li>
         </ul>
       </section>
       <header>
