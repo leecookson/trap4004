@@ -16,6 +16,9 @@
     </style>
 
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <style>
+      .table td, .table th {padding: 5px;}
+    </style>
 
   </head>
   <body>
@@ -53,7 +56,7 @@
               <td class="numeric">{{loot.stoneStr}}</td>
               <td class="numeric">{{loot.oreStr}}</td>
               <td class="numeric">{{loot.totalStr}}</td>
-              <th><a href="ally/{{n}}.html">{{n}}</a></th>
+              <th><a href="ally/{{fn}}.html">{{n}}</a></th>
             </tr>
             {{/players}}
             <tr>
