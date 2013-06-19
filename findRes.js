@@ -100,7 +100,7 @@ data.loadDB('report', {
               if (!players[loser.id]) {
                 players[loser.id] = {
                   'n': loser.n,
-                  'fn' : userToFileName(farmer.n),
+                  'fn' : userToFileName(loser.n),
                   xCoord: item.side0XCoord,
                   yCoord: item.side0YCoord
                 };
