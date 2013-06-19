@@ -1,8 +1,10 @@
 var path = require('path'),
   fs = require('fs'),
   hogan = require('hogan.js'),
+  _ = require('underscore'),
   toGameTime = require('./gameTime'),
-  toSimpleTime = require('./simpleTime');
+  toSimpleTime = require('./simpleTime'),
+  toSimpleDate = require('./simpleDate');
 
 var reportFolder = process.argv[2] || 'ally'
 var templateFileName = path.resolve('folderIndex.mu');
@@ -23,10 +25,16 @@ var folderPath = path.resolve('reports', reportFolder);
 
 var files = fs.readdirSync(folderPath);
 
+files.sort();
+
 files.forEach(function (item) {
   var name = path.basename(item, '.html');
-  if (name !== 'index' && name !== item) {
-    indexData.files.push({name: name, file: item});
+  var file = path.resolve('reports', reportFolder, item);
+  if (item[0] !== '.' && item !== 'index.html') {
+    var fileData = {name: name, file: item, stats: fs.statSync(file)};
+    fileData.stats.mTime = toSimpleTime(toGameTime(fileData.stats.mtime));
+    fileData.stats.mDate = toSimpleDate(toGameTime(fileData.stats.mtime));
+    indexData.files.push(fileData);
   }
 });
 
