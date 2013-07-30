@@ -9,7 +9,8 @@ var async = require('async'),
 
 module.exports = TrapExtract;
 
-function TrapExtract(path) {
+function TrapExtract(host, path) {
+  this.host = host; // in form www{gameNumber}.{gameDomain}
   this.path = path;
   this.handle = this.handlers[path] || this.defaultHandler;
 }
@@ -21,10 +22,11 @@ TrapExtract.prototype.defaultHandler = function (data, cb) {
 TrapExtract.prototype.handlers = {};
 
 TrapExtract.prototype.handlers['/ajax/fetchMapTiles.php'] = function (mapObj, cb) {
+  var self = this;
 
   // console.log('map data', mapObj.data);
-  var userData = new UserData();
-  var mapData = new MapData();
+  var userData = new UserData(self.host);
+  var mapData = new MapData(self.host);
 
   async.waterfall(
     [
@@ -52,15 +54,17 @@ TrapExtract.prototype.handlers['/ajax/fetchMapTiles.php'] = function (mapObj, cb
 
 TrapExtract.prototype.handlers['/ajax/listReports.php'] = function (report, cb) {
 
+  var self = this;
+
   //console.log('report data', report);
-  var userData = new UserData();
+  var userData = new UserData(self.host);
 
   userData.handleReportUsers(report.arPlayerNames, function () {
 
-    var reportData = new ReportData();
+    var reportData = new ReportData(self.host);
 
     reportData.handleReports(report.arReports, function (err) {
-      var allianceData = new AllianceData();
+      var allianceData = new AllianceData(self.host);
 
       allianceData.handleReportAlliances(report.arAllianceNames, function (err) {
 
@@ -75,11 +79,12 @@ TrapExtract.prototype.handlers['/ajax/listReports.php'] = function (report, cb) 
 
 
 TrapExtract.prototype.handlers['/ajax/allianceGetMembersInfo.php'] = function (report, cb) {
+  var self = this;
 
   //console.log('report data', report);
-  var userData = new UserData();
+  var userData = new UserData(self.host);
 
-  userData.handleAllianceUsers(report.memberInfo, function (err) {
+  userData.handleAllianceUsers(report.allianceId, report.memberInfo, function (err) {
       userData.close();
       cb(err);
     });
@@ -87,9 +92,10 @@ TrapExtract.prototype.handlers['/ajax/allianceGetMembersInfo.php'] = function (r
 };
 
 TrapExtract.prototype.handlers['/ajax/getLeaderboard.php'] = function (report, cb) {
+  var self = this;
 
   //console.log('report data', report);
-  var userData = new UserData();
+  var userData = new UserData(self.host);
 
   userData.handleLeaderboard(report.leaderboard, function (err) {
       userData.close();
@@ -104,9 +110,10 @@ TrapExtract.prototype.handlers['/ajax/getLeaderboard.php'] = function (report, c
 };
 
 TrapExtract.prototype.handlers['/ajax/tileBookmark.php'] = function (report, cb) {
+  var self = this;
 
   //console.log('report data', report);
-  var bookmarkData = new BookmarkData();
+  var bookmarkData = new BookmarkData(self.host);
 
   bookmarkData.handleBookmarks(report.bookmarkInfo, function (err) {
     bookmarkData.close();
@@ -116,9 +123,10 @@ TrapExtract.prototype.handlers['/ajax/tileBookmark.php'] = function (report, cb)
 };
 
 TrapExtract.prototype.handlers['/ajax/allianceGetOtherInfo.php'] = function (report, cb) {
+  var self = this;
 
   //console.log('report data', report);
-  var allianceData = new AllianceData();
+  var allianceData = new AllianceData(self.host);
 
   allianceData.handleAlliances(report.otherAlliances, function (err) {
     allianceData.close();
