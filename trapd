@@ -1,0 +1,91 @@
+#!/bin/bash
+
+app=trap3
+
+action=$1
+
+game=$2
+port=$3
+
+game_home=/home/ec2-user/trap4004
+
+if [ -z $action ]
+then
+  action='start'
+fi
+
+if [ -z $game ]
+then
+  game='hobbitmobile'
+fi
+
+if [ -z $port ]
+then
+ port='4004'
+fi
+
+echo $0 $action $game $port
+
+function status() {
+  local game=$1
+  if [ "$game" == "all" ]
+  then
+    game=""
+  fi
+  ps ax | grep "node $app $game" | grep -v grep | awk '{print $1, $7}'
+}
+
+function get_process() {
+  local game=$1
+  local process=$(ps xo "%p %a" | grep "node $app $game" | grep -v grep)
+  process=$(echo $process)
+  process=$(echo $process | cut -d ' ' -f 1)
+  echo $process
+}
+
+function stop() {
+  local game=$1
+  local process=$(get_process $game)
+
+  if [ ! -z $process ]
+  then
+    echo "STOP $game"
+    kill $process
+  fi
+}
+
+function start() {
+  local game=$1
+  local port=$2
+  local log="${game_home}/log/${game}.log"
+  stop $game
+  cd ${game_home}
+
+  echo "START $game $port"
+  nohup node 2>&1 $app $game $port >> $log & > /dev/null
+}
+
+if [ "$action" == "status" ]
+then
+  status $game
+  exit 0
+fi
+
+
+case "$action" in
+"status")
+    status $game
+    exit 0
+    ;;
+"start" | "restart")
+    start $game $port
+    ;;
+"stop")
+    stop $game
+    ;;
+*)
+    status all
+    ;;
+esac
+
+
