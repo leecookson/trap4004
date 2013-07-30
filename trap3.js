@@ -6,7 +6,8 @@ var http = require('http'),
 
 var captures = {};
 
-var port = 4004;
+var port = process.argv[3] || 4004;
+var gameDomain = process.argv[2] || 'hobbitmobile';
 
 if (process.env['SUBDOMAIN']) {
     port = 80;
@@ -21,7 +22,7 @@ function saveData() {
   process.exit(0);
 }
 
-console.log('Listening on port', port);
+console.log('Listening on port', port, 'for game', gameDomain);
 
 process.on('SIGINT', function () {
   console.log('SIGINT');
@@ -41,8 +42,7 @@ http.createServer(function (req, res) {
 
 //  console.log(host);
 
-console.log(host);
-  if (host.indexOf('hobbitmobile.com') !== -1) {
+  if (host.indexOf(gameDomain) !== -1) {
     handle = true;
     // console.log('headers', res.headers);
     res.rawData = '';
@@ -54,7 +54,7 @@ console.log(host);
     var hostPos = req.url.indexOf(host) + host.length;
     var path = req.url.substring(hostPos);
 
-    var trap_extract = new TrapExtract('www1.hobbitmobile.com', path);
+    var trap_extract = new TrapExtract(req.headers.host, path);
   }
 
   var proxy_req = proxy.request(req.method, req.url, req.headers);
@@ -84,7 +84,7 @@ console.log(host);
         trap_extract.handle(data, function (err) {
           if (err) {
             if (err.message === 'UnhandledPath') {
-              console.log(Date(), 'unhandled path', path);
+              //console.log(Date(), 'unhandled path', path);
             } else {
               console.log('error extracting', err);
             }
