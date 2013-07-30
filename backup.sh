@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 date=$(date +%F)
-trapHome = /home/ec2-user/trap4004
+trapHome=/home/ec2-user/trap4004
 cd ${trapHome}/reports
 
 files="*.txt *.html"
