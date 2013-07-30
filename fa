@@ -1,5 +1,7 @@
 #!/bin/bash
 
+logfile=/home/ec2-user/trap4004/log/reports.log
+exec > $logfile 2>&1
 
 echo 'Finding Hits'
 
@@ -26,3 +28,6 @@ echo 'Fiding Enemies'
 node generateIndex
 node generateFolderIndex ally
 node generateFolderIndex enemy
+
+node imgMembers
+node imgMembers reports/farmers.txt reports/farmers.gif '-'
