@@ -4,12 +4,11 @@ var async = require('async'),
 
 module.exports = exports = UserData;
 
-var allianceId = '15740';
-
-function UserData() {
+function UserData(domain) {
 
   this.me = 'UserData';
-  this.data = new Data();
+  this.data = new Data({domain:domain});
+  this.domain = domain;
 }
 
 UserData.prototype.close = function () {
@@ -65,9 +64,8 @@ UserData.prototype.handleReportUsers = function (reportUsers, cb) {
   });
 };
 
-UserData.prototype.handleAllianceUsers = function (allyUsers, cb) {
+UserData.prototype.handleAllianceUsers = function (allianceId, allyUsers, cb) {
   var self = this;
-
 
   async.eachSeries(
   _.keys(allyUsers), function (key, next) {

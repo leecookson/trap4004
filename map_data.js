@@ -6,10 +6,10 @@ var fs = require('fs'),
 
 module.exports = exports = MapData;
 
-function MapData() {
+function MapData(domain) {
 
   this.me = 'MapData';
-  this.data = new Data();
+  this.data = new Data({domain: domain});
 }
 
 MapData.prototype.close = function () {

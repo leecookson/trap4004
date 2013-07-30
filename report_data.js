@@ -9,10 +9,10 @@ module.exports = exports = ReportData;
 
 var importantLimit = 10;
 
-function ReportData() {
+function ReportData(domain) {
 
   this.me = 'ReportData';
-  this.data = new Data();
+  this.data = new Data({domain:domain});
 }
 
 ReportData.prototype.close = function () {

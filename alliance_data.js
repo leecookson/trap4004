@@ -4,10 +4,10 @@ var async = require('async'),
 
 module.exports = exports = AllianceData;
 
-function AllianceData() {
+function AllianceData(domain) {
 
   this.me = 'AllianceData';
-  this.data = new Data();
+  this.data = new Data({domain: domain});
 }
 
 AllianceData.prototype.close = function () {

@@ -6,10 +6,10 @@ var fs = require('fs'),
 
 module.exports = exports = BookmarkData;
 
-function BookmarkData() {
+function BookmarkData(domain) {
 
   this.me = 'BookmarkData';
-  this.data = new Data();
+  this.data = new Data({domain: domain});
 }
 
 BookmarkData.prototype.close = function () {

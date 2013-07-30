@@ -13,9 +13,15 @@ var DEFAULT_OPTIONS = {
 function Data(options) {
   var self = this;
 
+  var options = options || {};
+
   this.me = 'Data';
   this.data = {};
   this.dbStatus = "CLOSED";
+
+  this.domain = options.domain || 'www1.hobbitmobile.com';
+
+  this.databaseName = getDatabaseName(this.domain);
 
   this.options = _.defaults({}, DEFAULT_OPTIONS, options);
 
@@ -144,20 +150,23 @@ Data.prototype.find = function (type, limit, cb) {
 Data.prototype.saveItem = function (id, item, type, cb) {
   var self = this;
 
-  if (self.options.logLevel > 1) console.log('id', id, 'item', item, 'type', type, typeof cb);
-  if (self.options.logLevel > 0) console.log('saving', id);
-
-  db.collection(type + 'Data').update({
-    'id': id
-  }, {
-    $set: item
-  }, {
-    'upsert': true
-  }, function (err, docs) {
+  self.initDB(function (err) {
     if (err) return cb(err);
+    if (self.options.logLevel > 1) console.log('id', id, 'item', item, 'type', type, typeof cb);
+    if (self.options.logLevel > 0) console.log('saving', id);
 
-    if (self.options.logLevel > 0) console.log('id', id, 'saved');
-    cb(null, docs[0]);
+    self.db.collection(type + 'Data').update({
+      'id': id
+    }, {
+      $set: item
+    }, {
+      'upsert': true
+    }, function (err, docs) {
+      if (err) return cb(err);
+
+      if (self.options.logLevel > 0) console.log('id', id, 'saved');
+      cb(null, docs[0]);
+    });
   });
 
 
@@ -257,13 +266,8 @@ Data.prototype.initDB = function (cb) {
 
   if (self.options.logLevel > 1) console.log('CONNECTING on port 21017');
 
-  // mongo ds051977.mongolab.com:51977/nodejitsu_leecookson_nodejitsudb3997674125 -u nodejitsu_leecookson -p oln6511kbfp3q824a54s5akhgo
-  /*
-  self.db = new mongodb.Db('nodejitsu_leecookson_nodejitsudb3997674125',
-    new mongodb.Server('ds051977.mongolab.com', 51977, {}), {w: 1}
-  );
-  */
-  self.db = new mongodb.Db('trap4004', new mongodb.Server('localhost', 27017, {}), {
+//  console.log('opening', self.databaseName);
+  self.db = new mongodb.Db(self.databaseName, new mongodb.Server('localhost', 27017, {}), {
     w: 1
   });
 
@@ -277,14 +281,6 @@ Data.prototype.initDB = function (cb) {
     self.dbStatus = 'CONNECTED';
     if (self.options.logLevel > 1) console.log("You are now connected to mongo.");
     cb(null);
-    /*
-    console.log('LOGGING IN');
-    self.db.authenticate('nodejitsu_leecookson', 'oln6511kbfp3q824a54s5akhgo', function (err, replies) {
-      self.dbStatus = 'CONNECTED';
-      console.log("You are now connected and authenticated to mongo.");
-      cb(null);
-    });
-    */
   });
 
 };
@@ -295,6 +291,11 @@ Data.prototype.closeDB = function () {
 
 };
 
-var db = mongo.db('localhost:27017/trap4004', {
-  w: 1
-});
+function getDatabaseName(domain) {
+  var domainParts = domain.split('.');
+  var gameNumber = domainParts[0].substring(3);
+
+  var databaseName = domainParts[1] + '-' + gameNumber;
+  return databaseName;
+}
+
