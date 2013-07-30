@@ -2,8 +2,9 @@ var _ = require('underscore');
 
 module.exports = exports = formatRes;
 
-function formatRes(value) {
+function formatRes(value, precision) {
   var val = parseInt(value, 10);
+  var precision = precision || 3;
   if (_.isNaN(val)) return -1;
 
   if (val === 0) return '0';
@@ -23,13 +24,13 @@ function formatRes(value) {
     div = 1000;
     mag = 'k';
   }
-  var prec = (val / div).toPrecision(3);
-  prec = ('' + prec).substring(0, 3);
+  var prec = (val / div).toPrecision(precision);
+  prec = ('' + prec).substring(0, precision);
   if (prec.substring(prec.length - 2) === '.0') {
     prec = '' + prec.substring(0, 1);
   }
   if (prec.substring(prec.length - 1) === '.') {
-    prec = '' + prec.substring(0, 2);
+    prec = '' + prec.substring(0, precision - 1);
   }
   return '' + prec + mag;
   // TODO: handle pos and negative
