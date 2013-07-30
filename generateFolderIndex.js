@@ -12,8 +12,10 @@ var indexFileName = path.resolve('reports', reportFolder, 'index.html');
 var folderPath = path.resolve('reports', reportFolder);
 
 var templateSource = fs.readFileSync(templateFileName, 'utf-8').toString();
+var headerFile = fs.readFileSync('header.mu', 'utf-8').toString();
 
 var template = hogan.compile(templateSource);
+var header = hogan.compile(headerFile);
 
 var indexData = {
   name: reportFolder,
@@ -38,6 +40,10 @@ files.forEach(function (item) {
   }
 });
 
-fs.writeFileSync(indexFileName, template.render(indexData), 'utf-8');
+indexData.fileCount = indexData.files.length;
+
+fs.writeFileSync(indexFileName, template.render(indexData, {
+  'header': header
+}), 'utf-8');
 
 
