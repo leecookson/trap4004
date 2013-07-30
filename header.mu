@@ -4,11 +4,13 @@
 <header>
   <nav>
     <ul class="nav nav-pills">
-      <li><a href="/reports">Home</a></li>
-      <li><a href="/reports/farmers.html">Farmers</a></li>
-      <li><a href="/reports/losers.html">Losers</a></li>
-      <li><a href="/reports/incomingByAlliance.html">Incoming</a></li>
-      <li><a href="/reports/allies.html">Member Rank</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/farmers.html">Farmers</a></li>
+      <li><a href="/losers.html">Losers</a></li>
+      <li><a href="/incomingByAlliance.html">Incoming</a></li>
+      <li><a href="/allies.html">Member Rank</a></li>
+      <li><a href="/ally">Alli</a></li>
+      <li><a href="/enemy">Enemy</a></li>
     </ul>
   </nav>
 </header>

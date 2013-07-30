@@ -44,13 +44,13 @@
         </ul>
       </section>
       <header>
-        <h2>Hits for {{name}}</h2>
+        <h3>Hits for {{name}}</h3>
 
       </header>
 
       <pre>
-  hit opponent             opp coord   res unitSnt time  own coord mgtLost mgtKild ratio
-  ------------             --------- ----- ------- ----- --------- ------- ------- -----
+  hit opponent             opp coord   res unitSnt time  own coord mgtLost mgtKild ratio Hro Bst Other
+  ------------             --------- ----- ------- ----- --------- ------- ------- ----- ------- -----
 {{table}}
       </pre>
     </div>

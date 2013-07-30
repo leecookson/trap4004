@@ -28,13 +28,13 @@
       <section>
         <ul class="unstyled">
           <li>Start Time: {{startTime.time}} {{startTime.dayOfWeek}}</li>
-          <li>End Time: <strong>{{endTime.time}}</strong></li>
+          <li>End Time: <strong>{{endTime.time}}</strong> {{endTime.dayOfWeek}} {{endTime.monthDay}}</li>
           <li>Time Now: {{nowTime.time}}</li>
           <li>Total Res: {{totals.totalStr}}</li>
         </ul>
       </section>
       <header>
-        <h2>{{titleLabel}}</h2>
+        <h3>{{titleLabel}}</h3>
       </header>
       <section>
         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">

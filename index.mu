@@ -6,7 +6,7 @@
 
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
         <style>
-          body { padding-top: 10px;}
+          body { padding-top: 10px; font-size: 14px}
           table { width: 100%; }
           td, th {text-align: left; white-space: nowrap;}
           td.numeric, th.numeric { text-align: right; }
@@ -22,12 +22,13 @@
       li {margin-top:3px;}
     </style>
   </head>
-  <body bgcolor="white" style="font-size: 1.2em; text-decoration: none">
+  <body bgcolor="white" style="text-decoration: none">
     {{> header }}
 
+    <div style="font-size: 1.2em">
     <h3>League0fLegends Reports - {{now}}</h3>
     <hr>
-    <ul class="unstyled" style="width: 380px;">
+    <ul class="unstyled" style="width: 400px;">
       <li><a href="allies.html">Alli Member Ranks</a></li>
       <li><a href="farmers.html">Farmers</a></li>
       <li><a href="losers.html">Losers</a></li>
@@ -37,8 +38,10 @@
       <li><a href="history/">History</a></li>
       <li><a href="tips/">Tips</a></li>
       <li><a href="special/FuseBankBattle-2013-05-11.txt">Fuse Bank Heist 2013-05-11</a></li>
-      <li><a href="special/AlexsEpicFarmingDay.html">Alex's Epic Farming Day 2013-05-20</a></li>
+      <li><a href="special/AlexsEpicFarmingDay.html">Alex's Epic Farming Day 2013-05-20 - 195m</a></li>
+      <li><a href="special/HobbitSam-2013-06-21.html">Blobb's Epic Farming Day 2013-06-21 - 248m</a></li>
     </ul>
+    </div>
     <hr>
   </body>
 </html>
