@@ -31,10 +31,6 @@ console.log('report for users:', userNames);
 //TODO: change this to a command flag (optimist, maybe)
 var startDaysAgo = process.argv[3] || 1;
 
-if (typeof startDaysAgo !== 'number') {
-  startDaysAgo = 1;
-}
-
 console.log('start days ago:', startDaysAgo);
 
 var ourAlliance = "15740";
@@ -133,7 +129,10 @@ function getUserHits(reports, users, user) {
   var farmers = {};
   var losers = {};
 
-  var totalLootFarmed = totalLootLost = totalMightLost = totalMightKilled = 0;
+  var totalLootFarmed = 0,
+    totalLootLost = 0,
+    totalMightLost = 0,
+    totalMightKilled = 0;
   var outputPrefix = 'ally';
 
   if (user.a !== ourAlliance) {
@@ -181,7 +180,36 @@ function getUserHits(reports, users, user) {
 
 
         item.boxContent.n = user0.n;
-
+/*
+"boxContent" : { "s0Kid" : "0",
+    "s1Kid" : "316497",
+    "s1KLv" : "85",
+    "s0KCombatLv" : "None",
+    "s1KCombatLv" : "85",
+    "fght" : { "s0" : [],
+      "s1" : { "r2" : { "u2" : [
+            "333",
+            "333",
+            0 ] } } },
+    "rnds" : 1,
+    "winner" : 2,
+    "wall" : 100,
+    "s0atkBoost" : 0,
+    "s0defBoost" : 0,
+    "s1atkBoost" : 0.2,
+    "s1defBoost" : 0.2,
+    "loot" : [
+      0,
+      60884,
+      71023,
+      65474,
+      0,
+      0,
+      0,
+      0,
+      0,
+      [] ] }
+*/
         // TODO: filter by alliance, not user, optional
         if (user1 && user1.n === user.n) {
 
@@ -203,6 +231,15 @@ function getUserHits(reports, users, user) {
           };
           stats.loot = refactorLoot(item.boxContent.loot);
 
+          if (item.boxContent) {
+            stats.heroLvl = item.boxContent.s1KCombatLv || 0;
+            stats.heroLvlOther = item.boxContent.s0KCombatLv || 0;
+            stats.defBoost = item.boxContent.s1defBoost || 0;
+            stats.atkBoost = item.boxContent.s1atkBoost || 0;
+            stats.defBoostOther = item.boxContent.s0defBoost || 0;
+            stats.atkBoostOther = item.boxContent.s0atkBoost || 0;
+          }
+
           stats.attUnits = stats.defUnits = 0;
           if (item.boxContent.fght) {
             var s0 = item.boxContent.fght.s0;
@@ -218,6 +255,8 @@ function getUserHits(reports, users, user) {
             reportData.table.push('  hit ===> ' + formatStats(stats));
           }
           totalLootFarmed += stats.loot.total;
+          totalMightLost += stats.attMightLost;
+          totalMightKilled += stats.defMightLost;
 
           userCoords[item.side1XCoord + ',' + item.side1YCoord] = item.side1XCoord + ',' + item.side1YCoord;
         }
@@ -243,6 +282,15 @@ function getUserHits(reports, users, user) {
           };
           stats.loot = refactorLoot(item.boxContent.loot);
 
+          if (item.boxContent) {
+            stats.heroLvlOther = item.boxContent.s1KCombatLv || 0;
+            stats.heroLvl = item.boxContent.s0KCombatLv || 0;
+            stats.defBoost = item.boxContent.s0defBoost || 0;
+            stats.atkBoost = item.boxContent.s0atkBoost || 0;
+            stats.defBoostOther = item.boxContent.s1defBoost || 0;
+            stats.atkBoostOther = item.boxContent.s1atkBoost || 0;
+          }
+
           stats.attUnits = stats.defUnits = 0;
           if (item.boxContent.fght) {
             var s0 = item.boxContent.fght.s0;
@@ -258,8 +306,8 @@ function getUserHits(reports, users, user) {
             reportData.table.push('<== hit by ' + formatStats(stats));
           }
           totalLootLost += stats.loot.total;
-          totalMightLost += stats.defMightLost;
-          totalMightKilled += stats.attMightLost;
+          totalMightLost += (stats.defMightLost || 0);
+          totalMightKilled += (stats.attMightLost || 0);
 
           userCoords[item.side0XCoord + ',' + item.side0YCoord] = item.side0XCoord + ',' + item.side0YCoord;
         }
@@ -349,6 +397,15 @@ function getAllianceHits(reports, users, alliances) {
     item.totalMightKilled = formatRes(item.totalMightKilled);
     item.totalMightLost = formatRes(item.totalMightLost);
     _.each(item.hits, function (hit) {
+      if (hit.boxContent) {
+        hit.stats.heroLvl = hit.boxContent.s0KCombatLv || 0;
+        hit.stats.heroLvlOther = hit.boxContent.s1KCombatLv || 0;
+        hit.stats.defBoost = hit.boxContent.s0defBoost || 0;
+        hit.stats.atkBoost = hit.boxContent.s0atkBoost || 0;
+        hit.stats.defBoostOther = hit.boxContent.s1defBoost || 0;
+        hit.stats.atkBoostOther = hit.boxContent.s1atkBoost || 0;
+      }
+
       hit.stats.loot = refactorLoot(hit.boxContent.loot);
       hit.reportLine = 'hit ==> ' + formatStats(hit.stats) + '  ' + hit.by;
       console.log('hit ==>', formatStats(hit.stats));
@@ -410,10 +467,10 @@ function addAllianceHit(allianceHit, hit, users, alliances) {
 
 var reportFormat = '%4s  %4s  %4s  %4s %4s  %s %s';
 
-var hitReportFormat = '%-15s (%3d %3d)  %4s %7s %s (%3d %3d) %7d %7d %4.1f';
+var hitReportFormat = '%-15s (%3d %3d)  %4s %7s %s (%3d %3d) %7d %7d %4.1f  %3s %s%s  %3s %s%s';
 
 function outputHeader() {
-  return '  hit opponent             opp coord   res unitSnt time  own coord mgtLost mgtKild ratio\n' + '  ------------             --------- ----- ------- ----- --------- ------- ------- -----';
+  return '  hit opponent             opp coord   res unitSnt time  own coord mgtLost mgtKild ratio Hero Bst  Other  Bst\n' + '  ------------             --------- ----- ------- ----- --------- ------- ------- ----- --- ---- ------ ----';
 }
 
 
@@ -423,12 +480,27 @@ function formatStats(stats) {
       var attMightLost = stats.attMightLost || 0;
       var defMightLost = stats.defMightLost || 0;
       var ratio = defMightLost / attMightLost;
+
+      var def20 = stats.defBoost <= 0.21 && stats.defBoost > 0;
+      var att20 = stats.atkBoost <= 0.21 && stats.atkBoost > 0;
+      var def100 = stats.defBoost > 0.9;
+      var att100 = stats.atkBoost > 0.9;
+      var defSymbol = def100 ? '*' : def20 ? '+' : ' ';
+      var attSymbol = att100 ? '*' : att20 ? '+' : ' ';
+
+      var def20Other = stats.defBoostOther <= 0.21 && stats.defBoostOther > 0;
+      var att20Other = stats.atkBoostOther <= 0.21 && stats.atkBoostOther > 0;
+      var def100Other = stats.defBoostOther > 0.9;
+      var att100Other = stats.atkBoostOther > 0.9;
+      var defSymbolOther = def100Other ? '*' : def20Other ? '+' : ' ';
+      var attSymbolOther = att100Other ? '*' : att20Other ? '+' : ' ';
+
       return printf(hitReportFormat, stats.n, stats.xCoord, stats.yCoord,
       /*        formatRes(stats.loot.food),
         formatRes(stats.loot.wood),
         formatRes(stats.loot.stone),
         formatRes(stats.loot.ore),*/
-      formatRes(stats.loot.total), stats.attUnits, toSimpleTime(toGameTime(new Date(stats.reportUnixTime * 1000))), stats.xCoordFrom, stats.yCoordFrom, attMightLost, defMightLost, ratio);
+      formatRes(stats.loot.total), stats.attUnits, toSimpleTime(toGameTime(new Date(stats.reportUnixTime * 1000))), stats.xCoordFrom, stats.yCoordFrom, attMightLost, defMightLost, ratio, shortenHeroLvl(stats.heroLvl), attSymbol, defSymbol, shortenHeroLvl(stats.heroLvlOther), attSymbolOther, defSymbolOther);
     } catch (e) {
       console.error(e, e.stack);
       return "error";
@@ -595,6 +667,13 @@ function generateIncomingReport(allianceHits) {
 
 }
 
+function shortenHeroLvl(lvl) {
+  if (typeof lvl !== 'string') return lvl;
+  if (lvl === 'Higher') return 'Hgr';
+  return lvl.substring(0,3);
+}
+
+// Extend Date prototype to add getMonthName and getDayName
 (function () {
   var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 

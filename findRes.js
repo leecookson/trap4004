@@ -11,6 +11,7 @@ var userToFileName = require('./userToFileName');
 
 var alliance = "15740";
 var farmMode = process.argv[2] || 0; // 1 = farm, 0 = lose
+var gameDomain = process.argv[3] || 'www1.hobbitmobile.com';
 
 var gameHoursShift = 0;
 
@@ -21,7 +22,7 @@ var startReportTime = new Date();
 startReportTime.setDate(now.getDate() - startDaysAgo);
 
 var logLevel = 1; // 0 = nothing, 1 = normal, 2 = info
-var data = new Data();
+var data = new Data(gameDomain);
 
 var earliestTime = new Date();
 var latestTime = startReportTime;
@@ -31,7 +32,7 @@ process.on('uncaughtException', function (err) {
   process.exit(-1);
 });
 
-console.log('Starting       ====', new Date());
+//console.log('Starting       ====', new Date());
 
 data.loadDB('report', {
   query: {
@@ -40,12 +41,12 @@ data.loadDB('report', {
     }
   }
 }, function (err, reports) {
-  console.log('Reports Loaded ====', new Date(), reports.length);
+//  console.log('Reports Loaded ====', new Date(), reports.length);
 
   data.loadDB('user', {
     query: {}
   }, function (err, users) {
-    console.log('Users Loaded   ====', new Date(), users.length, '\n');
+//    console.log('Users Loaded   ====', new Date(), users.length, '\n');
 
     var reportsSorted = [];
     var globalLoot = {
@@ -58,11 +59,9 @@ data.loadDB('report', {
     };
     var players = {};
 
-    console.log('before sort', new Date());
     reportsSorted = _.sortBy(reports, function (item) {
       return -(item.reportUnixTime);
     });
-    console.log('after sort', new Date());
 
     // TODO: write this out to a specific file automatically, not std out
     if (logLevel > 1) console.log(reports.length, 'reports');
@@ -133,20 +132,22 @@ data.loadDB('report', {
     var reportData = {};
     reportData.startTime = {
       time: toSimpleTime(toGameTime(earliestTime)),
-      dayOfWeek: earliestTime.getDayName()
+      dayOfWeek: earliestTime.getDayName(),
+      monthDay: (earliestTime.getMonth() + 1) + '/' + earliestTime.getDate()
     };
     reportData.endTime = {
       time: toSimpleTime(toGameTime(latestTime)),
-      dayOfWeek: latestTime.getDayName()
+      dayOfWeek: latestTime.getDayName(),
+      monthDay: (latestTime.getMonth() + 1) + '/' + latestTime.getDate()
     };
     reportData.nowTime = {
       time: toSimpleTime(gameTime),
     };
     reportData.players = [];
 
-    console.log('Start Time:    ', toSimpleTime(toGameTime(earliestTime)), earliestTime.getDayName());
-    console.log('End Time:      ', toSimpleTime(toGameTime(latestTime)), latestTime.getDayName());
-    console.log('Game Time Now: ', toSimpleTime(gameTime));
+//    console.log('Start Time:    ', toSimpleTime(toGameTime(earliestTime)), earliestTime.getDayName());
+//    console.log('End Time:      ', toSimpleTime(toGameTime(latestTime)), latestTime.getDayName());
+//    console.log('Game Time Now: ', toSimpleTime(gameTime));
     if (farmMode) {
       reportData.titleLabel = 'Farmers';
       console.log('\nFarmers');
@@ -154,7 +155,7 @@ data.loadDB('report', {
       reportData.titleLabel = 'Losers';
       console.log('\nLosers');
     }
-    console.log('======');
+    console.log('=======');
     formatHeader();
     var sortPlayers = _.sortBy(players, function (item) {
       return -item.loot.total;

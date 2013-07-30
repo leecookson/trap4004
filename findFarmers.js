@@ -12,13 +12,14 @@ var loserAlliance = "15740";
 var gameHoursShift = 0;
 
 var now = new Date();
+var gameDomain = process.argv[2] || 'www1.hobbitmobile.com';
 
 var startDaysAgo = 1;
 var startReportTime = new Date();
 startReportTime.setDate(now.getDate() - startDaysAgo);
 
 var logLevel = 1; // 0 = nothing, 1 = normal, 2 = info
-var data = new Data();
+var data = new Data(gameDomain);
 
 var earliestTime = new Date();
 var latestTime = startReportTime;

@@ -47,7 +47,7 @@ data.loadDB('user', {query: {}}, function (err, users) {
   var prevMight = Infinity;
   if (logLevel > 1) console.log(users.length, 'users');
 
-  usersSorted.forEach(function (item) {
+  usersSorted.forEach(function (item, index) {
     var user0, user1;
     var stats;
 
@@ -62,7 +62,7 @@ data.loadDB('user', {query: {}}, function (err, users) {
           delta = formatRes(0 + prevMight - item.m);
         }
         prevMight = item.m
-        outputReport.push(formatMember(item, delta));
+        outputReport.push(formatMember(item, delta, index + 1));
       }
 
     } catch (e) {
@@ -75,7 +75,11 @@ data.loadDB('user', {query: {}}, function (err, users) {
   var outputReportText = outputReport.join('\n');
   fs.writeFileSync(outputFileName, outputReportText);
 
-  var reportData = { alliList: outputReportText, now: toSimpleTime(gameTime) };
+  var reportData = {
+    alliList: outputReportText,
+    numMembers:  usersSorted.length,
+    now: toSimpleTime(gameTime)
+  };
 
   var outputFile = path.resolve('reports', 'allies.html');
   fs.writeFileSync(outputFile, generateReport(reportData));
@@ -85,15 +89,16 @@ data.loadDB('user', {query: {}}, function (err, users) {
 
 var reportFormat = '%4s  %4s  %4s  %4s  %4s  %s';
 var hitReportFormat = '%-15s (%3d %3d)  %4s  %4s  %4s  %4s  %4s  %s';
-var memberFormat = '%-15s %-10s %s %s %s';
+var memberFormat = '%2d %-15s %-10s %s %s %s';
 function formatHeader() {
   console.log(printf(reportFormat,
         '  F ', '  W ', '  S ', '  O ', '  T ', 'Totals'));
 }
 
-function formatMember(member, delta) {
+function formatMember(member, delta, index) {
   var d = new Date(member.lastLogin);
   return printf(memberFormat,
+      index,
       member.n,
       member.m,
       toSimpleTime(d),
