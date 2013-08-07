@@ -30,7 +30,7 @@
           <li>Start Time: {{startTime.time}} {{startTime.dayOfWeek}}</li>
           <li>End Time: <strong>{{endTime.time}}</strong> {{endTime.dayOfWeek}} {{endTime.monthDay}}</li>
           <li>Time Now: {{nowTime.time}}</li>
-          <li>Total Res: {{totals.totalStr}}</li>
+          <li>Total Res: <strong>{{totals.totalStr}}</strong></li>
         </ul>
       </section>
       <header>
