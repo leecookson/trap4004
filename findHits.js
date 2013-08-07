@@ -17,19 +17,25 @@ var Data = require('./data'),
 var numParams = process.argv.length;
 
 var userNames = [];
+var startDaysAgo = 1;
 
+// Usage:
+//   findHits [startDaysAgo] name [name ...]
 if (numParams > 3) {
-  userNames = process.argv.slice(2);
+  if (typeof process.argv[2].match(/[0-9]+/)) {
+    startDaysAgo = process.argv[2];
+  }
+  userNames = process.argv.slice(3);
 } else {
   userNames.push(process.argv[2] || 'all');
 }
 
 var incomingMode = (userNames[0] === 'incoming');
+var outgoingMode = (userNames[0] === 'outgoing');
 
 console.log('report for users:', userNames);
 
 //TODO: change this to a command flag (optimist, maybe)
-var startDaysAgo = process.argv[3] || 1;
 
 console.log('start days ago:', startDaysAgo);
 
@@ -100,7 +106,11 @@ data.loadDB('report', {
 
     } else if (incomingMode) {
 
-      getAllianceHits(reportsSorted, userHash, allianceHash);
+      getAllianceHits(reportsSorted, userHash, allianceHash, true);
+
+    } else if (outgoingMode) {
+
+      getAllianceHits(reportsSorted, userHash, allianceHash, false);
 
     } else {
 
@@ -255,8 +265,8 @@ function getUserHits(reports, users, user) {
             reportData.table.push('  hit ===> ' + formatStats(stats));
           }
           totalLootFarmed += stats.loot.total;
-          totalMightLost += stats.attMightLost;
-          totalMightKilled += stats.defMightLost;
+          totalMightLost += (stats.attMightLost || 0);
+          totalMightKilled += (stats.defMightLost || 0);
 
           userCoords[item.side1XCoord + ',' + item.side1YCoord] = item.side1XCoord + ',' + item.side1YCoord;
         }
@@ -354,7 +364,7 @@ function getUserHits(reports, users, user) {
 
 }
 
-function getAllianceHits(reports, users, alliances) {
+function getAllianceHits(reports, users, alliances, incoming) {
   var reportData = {};
   var allianceHits = {};
 
@@ -362,7 +372,7 @@ function getAllianceHits(reports, users, alliances) {
   reports.forEach(function (item) {
     var reportDate = new Date(item.reportUnixTime * 1000);
 
-    if (item.side0AllianceId === ourAlliance) {
+    if (item.side0AllianceId === ourAlliance && incoming) {
 
       if (reportDate.getTime() < earliestTime.getTime()) earliestTime = reportDate;
       if (reportDate.getTime() > latestTime.getTime()) latestTime = reportDate;
@@ -384,6 +394,28 @@ function getAllianceHits(reports, users, alliances) {
         addAllianceHit(allianceHits[item.side1AllianceId], item, users, alliances);
       }
     }
+    if (item.side1AllianceId === ourAlliance && !incoming) {
+
+      if (reportDate.getTime() < earliestTime.getTime()) earliestTime = reportDate;
+      if (reportDate.getTime() > latestTime.getTime()) latestTime = reportDate;
+
+      var alliance = alliances[item.side0AllianceId];
+      if (alliance) {
+        if (!allianceHits[item.side0AllianceId]) {
+          allianceHits[item.side0AllianceId] = {
+            hits:[],
+            allianceId: item.side0AllianceId,
+            id: alliance.id,
+            name: alliance.name,
+            a: item.side0AllianceId,
+            totalLootFarmed: 0,
+            totalMightLost: 0,
+            totalMightKilled: 0
+          };
+        }
+        addAllianceHit(allianceHits[item.side0AllianceId], item, users, alliances);
+      }
+    }
   });
 
   reportData.allianceHits = _.toArray(allianceHits);
@@ -398,12 +430,21 @@ function getAllianceHits(reports, users, alliances) {
     item.totalMightLost = formatRes(item.totalMightLost);
     _.each(item.hits, function (hit) {
       if (hit.boxContent) {
-        hit.stats.heroLvl = hit.boxContent.s0KCombatLv || 0;
-        hit.stats.heroLvlOther = hit.boxContent.s1KCombatLv || 0;
-        hit.stats.defBoost = hit.boxContent.s0defBoost || 0;
-        hit.stats.atkBoost = hit.boxContent.s0atkBoost || 0;
-        hit.stats.defBoostOther = hit.boxContent.s1defBoost || 0;
-        hit.stats.atkBoostOther = hit.boxContent.s1atkBoost || 0;
+        if (incoming) {
+          hit.stats.heroLvl = hit.boxContent.s0KCombatLv || 0;
+          hit.stats.heroLvlOther = hit.boxContent.s1KCombatLv || 0;
+          hit.stats.defBoost = hit.boxContent.s0defBoost || 0;
+          hit.stats.atkBoost = hit.boxContent.s0atkBoost || 0;
+          hit.stats.defBoostOther = hit.boxContent.s1defBoost || 0;
+          hit.stats.atkBoostOther = hit.boxContent.s1atkBoost || 0;
+        } else {
+          hit.stats.heroLvl = hit.boxContent.s1KCombatLv || 0;
+          hit.stats.heroLvlOther = hit.boxContent.s0KCombatLv || 0;
+          hit.stats.defBoost = hit.boxContent.s1defBoost || 0;
+          hit.stats.atkBoost = hit.boxContent.s1atkBoost || 0;
+          hit.stats.defBoostOther = hit.boxContent.s0defBoost || 0;
+          hit.stats.atkBoostOther = hit.boxContent.s0atkBoost || 0;
+        }
       }
 
       hit.stats.loot = refactorLoot(hit.boxContent.loot);
@@ -417,11 +458,12 @@ function getAllianceHits(reports, users, alliances) {
     return -item.hits.length;
   });
 
-  var htmlFileName = path.resolve('reports', 'incomingByAlliance.html');
-  fs.writeFileSync(htmlFileName, generateIncomingReport(reportData));
+  var filePrefix = incoming ? 'incoming' : 'outgoing';
+  var htmlFileName = path.resolve('reports', filePrefix + 'ByAlliance.html');
+  fs.writeFileSync(htmlFileName, generateIncomingReport(reportData, incoming));
 }
 
-function addAllianceHit(allianceHit, hit, users, alliances) {
+function addAllianceHit(allianceHit, hit, users, alliances, incoming) {
   var user0, user1;
   allianceHit.hits.push(hit);
 
@@ -653,8 +695,9 @@ function generateReport(reportData) {
 
 }
 
-function generateIncomingReport(allianceHits) {
-  var templateFile = fs.readFileSync('incoming.mu', 'utf-8').toString();
+function generateIncomingReport(allianceHits, incoming) {
+  var filePrefix = incoming ? 'incoming' : 'outgoing';
+  var templateFile = fs.readFileSync(filePrefix + '.mu', 'utf-8').toString();
   var headerFile = fs.readFileSync('header.mu', 'utf-8').toString();
 
   // compile template
