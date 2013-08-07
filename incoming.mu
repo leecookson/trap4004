@@ -38,8 +38,8 @@
       {{#allianceHits}}
       <h4>{{name}} - {{totalLootFarmed}} res farmed - {{totalMightKilled}} killed - {{totalMightLost}} lost</h4>
       <pre>
-hit member              our coord   res unitSnt time  ene coord mgtLost mgtKild ratio by
-----------              --------- ----- ------- ----- --------- ------- ------- ----- ------
+hit member              our coord   res unitSnt time  ene coord mgtLost mgtKild ratio Hro Bst Other
+----------              --------- ----- ------- ----- --------- ------- ------- ----- ------  ------
 {{#hits}}
 {{reportLine}}
 {{/hits}}
