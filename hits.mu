@@ -31,6 +31,7 @@
   totalMightLost: -1 }
 -->
     <div class="container-fluid">
+      {{>header}}
       <section>
         <ul class="unstyled">
           <li>Earliest: {{earliestTime}}</li>
