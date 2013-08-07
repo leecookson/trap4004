@@ -18,6 +18,7 @@ echo 'Finding Farmers'
 echo 'Finding Alliances hitting us'
 
 node findHits incoming
+node findHits outgoing
 
 sleep 60
 
