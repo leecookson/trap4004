@@ -1,6 +1,6 @@
 #!/bin/bash
 
-app=trap3
+app=lib/trap
 
 action=$1
 
@@ -49,7 +49,7 @@ function stop() {
 
   if [ ! -z $process ]
   then
-    echo "STOP $game"
+    echo "STOP $game $process"
     kill $process
   fi
 }
