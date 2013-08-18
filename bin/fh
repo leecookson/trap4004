@@ -1,4 +1,6 @@
 #!/bin/bash
 
-node findHits.js ${@}
+trapHome=$HOME/trap4004
+
+node ${trapHome}/lib/reports/findHits.js ${@}
 echo
