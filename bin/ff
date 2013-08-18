@@ -1,6 +1,9 @@
 #!/bin/bash
 
-node findRes.js 1 > reports/farmers.txt
-cat reports/farmers.txt
-node findRes.js > reports/losers.txt
-cat reports/losers.txt
+trapHome=$HOME/trap4004
+cd $trapHome
+
+node ${trapHome}/lib/reports/findRes.js 1 > $HOME/reports/farmers.txt
+cat $HOME/reports/farmers.txt
+node ${trapHome}/lib/reports/findRes.js > $HOME/reports/losers.txt
+cat $HOME/reports/losers.txt
