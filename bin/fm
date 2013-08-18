@@ -1,5 +1,7 @@
 #!/bin/bash
 
-node findMembers.js
-cat reports/allies.txt
+trapHome=$HOME/trap4004
+
+node ${trapHome}/lib/reports/findMembers.js
+cat $HOME/reports/allies.txt
 echo
