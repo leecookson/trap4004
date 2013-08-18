@@ -1,4 +1,6 @@
 #!/bin/bash
 
-node findCandidates.js
-cat reports/candidates.txt
+trapHome=$HOME/trap4004
+
+node ${trapHome}/lib/reports/findCandidates.js
+cat $HOME/reports/candidates.txt
