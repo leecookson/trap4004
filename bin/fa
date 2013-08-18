@@ -1,34 +1,56 @@
 #!/bin/bash
 
-logfile=/home/ec2-user/trap4004/log/reports.log
+function dt () {
+  date +"%F %T"
+}
+
+trapHome=/home/ec2-user/trap4004
+scriptHome=${trapHome}/bin
+reportLib=${trapHome}/lib/reports
+imageLib=${trapHome}/lib/image
+reportHome=/home/ec2-user/reports
+logfile=${trapHome}/log/reports.log
+
+cd ${scriptHome}
+
 exec > $logfile 2>&1
 
+dt
 echo 'Finding Hits'
 
 ./fh
 
+dt
 echo 'Finding Members'
 
 ./fm
 
+dt
 echo 'Finding Farmers'
 
 ./ff
 
+dt
 echo 'Finding Alliances hitting us'
 
-node findHits incoming
-node findHits outgoing
+node ${reportLib}/findHits incoming
+node ${reportLib}/findHits outgoing
 
 sleep 60
 
+dt
 echo 'Fiding Enemies'
 
 ./fe
 
-node generateIndex
-node generateFolderIndex ally
-node generateFolderIndex enemy
+dt
+echo 'Generating Indexes'
+node ${reportLib}/generateIndex
+node ${reportLib}/generateFolderIndex ally
+node ${reportLib}/generateFolderIndex enemy
+dt
+echo 'Done Reports'
 
-node imgMembers
-node imgMembers reports/farmers.txt reports/farmers.gif '-'
+node ${imageLib}/imgMembers
+node ${imageLib}/imgMembers ${reportHome}/farmers.txt ${reportHome}/farmers.gif '-'
+dt
