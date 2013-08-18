@@ -1,6 +1,7 @@
 #!/bin/bash
 
-enemies=$(grep hit reports/ally/*.html | grep 'hit by' | cut -d ' ' -f 4 | sort -u)
+trapHome=$HOME/trap4004
 
-node findHits 2 $enemies
-#for enemy in $enemies; do ./fh "$enemy"; echo "Report for: $enemy"; done
+enemies=$(grep hit $HOME/reports/ally/*.html | grep 'hit by' | cut -d ' ' -f 4 | sort -u | sed 's/(.*)/"&"/')
+
+node ${trapHome}/lib/reports/findHits 2 $enemies
