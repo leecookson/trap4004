@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hits for {{name}}</title>
+    <title>Hits for {{name}} {{user.allianceName}}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -38,6 +38,7 @@
       {{>header}}
       <section>
         <ul class="unstyled">
+          <li>Last Login: {{lastLoginTime}} {{lastLoginDate}}</li>
           <li>Earliest: {{earliestTime}}</li>
           <li>Latest: <strong>{{latestTime}} {{latestDate}}</strong></li>
           <li>Now: {{gameTime}}</li>
@@ -49,7 +50,7 @@
         </ul>
       </section>
       <header>
-        <h3>Hits for {{name}}</h3>
+        <h3>Hits for {{name}} {{user.allianceName}}</h3>
 
       </header>
 
