@@ -11,6 +11,17 @@ imageLib=${trapHome}/lib/image
 reportHome=/home/ec2-user/reports
 logfile=${trapHome}/log/reports.log
 
+function get_process() {
+   local game=$1
+   local process=$(ps xo "%p %a" | grep "bash bin/fa" | grep -v grep | grep -v $$)
+   process=$(echo $process)
+   process=$(echo $process | cut -d ' ' -f 1)
+   echo $process
+}
+
+# avoid running reports twice
+kill $(get_process)
+
 cd ${scriptHome}
 
 exec > $logfile 2>&1
@@ -41,7 +52,7 @@ sleep 60
 dt
 echo 'Fiding Enemies'
 
-./fe
+node ${reportLib}/findHits enemies
 
 dt
 echo 'Generating Indexes'
