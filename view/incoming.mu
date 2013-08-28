@@ -44,6 +44,26 @@ hit member              our coord   res unitSnt time  ene coord mgtLost mgtKild 
 {{reportLine}}
 {{/hits}}
       </pre>
+      <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
+        <thead><tr>
+          <th>Attacker</th>
+          <th>From</th>
+          <th>Sent</th>
+          <th>Hero</th>
+          <th>Res</th>
+          <th>MtLst</th>
+          <th>Time</th>
+          <th>Ratio</th>
+          <th>MtKld</th>
+          <th>Hero</th>
+          <th>Coords</th>
+          <th>Defender</th>
+        </tr></thead>
+
+        {{#reports}}
+          {{>row}}
+        {{/reports}}
+      </table>
       {{/allianceHits}}
     </div>
   </body>
