@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hits for {{name}}</title>
+    <title>Hits for {{name}} {{user.allianceName}}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -38,6 +38,7 @@
       {{>header}}
       <section>
         <ul class="unstyled">
+          <li>Last Login: {{lastLoginTime}} {{lastLoginDate}}</li>
           <li>Earliest: {{earliestTime}}</li>
           <li>Latest: <strong>{{latestTime}} {{latestDate}}</strong></li>
           <li>Now: {{gameTime}}</li>
@@ -49,7 +50,7 @@
         </ul>
       </section>
       <header>
-        <h3>Hits for {{name}}</h3>
+        <h3>Hits for {{name}} {{user.allianceName}}</h3>
 
       </header>
 
@@ -74,22 +75,17 @@
           <td>{{item.side1XCoord}},{{item.side1YCoord}}</td>
           <td class="numeric">{{stats.attUnits}}</td>
           <td>{{item.s1hero}} {{item.s1atkBoostSym}} {{item.s1defBoostSym}}</td>
-          <td class="numeric {{stats.max}} {{stats.capacity}}">{{stats.totalFarmed}}</td>
+          <td class="numeric {{stats.max}} {{stats.capacity}} {{stats.loot.total}}">{{stats.totalFarmed}} {{stats.maxLootSym}}</td>
           <td class="numeric">{{stats.attMightLost}}</td>
           <td class="middle">{{stats.hitTime}}</td>
           <td class="numeric">{{stats.ratioShort}}</td>
           <td class="numeric">{{stats.defMightLost}}</td>
           <td>{{item.s0hero}} {{item.s0atkBoostSym}} {{item.s0defBoostSym}}</td>
           <td>{{item.side0XCoord}},{{item.side0YCoord}}</td>
-          <th class="defender {{inOut}}"><a href="{{onLink}}.html">{{on}}</a></th>
+          <th class="defender {{inOut}}"><a href="{{onLink}}">{{on}}</a></th>
         </tr>
         {{/reports}}
       </table>
-      <pre>
-  hit opponent             opp coord   res unitSnt time  own coord mgtLost mgtKild ratio Hro Bst Other
-  ------------             --------- ----- ------- ----- --------- ------- ------- ----- ------- -----
-{{table}}
-      </pre>
     </div>
   </body>
 </html>
