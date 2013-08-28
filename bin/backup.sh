@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 date=$(date +%F)
 trapHome=/home/ec2-user/trap4004
@@ -18,4 +18,4 @@ done
 cp -R ally history/${date}/ally
 cp -R enemy history/${date}/enemy
 
-node ${trapHome}/generateFolderIndex history
+node ${trapHome}/lib/reports/generateFolderIndex history
